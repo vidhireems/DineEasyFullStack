@@ -9,6 +9,7 @@ class GooglePassport {
         this.secretId = googleOauth2_1.googleAppAuth.secret;
         const callbackURLs = [
             "http://localhost:8080/auth/google",
+            "https://dineeasyy.azurewebsites.net/auth/google/callback"
         ];
         callbackURLs.forEach(callbackURL => {
             passport.use(new GoogleStrategy({

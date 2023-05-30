@@ -1,5 +1,5 @@
 class googleAppAuth {
-    static id: string = "1015655147059-6mvk5spimik4522m6alcajtgp2hfuett.apps.googleusercontent.com";
-    static secret:string = "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"; 
+    static id: string = "34431887512-ikn8h4d2af4jqhbo19orqsdodr02ergf.apps.googleusercontent.com";
+    static secret:string = "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"; 
     }
 export  {googleAppAuth};

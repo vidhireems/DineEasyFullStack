@@ -15,6 +15,7 @@ class GooglePassport {
 
         const callbackURLs = [
             "http://localhost:8080/auth/google",
+            "https://dineeasyy.azurewebsites.net/auth/google/callback"
         ];
 
         callbackURLs.forEach(callbackURL => {

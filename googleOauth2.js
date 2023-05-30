@@ -4,5 +4,5 @@ exports.googleAppAuth = void 0;
 class googleAppAuth {
 }
 exports.googleAppAuth = googleAppAuth;
-googleAppAuth.id = "1015655147059-6mvk5spimik4522m6alcajtgp2hfuett.apps.googleusercontent.com";
-googleAppAuth.secret = "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";
+googleAppAuth.id = "34431887512-ikn8h4d2af4jqhbo19orqsdodr02ergf.apps.googleusercontent.com";
+googleAppAuth.secret = "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";
