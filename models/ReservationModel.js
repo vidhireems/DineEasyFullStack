@@ -19,7 +19,7 @@ const DbConnection_1 = require("../DbConnection");
 const uuid_1 = require("uuid");
 const RestaurantModel_1 = require("./RestaurantModel");
 const node_cron_1 = __importDefault(require("node-cron"));
-const CustomerUserModel_1 = require("./CustomerUserModel");
+const CustomerModel_1 = require("./CustomerModel");
 //Mongoose connections and object
 let mongooseConnection = DbConnection_1.DbConnection.mongooseConnection;
 let mongooseObj = DbConnection_1.DbConnection.mongooseInstance;
@@ -30,7 +30,7 @@ class ReservationModel {
         this.createSchema();
         this.createModel();
         this.restaurantModel = new RestaurantModel_1.RestaurantModel();
-        this.customeruserModel = new CustomerUserModel_1.CustomerUserModel();
+        this.CustomerModel = new CustomerModel_1.CustomerModel();
         node_cron_1.default.schedule("1 0 * * *", this.resetTableCount.bind(this));
     }
     //function to create the schema for restaurants

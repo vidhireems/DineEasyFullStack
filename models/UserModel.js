@@ -17,7 +17,7 @@ exports.UserModel = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const DbConnection_1 = require("../DbConnection");
 const bcrypt = require('bcrypt');
-const uuid_1 = require("uuid");
+const CustomerModel_1 = require("./CustomerModel");
 //Mongoose connections and object
 let mongooseConnection = DbConnection_1.DbConnection.mongooseConnection;
 let mongooseObj = DbConnection_1.DbConnection.mongooseInstance;
@@ -27,6 +27,7 @@ class UserModel {
     constructor() {
         this.createSchema();
         this.createModel();
+        this.customer = new CustomerModel_1.CustomerModel();
     }
     //function to create the schema for restaurants
     createSchema() {
@@ -34,7 +35,6 @@ class UserModel {
             userId: String,
             name: String,
             email: String,
-            password: String,
             userType: String,
             refrenceUserTypeId: String,
         }, { collection: 'Users' });
@@ -47,67 +47,67 @@ class UserModel {
     retrieveUser(response, filter) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const query = this.model.findOne(filter);
-                query.then((UserDetail) => {
-                    if (!UserDetail) {
-                        console.error({ error: "Unable to find User" });
-                        response.status(404).send({ error: "User not found" });
-                    }
-                    else {
-                        response.send(UserDetail);
-                    }
-                });
+                const UserDetail = yield this.model.findOne(filter);
+                if (response) {
+                    response.json(UserDetail);
+                }
+                console.log(UserDetail);
+                return UserDetail;
             }
             catch (err) {
                 console.error(err);
-                response.sendStatus(500).send({ message: "Internal server error while retrieving User detail" });
+                if (response) {
+                    response.json({ message: "Internal server error while retrieving User detail" });
+                    response.sendStatus(500);
+                }
+                return { message: "Internal server error while retrieving User detail" };
             }
         });
     }
-    //login user
-    //logout user
-    // delete user will delete all the items related to that user
     // add new user
-    createCustomerUser(data) {
+    createUser(request, response) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                //create uuid
-                const userId = (0, uuid_1.v4)();
                 // Extract the required data from the 'data' parameter
-                const { referenceCustomerTypeId, userType, name, email, password } = data;
+                const { userId, name, email, userType } = request;
+                console.log("user: " + userId + " name: " + name + " email: " + email);
+                const customerResponse = yield this.customer.createCustomer({ email: email, name: name });
+                console.log(customerResponse);
+                let referenceCustomerTypeId;
+                if (!customerResponse) {
+                    throw new Error("Error Creating User because customer could not be created");
+                }
+                else {
+                    referenceCustomerTypeId = customerResponse.customerId;
+                }
                 // Perform the logic to create a user based on the provided data
                 const newUser = new this.model({
                     userId,
                     name,
                     email,
-                    password,
                     userType,
                     referenceCustomerTypeId
                 });
                 yield newUser.save();
-                return { message: "User Created successfully" };
+                console.log("User created successfully");
+                const responseData = {
+                    userId: userId,
+                    email: email,
+                    name: name,
+                    userType: userType,
+                    referenceCustomerTypeId: referenceCustomerTypeId
+                };
+                if (response) {
+                    response.json(responseData);
+                    response.status(200);
+                }
+                else {
+                    return responseData;
+                }
             }
             catch (error) {
                 console.error("Error Creating User:", error);
                 throw new Error("Error Creating User");
-            }
-        });
-    }
-    //update user (password, email)
-    updateCustomerUser(data) {
-        return __awaiter(this, void 0, void 0, function* () {
-            //find the user using the refrence user type id and update the information
-            try {
-                // Extract the required data from the 'data' parameter
-                const { referenceCustomerTypeId, name, email, password } = data;
-                //perform logic to find and update
-                //start working here
-                const updateUser = yield this.model.findOneAndUpdate({ referenceCustomerTypeId }, { email, password, name }, { new: true });
-                return { message: "User Updated Successfully" };
-            }
-            catch (error) {
-                console.error("Error Updating User:", error);
-                throw new Error("Error Updating User");
             }
         });
     }

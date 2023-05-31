@@ -5,7 +5,7 @@ import { IReservationModel } from "../interfaces/IReservationModel";
 import { v4 as uuidv4 } from "uuid";
 import { RestaurantModel } from "./RestaurantModel";
 import cron from "node-cron";
-import { CustomerUserModel } from "./CustomerUserModel";
+import { CustomerModel } from "./CustomerModel";
 
 //Mongoose connections and object
 let mongooseConnection = DbConnection.mongooseConnection;
@@ -16,14 +16,14 @@ class ReservationModel {
   public schema: any;
   public model: any;
   private restaurantModel: any;
-  private customeruserModel: any;
+  private CustomerModel: any;
 
   //constructor initilize the create schema and model
   public constructor() {
     this.createSchema();
     this.createModel();
     this.restaurantModel = new RestaurantModel();
-    this.customeruserModel = new CustomerUserModel();
+    this.CustomerModel = new CustomerModel();
     cron.schedule("1 0 * * *", this.resetTableCount.bind(this));
   }
 

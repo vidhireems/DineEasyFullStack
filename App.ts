@@ -5,12 +5,16 @@ import { MenuItemsModel } from "./models/MenuItemsModel";
 import express = require("express");
 import * as bodyParser from "body-parser";
 import { OrderModel } from "./models/OrderModel";
-import { CustomerUserModel } from "./models/CustomerUserModel";
+import { CustomerModel } from "./models/CustomerModel";
 import cors from "cors";
 import { ReservationModel } from "./models/ReservationModel";
 import GooglePassportObj from './GooglePassport';
 import passport = require("passport");
 import path = require("path");
+import { v4 as uuidv4 } from "uuid";
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
 
 // Class App which creates and configure the express application
 class App {
@@ -19,9 +23,10 @@ class App {
   public Menu: MenuModel;
   public MenuItems: MenuItemsModel;
   public Orders: OrderModel;
-  public Customer: CustomerUserModel;
+  public Customer: CustomerModel;
   public Reservation: ReservationModel;
   public googlePassportObj:GooglePassportObj;
+  public sessionKey: string;
 
   // Constructor which runs the configuration on the express application and calls the routes function
   constructor() {
@@ -30,9 +35,10 @@ class App {
     this.Menu = new MenuModel();
     this.MenuItems = new MenuItemsModel();
     this.Orders = new OrderModel();
-    this.Customer = new CustomerUserModel();
+    this.Customer = new CustomerModel();
     this.Reservation = new ReservationModel();
     this.googlePassportObj = new GooglePassportObj();
+    this.sessionKey = uuidv4();
     this.middleware();
     this.routes();
     
@@ -44,6 +50,11 @@ class App {
     this.expressApp.use(bodyParser.json());
     this.expressApp.use(bodyParser.urlencoded({ extended: true }));
     this.expressApp.use(express.static(path.join(__dirname, '/frontend/dist')));
+    this.expressApp.use(session({ 
+      secret: 'keyboard ysaeenid',  
+      resave: true,
+      saveUninitialized: true }));
+    this.expressApp.use(cookieParser());
     this.expressApp.use(passport.initialize());
     this.expressApp.use(passport.session());
   }
@@ -58,10 +69,14 @@ class App {
   private routes(): void {
     let router = express.Router();
 
-     router.get('/auth/google', 
-    passport.authenticate('google', {scope: ['profile']}));
-
-
+    router.get('/auth/google', 
+    passport.authenticate('google', {scope: ['profile', 'email']}),
+    (req, res) => {
+      console.log("Localhost: successfully authenticated user and returned to callback page.");
+      console.log("Localhost: redirecting to home");
+      res.redirect('/');
+    } 
+  );
     router.get('/auth/google/callback', 
       passport.authenticate('google', 
         { failureRedirect: '/' }

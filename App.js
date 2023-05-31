@@ -34,12 +34,15 @@ const MenuItemsModel_1 = require("./models/MenuItemsModel");
 const express = require("express");
 const bodyParser = __importStar(require("body-parser"));
 const OrderModel_1 = require("./models/OrderModel");
-const CustomerUserModel_1 = require("./models/CustomerUserModel");
+const CustomerModel_1 = require("./models/CustomerModel");
 const cors_1 = __importDefault(require("cors"));
 const ReservationModel_1 = require("./models/ReservationModel");
 const GooglePassport_1 = __importDefault(require("./GooglePassport"));
 const passport = require("passport");
 const path = require("path");
+const uuid_1 = require("uuid");
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 // Class App which creates and configure the express application
 class App {
     // Constructor which runs the configuration on the express application and calls the routes function
@@ -49,9 +52,10 @@ class App {
         this.Menu = new MenuModel_1.MenuModel();
         this.MenuItems = new MenuItemsModel_1.MenuItemsModel();
         this.Orders = new OrderModel_1.OrderModel();
-        this.Customer = new CustomerUserModel_1.CustomerUserModel();
+        this.Customer = new CustomerModel_1.CustomerModel();
         this.Reservation = new ReservationModel_1.ReservationModel();
         this.googlePassportObj = new GooglePassport_1.default();
+        this.sessionKey = (0, uuid_1.v4)();
         this.middleware();
         this.routes();
     }
@@ -61,6 +65,12 @@ class App {
         this.expressApp.use(bodyParser.json());
         this.expressApp.use(bodyParser.urlencoded({ extended: true }));
         this.expressApp.use(express.static(path.join(__dirname, '/frontend/dist')));
+        this.expressApp.use(session({
+            secret: 'keyboard ysaeenid',
+            resave: true,
+            saveUninitialized: true
+        }));
+        this.expressApp.use(cookieParser());
         this.expressApp.use(passport.initialize());
         this.expressApp.use(passport.session());
     }
@@ -75,7 +85,11 @@ class App {
     // Api Endpoints....
     routes() {
         let router = express.Router();
-        router.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
+        router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }), (req, res) => {
+            console.log("Localhost: successfully authenticated user and returned to callback page.");
+            console.log("Localhost: redirecting to home");
+            res.redirect('/');
+        });
         router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
             console.log("successfully authenticated user and returned to callback page.");
             console.log("redirecting to home");
