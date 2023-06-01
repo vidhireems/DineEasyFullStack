@@ -29,7 +29,9 @@
   },
   "scripts": {
     "test": "c8 mocha --exit",
-    "start": "node AppServer.js"
+    "build": "tsc && cd frontend && npm run build && cd ..",
+    "start": "node AppServer.js",
+    "start:local": "tsc && cd frontend && npm run build:local && cd .. && node AppServer.js --env localhost"
   },
   "repository": {
     "type": "git",
