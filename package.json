@@ -35,14 +35,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vidhireems/DineEasy.git"
+    "url": "git+https://github.com/vidhireems/DineEasyFullStack.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vidhireems/DineEasy/issues"
+    "url": "https://github.com/vidhireems/DineEasyFullStack/issues"
   },
-  "homepage": "https://github.com/vidhireems/DineEasy#readme",
+  "homepage": "https://github.com/vidhireems/DineEasyFullStack#readme",
   "devDependencies": {
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.13",
