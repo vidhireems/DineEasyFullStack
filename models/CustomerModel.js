@@ -59,13 +59,16 @@ class CustomerModel {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const query = this.model.findOne(filter);
-                query.then((CustomerDetail) => {
-                    if (!CustomerDetail) {
+                query.then((CustomerInfo) => {
+                    if (!CustomerInfo) {
                         console.error({ error: "Unable to find Customer" });
                         response.status(404).send({ error: "Customer not found" });
                     }
                     else {
-                        response.send(CustomerDetail);
+                        if (response) {
+                            response.send(CustomerInfo);
+                        }
+                        return CustomerInfo;
                     }
                 });
             }

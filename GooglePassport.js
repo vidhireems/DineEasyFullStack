@@ -9,7 +9,7 @@ class GooglePassport {
     constructor() {
         this.clientId = googleOauth2_1.googleAppAuth.id;
         this.secretId = googleOauth2_1.googleAppAuth.secret;
-        this.user = new UserModel_1.UserModel();
+        this.users = new UserModel_1.UserModel();
         this.customer = new CustomerModel_1.CustomerModel();
         let callbackURL = "https://dineeasyy.azurewebsites.net/auth/google/callback";
         if (GooglePassport.env === 'localhost') {
@@ -20,22 +20,18 @@ class GooglePassport {
             clientSecret: this.secretId,
             callbackURL: callbackURL
         }, (accessToken, _refreshToken, profile, done) => {
-            console.log("inside new passport google strategy");
             process.nextTick(() => {
-                console.log('validating google profile:' + JSON.stringify(profile));
-                console.log("retrieve all of the profile info needed");
                 let response;
-                this.user.retrieveUser(response, { ssoId: profile.id })
+                this.users.retrieveUser(response, { ssoId: profile.id })
                     .then((userResponse) => {
-                    console.log("Resp: " + userResponse);
                     if (userResponse === null) {
-                        const req = {
+                        const request = {
                             ssoId: profile.id,
                             name: profile.displayName,
                             email: profile.emails[0].value,
                             userType: "Customer",
                         };
-                        this.user.createUser(req).then((resp) => {
+                        this.users.createUser(request).then((resp) => {
                             if (resp.ssoId === profile.id) {
                                 console.log("The user was successfully added to the database using OAuth!");
                             }
@@ -49,17 +45,19 @@ class GooglePassport {
                     }
                 })
                     .catch((error) => {
-                    // Handle any errors that occurred during the retrieval process
                     console.error("Error retrieving user:", error);
                 });
                 return done(null, profile);
             });
         }));
-        passport.serializeUser(function (user, done) {
-            done(null, user);
+        passport.serializeUser((user, done) => {
+            done(null, user.id);
         });
-        passport.deserializeUser(function (user, done) {
-            done(null, user);
+        passport.deserializeUser((id, done) => {
+            let resp;
+            this.users.retrieveUser(resp, { ssoId: id }).then((user) => {
+                done(null, user);
+            });
         });
     }
 }

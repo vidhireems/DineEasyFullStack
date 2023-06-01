@@ -57,12 +57,16 @@ class CustomerModel {
   public async retrieveCustomer(response: any, filter: Object): Promise<any> {
     try {
       const query = this.model.findOne(filter);
-      query.then((CustomerDetail: any) => {
-        if (!CustomerDetail) {
+      query.then((CustomerInfo: any) => {
+        if (!CustomerInfo) {
           console.error({ error: "Unable to find Customer" });
           response.status(404).send({ error: "Customer not found" });
         } else {
-          response.send(CustomerDetail);
+          if(response)
+          {
+            response.send(CustomerInfo);
+          }
+          return CustomerInfo;
         }
       });
     } catch (err) {

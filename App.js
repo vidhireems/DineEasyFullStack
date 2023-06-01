@@ -87,13 +87,38 @@ class App {
         let router = express.Router();
         router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }), (req, res) => {
             console.log("Localhost: successfully authenticated user and returned to callback page.");
-            console.log("Localhost: redirecting to home");
             res.redirect('/');
         });
         router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
             console.log("successfully authenticated user and returned to callback page.");
-            console.log("redirecting to home");
             res.redirect('/');
+        });
+        router.get('/check-auth', (req, res) => {
+            if (req.isAuthenticated()) {
+                res.json({ authenticated: true, user: req.user });
+            }
+            else {
+                res.json({ authenticated: false });
+            }
+        });
+        router.get('/user', this.validateAuth, (req, res) => {
+            if (req.user) {
+                const user = req.user;
+                res.json(user);
+            }
+            else {
+                console.log('User not authenticated');
+                res.status(401).json({ message: 'User not authenticated' });
+            }
+        });
+        router.post('/logout', this.validateAuth, (req, res, next) => {
+            req.logout(function (err) {
+                if (err) {
+                    console.log(err);
+                    return next(err);
+                }
+                res.redirect('/');
+            });
         });
         // Retrieve all the restaurant endpoint
         router.get("/restaurants", (req, res) => {
