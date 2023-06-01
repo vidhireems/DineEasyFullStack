@@ -58,27 +58,32 @@ class CustomerModel {
     retrieveCustomer(response, filter) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const query = this.model.findOne(filter);
-                query.then((CustomerInfo) => {
-                    if (!CustomerInfo) {
-                        console.error({ error: "Unable to find Customer" });
+                const CustomerInfo = yield this.model.findOne(filter);
+                if (!CustomerInfo) {
+                    console.error({ error: "Unable to find Customer" });
+                    if (response) {
                         response.status(404).send({ error: "Customer not found" });
                     }
+                }
+                else {
+                    if (response) {
+                        return response.status(200).json(CustomerInfo);
+                    }
                     else {
-                        if (response) {
-                            response.send(CustomerInfo);
-                        }
                         return CustomerInfo;
                     }
-                });
+                }
             }
             catch (err) {
                 console.error(err);
-                response
-                    .sendStatus(500)
-                    .send({
-                    message: "Internal server error while retrieving Customer detail",
-                });
+                if (response) {
+                    return response.status(500).json({
+                        message: "Internal server error while retrieving Customer detail",
+                    });
+                }
+                else {
+                    throw new Error("Internal server error while retrieving Customer detail");
+                }
             }
         });
     }

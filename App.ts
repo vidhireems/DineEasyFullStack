@@ -96,10 +96,10 @@ class App {
       }
     });
 
-    router.get('/user', this.validateAuth, (req, res) => {
+    router.get('/user/:userId', this.validateAuth, (req, res) => {
       if (req.user) {
-        const user = req.user;
-        res.json(user);
+        let userId = req.params.userId;
+        this.Customer.retrieveCustomer(res, {customerId: userId});
       } else {
         console.log('User not authenticated');
         res.status(401).json({ message: 'User not authenticated' });
