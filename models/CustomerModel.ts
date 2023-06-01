@@ -23,8 +23,9 @@ class CustomerModel {
   public createSchema(): void {
     this.schema = new Mongoose.Schema(
       {
-        name: { type: String, require: true },
         customerId: { type: String, require: true },
+        email: { type: String, require: true },
+        name: { type: String, require: true },
         address: { type: String, require: true },
         contactNumber: { type: String, require: true },
         isCheckedIn: {

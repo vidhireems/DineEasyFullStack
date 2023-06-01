@@ -32,11 +32,11 @@ class UserModel {
     //function to create the schema for restaurants
     createSchema() {
         this.schema = new mongoose_1.default.Schema({
+            ssoId: String,
             userId: String,
             name: String,
             email: String,
             userType: String,
-            refrenceUserTypeId: String,
         }, { collection: 'Users' });
     }
     //function to create model for the User interface and schema
@@ -69,33 +69,30 @@ class UserModel {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 // Extract the required data from the 'data' parameter
-                const { userId, name, email, userType } = request;
-                console.log("user: " + userId + " name: " + name + " email: " + email);
+                const { ssoId, name, email, userType } = request;
+                console.log("user: " + ssoId + " name: " + name + " email: " + email);
                 const customerResponse = yield this.customer.createCustomer({ email: email, name: name });
                 console.log(customerResponse);
-                let referenceCustomerTypeId;
                 if (!customerResponse) {
                     throw new Error("Error Creating User because customer could not be created");
                 }
-                else {
-                    referenceCustomerTypeId = customerResponse.customerId;
-                }
+                const userId = customerResponse.customerId;
                 // Perform the logic to create a user based on the provided data
                 const newUser = new this.model({
+                    ssoId,
                     userId,
                     name,
                     email,
-                    userType,
-                    referenceCustomerTypeId
+                    userType
                 });
                 yield newUser.save();
                 console.log("User created successfully");
                 const responseData = {
+                    ssoId: ssoId,
                     userId: userId,
                     email: email,
                     name: name,
-                    userType: userType,
-                    referenceCustomerTypeId: referenceCustomerTypeId
+                    userType: userType
                 };
                 if (response) {
                     response.json(responseData);

@@ -30,8 +30,9 @@ class CustomerModel {
     //function to create the schema for customer
     createSchema() {
         this.schema = new mongoose_1.default.Schema({
-            name: { type: String, require: true },
             customerId: { type: String, require: true },
+            email: { type: String, require: true },
+            name: { type: String, require: true },
             address: { type: String, require: true },
             contactNumber: { type: String, require: true },
             isCheckedIn: {

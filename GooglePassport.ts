@@ -37,24 +37,22 @@ class GooglePassport {
                 console.log("inside new passport google strategy");
                 process.nextTick(() => {
                     console.log('validating google profile:' + JSON.stringify(profile));
-                    // console.log("userId:" + profile.id);
-                    // console.log("displayName: " + profile.displayName);
                     console.log("retrieve all of the profile info needed");
                     let response: any;
-                    this.user.retrieveUser(response, { userId: profile.id })
+                    this.user.retrieveUser(response, { ssoId: profile.id })
                     .then((userResponse) => {
                         console.log("Resp: " + userResponse);
                         if (userResponse === null) 
                         {
                             const req = {
-                                    userId: profile.id,
+                                    ssoId: profile.id,
                                     name: profile.displayName,
                                     email: profile.emails[0].value,
                                     userType: "Customer",
                                 };
     
                                 this.user.createUser(req).then((resp: any) => {
-                                    if (resp.userId === profile.id) {
+                                    if (resp.ssoId === profile.id) {
                                         console.log("The user was successfully added to the database using OAuth!");
                                     }
                                 })
