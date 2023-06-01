@@ -29,7 +29,7 @@
   },
   "scripts": {
     "test": "c8 mocha --exit",
-    "build": "tsc && cd frontend && npm run build && cd ..",
+    "build:prod": "tsc && cd frontend && npm run build && cd ..",
     "start": "node AppServer.js",
     "start:local": "tsc && cd frontend && npm run build:local && cd .. && node AppServer.js --env localhost"
   },

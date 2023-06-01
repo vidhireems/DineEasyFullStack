@@ -26,9 +26,9 @@ Build, Run and Deploy:
         `npm run start:local`  -- Builds and runs both Backend and Frontend in development mode
     
     Production mode:
-        `npm run build`  -- Builds both Backend and Frontend in production mode
+        `npm run build:prod`  -- Builds both Backend and Frontend in production mode
         `npm start`      -- Runs in production mode locally.
     
     To Deploy on Azure:
-        `npm run build` -- Builds in production mode and populates the dist folder
+        `npm run build:prod` -- Builds in production mode and populates the dist folder
         `git push azure main:master`
