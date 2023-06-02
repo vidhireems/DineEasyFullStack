@@ -97,9 +97,9 @@ restaurantCollection.insertMany([
     numberOfTables: 10,
   },
   {
-    resId: 6,
+    resId: "6",
     name: "Omega Ouzeri",
-    image: " https://resizer.otstatic.com/v2/photos/wide-huge/1/25221636.jpg ",
+    image: "https://cdn.vox-cdn.com/thumbor/--lNMZCibcGJHqyUnBZCTsPpSJA=/0x0:1200x900/1200x800/filters:focal(0x0:1200x900)/cdn.vox-cdn.com/uploads/chorus_image/image/46852728/Omega_Ouzeri.0.0.png",
     location: "1529 14th Ave, Seattle, WA 98122",
     rating: 4.8,
     reviews: 765,
@@ -115,9 +115,9 @@ restaurantCollection.insertMany([
   },
 
   {
-    resId: 7,
+    resId: "7",
     name: "Poquitos - Capitol Hill",
-    image: " https://resizer.otstatic.com/v2/photos/wide-huge/10/27725119.png ",
+    image: "https://resizer.otstatic.com/v2/photos/wide-huge/10/27725119.png",
     location: "1000 E Pike Street, Seattle, WA 98122",
     rating: 4.6,
     reviews: 518,
@@ -132,9 +132,9 @@ restaurantCollection.insertMany([
     numberOfTables: 8,
   },
   {
-    resId: 8,
+    resId: "8",
     name: "Violet",
-    image: " https://resizer.otstatic.com/v2/photos/wide-huge/2/27665971.jpg ",
+    image: "https://resizer.otstatic.com/v2/photos/wide-huge/2/27665971.jpg",
     location: " 1734 12th Ave, Seattle, WA 98122-2436 ",
     rating: 4.8,
     reviews: 530,
@@ -149,9 +149,9 @@ restaurantCollection.insertMany([
     numberOfTables: 10,
   },
   {
-    resId: 9,
+    resId: "9",
     name: "Footprint Wine Tap",
-    image: " https://resizer.otstatic.com/v2/photos/wide-huge/4/30660571.jpg ",
+    image: "https://resizer.otstatic.com/v2/photos/wide-huge/4/30660571.jpg",
     location: "900 Madison St, Seattle, WA 98104",
     rating: 5,
     reviews: 44,
@@ -166,7 +166,7 @@ restaurantCollection.insertMany([
     numberOfTables: 12,
   },
   {
-    resId: 10,
+    resId: "10",
     name: "Barrio - Capitol Hill",
     image: "https://resizer.otstatic.com/v2/photos/wide-huge/3/52194725.jpg",
     rating: 4.3,
@@ -183,7 +183,7 @@ restaurantCollection.insertMany([
     numberOfTables: 22,
   },
   {
-    resId: 11,
+    resId: "11",
     name: "Poco Bar & Lounge",
     image: "https://resizer.otstatic.com/v2/photos/wide-huge/2/51335269.jpg",
     location: ": E Pine St 1408, Seattle, WA 98122",
@@ -199,9 +199,9 @@ restaurantCollection.insertMany([
     numberOfTables: 8,
   },
   {
-    resId: 12,
+    resId: "12",
     name: "Quinn's Pub",
-    image: " https://resizer.otstatic.com/v2/photos/wide-huge/3/29001987.jpg ",
+    image: "https://resizer.otstatic.com/v2/photos/wide-huge/3/29001987.jpg",
     location: "1001 E Pike St, Seattle, WA 98122",
     rating: 4.5,
     reviews: 184,
