@@ -141,11 +141,11 @@ class CustomerModel {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const customerId = request.params.customerId;
-                const { name, address, contactNumber } = request.body;
-                if (!name || !address || !contactNumber)
+                const { name, email, address, contactNumber, customerType } = request.body;
+                if (!name || !email || !address || !contactNumber || !customerType)
                     return response.status(400).json({ message: "Please fill all the fields" });
                 //find the user and update it in customer collection
-                const updateCustomer = yield this.model.findOneAndUpdate({ customerId }, { name, address, contactNumber }, { new: true });
+                const updateCustomer = yield this.model.findOneAndUpdate({ customerId }, { name, email, address, contactNumber, customerType }, { new: true });
                 if (!updateCustomer)
                     return response.status(400).json({ message: "Customer Not found" });
                 return response.status(200).json({

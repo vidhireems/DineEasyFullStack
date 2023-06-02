@@ -51,7 +51,6 @@ class UserModel {
                 if (response) {
                     response.json(UserDetail);
                 }
-                console.log(UserDetail);
                 return UserDetail;
             }
             catch (err) {
@@ -70,9 +69,7 @@ class UserModel {
             try {
                 // Extract the required data from the 'data' parameter
                 const { ssoId, name, email, userType } = request;
-                console.log("user: " + ssoId + " name: " + name + " email: " + email);
                 const customerResponse = yield this.customer.createCustomer({ email: email, name: name });
-                console.log(customerResponse);
                 if (!customerResponse) {
                     throw new Error("Error Creating User because customer could not be created");
                 }

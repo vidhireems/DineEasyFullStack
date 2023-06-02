@@ -138,14 +138,14 @@ class CustomerModel {
   public async updateCustomer(request: any, response: any): Promise<any> {
     try {
       const customerId = request.params.customerId;
-      const { name, address, contactNumber } = request.body;
-      if ( !name || !address || !contactNumber )
+      const { name, email, address, contactNumber, customerType } = request.body;
+      if ( !name || !email || !address || !contactNumber || !customerType )
         return response.status(400).json({ message: "Please fill all the fields" });
 
       //find the user and update it in customer collection
       const updateCustomer = await this.model.findOneAndUpdate(
         { customerId },
-        { name, address, contactNumber },
+        { name, email, address, contactNumber, customerType },
         { new: true }
       );
 
