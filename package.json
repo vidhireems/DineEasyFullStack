@@ -49,6 +49,7 @@
     "@types/express-session": "^1.17.7",
     "@types/passport": "^1.0.12",
     "@types/uuid": "^9.0.1",
+    "c8": "^7.14.0",
     "express-session": "^1.17.3",
     "istanbul": "^0.4.5",
     "mocha": "^10.2.0",

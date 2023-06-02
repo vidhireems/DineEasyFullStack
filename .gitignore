@@ -37,8 +37,10 @@ build/Release
 
 # Dependency directories
 node_modules/
-/frontend/.angular/
-/frontend/node_modules/
+# /frontend/.angular/
+# /frontend/node_modules/
+/frontend/*
+!/frontend/dist
 
 # TypeScript cache
 *.tsbuildinfo
