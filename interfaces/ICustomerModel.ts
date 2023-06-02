@@ -6,6 +6,7 @@ interface ICustomerModel extends Mongoose.Document {
     customerId: String;
     email: String;
     name: String;
+    profilePic: String;
     address: String;
     contactNumber: String;
     isCheckedIn: Boolean;

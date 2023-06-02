@@ -6,6 +6,7 @@ interface IUserModel extends Mongoose.Document {
     ssoId: String;
     userId: String;
     name: String;
+    profilePic: String;
     email: String;
     userType: String;
 }

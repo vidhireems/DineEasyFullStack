@@ -35,6 +35,7 @@ class UserModel {
             ssoId: String,
             userId: String,
             name: String,
+            profilePic: String,
             email: String,
             userType: String,
         }, { collection: 'Users' });
@@ -68,8 +69,8 @@ class UserModel {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 // Extract the required data from the 'data' parameter
-                const { ssoId, name, email, userType } = request;
-                const customerResponse = yield this.customer.createCustomer({ email: email, name: name });
+                const { ssoId, name, profilePic, email, userType } = request;
+                const customerResponse = yield this.customer.createCustomer({ email: email, name: name, profilePic: profilePic });
                 if (!customerResponse) {
                     throw new Error("Error Creating User because customer could not be created");
                 }
@@ -79,6 +80,7 @@ class UserModel {
                     ssoId,
                     userId,
                     name,
+                    profilePic,
                     email,
                     userType
                 });
@@ -89,6 +91,7 @@ class UserModel {
                     userId: userId,
                     email: email,
                     name: name,
+                    profilePic: profilePic,
                     userType: userType
                 };
                 if (response) {

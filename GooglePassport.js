@@ -20,6 +20,7 @@ class GooglePassport {
             clientSecret: this.secretId,
             callbackURL: callbackURL
         }, (accessToken, _refreshToken, profile, done) => {
+            console.log(profile);
             process.nextTick(() => {
                 let response;
                 this.users.retrieveUser(response, { ssoId: profile.id })
@@ -28,6 +29,7 @@ class GooglePassport {
                         const request = {
                             ssoId: profile.id,
                             name: profile.displayName,
+                            profilePic: profile.photos[0].value,
                             email: profile.emails[0].value,
                             userType: "Customer",
                         };

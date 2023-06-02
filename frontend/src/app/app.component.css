@@ -1,0 +1,95 @@
+/* styles.css */
+.custom-image {
+    width: 100vw;
+    height:80vh;
+  }
+  .navbar {
+    background: cadetblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  
+  .navbar-left img {
+    width: 100px;
+  }
+  
+  .navbar-right button {
+    margin-left: 10px;
+  }
+  
+  .fixed-footer {
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .section-spacing {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  .dine-easy{
+    font-size: 20px;
+    font-weight:bold;
+    text-decoration: none;
+    color: black;
+    letter-spacing: 0.2em;
+  }
+
+  .search-custom {
+    color : rgb(74, 132, 213);
+    border-color:rgb(74, 132, 213);
+  }
+.buttons{
+  display: flex;
+  gap: 1cm;
+  text-transform: uppercase;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+  .my-button {
+    background-color: #000000; 
+    color: #FFFFFF;
+    transition: background-color 0.3s ease; 
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: small;
+    letter-spacing: 2px;
+  }
+  
+  .my-button:hover {
+    background-color: #f2fdf2; 
+    color: #000000; 
+    border: #000000 1px solid;
+  }
+
+  .profile-pic {
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

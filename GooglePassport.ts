@@ -32,6 +32,7 @@ class GooglePassport {
                 callbackURL: callbackURL
             },
             (accessToken: string, _refreshToken: string, profile: any, done: any) => {
+                console.log(profile)
                 process.nextTick(() => {
                     let response: any;
                     this.users.retrieveUser(response, { ssoId: profile.id })
@@ -41,6 +42,7 @@ class GooglePassport {
                             const request = {
                                     ssoId: profile.id,
                                     name: profile.displayName,
+                                    profilePic: profile.photos[0].value,
                                     email: profile.emails[0].value,
                                     userType: "Customer",
                                 };

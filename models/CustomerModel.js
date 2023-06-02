@@ -33,6 +33,7 @@ class CustomerModel {
             customerId: { type: String, require: true },
             email: { type: String, require: true },
             name: { type: String, require: true },
+            profilePic: { type: String },
             address: { type: String, require: true },
             contactNumber: { type: String, require: true },
             isCheckedIn: {
@@ -93,6 +94,7 @@ class CustomerModel {
                 const customerId = (0, uuid_1.v4)();
                 const name = request.name;
                 const email = request.email;
+                const profilePic = request.profilePic;
                 if (!name || !email || !customerId) {
                     if (response) {
                         return response.status(400).json({ message: "Please fill all fields" });
@@ -105,6 +107,7 @@ class CustomerModel {
                     customerId,
                     email,
                     name,
+                    profilePic,
                     address: "",
                     contactNumber: "",
                     isCheckedIn: false,
@@ -141,11 +144,11 @@ class CustomerModel {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const customerId = request.params.customerId;
-                const { name, email, address, contactNumber, customerType } = request.body;
-                if (!name || !email || !address || !contactNumber || !customerType)
+                const { name, profilePic, email, address, contactNumber, customerType } = request.body;
+                if (!name || !profilePic || !email || !address || !contactNumber || !customerType)
                     return response.status(400).json({ message: "Please fill all the fields" });
                 //find the user and update it in customer collection
-                const updateCustomer = yield this.model.findOneAndUpdate({ customerId }, { name, email, address, contactNumber, customerType }, { new: true });
+                const updateCustomer = yield this.model.findOneAndUpdate({ customerId }, { name, profilePic, email, address, contactNumber, customerType }, { new: true });
                 if (!updateCustomer)
                     return response.status(400).json({ message: "Customer Not found" });
                 return response.status(200).json({
