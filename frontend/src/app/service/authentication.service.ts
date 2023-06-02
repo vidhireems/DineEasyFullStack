@@ -14,7 +14,7 @@ export class AuthenticationService {
   private isLoggedIn = false;
   public isLoggingOut = false;
   public user: IUserModel;
-  customer: ICustomerModel[];
+  public customer: ICustomerModel;
   name: String;
   hostUrl: String = environment.hostUrl;
   constructor(private http: HttpClient, private router: Router) {}
@@ -27,14 +27,13 @@ export class AuthenticationService {
     this.http.get<any>(this.hostUrl + 'checkAuth').subscribe(
       (response) => {
         if (response.authenticated === true) {
-          console.log('here')
           this.isLoggedIn = true;
           this.user = response.user;
           console.log(this.user);
-  
           this.getCustomerInfo(this.user.userId).subscribe(
             (data) => {
               this.customer = data;
+              console.log(this.customer)
             },
             (error) => {
               console.error('Error:', error);
@@ -51,7 +50,7 @@ export class AuthenticationService {
   }
   
   getCustomerInfo(userId: String) {
-    return this.http.get<ICustomerModel[]>(this.hostUrl + 'user/' + userId);
+    return this.http.get<ICustomerModel>(this.hostUrl + 'user/' + userId);
   }
   
 

@@ -45,13 +45,7 @@ export class AppComponent {
     this.authenticationService.login();
   }
 
-
-
   logout() {
-    console.log("Logout in app")
-    // this.authenticationService.isLoggingOut = true;
-    // this.authenticationService.setAuthenticated(false);
-    // this.authenticationService.logout();
     this.authenticationService.logout().subscribe((response) => {
           console.log(response)
           window.location.href = '/';
@@ -61,5 +55,4 @@ export class AppComponent {
         }
       );
   }
-
 }
