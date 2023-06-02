@@ -32,3 +32,19 @@ Build, Run and Deploy:
     To Deploy on Azure:
         `npm run build:prod` -- Builds in production mode and populates the dist folder
         `git push azure main:master`
+
+Github repository update steps:
+
+1. `git checkout main`
+2. `git pull`
+3. `git checkout "your_branch_name"`
+4. `git merge main`
+    -- Integrate your code changes
+5. `npm run build:prod`
+    -- Ensure that .gitignore does not track 
+        1. node_modules 
+        2. frontend/.angular  
+        3. frontend/node_modules
+6. ` git add .`
+7. `git commit -m "Any message you want to add"`
+8. `git push`
