@@ -4,6 +4,7 @@ import { IUserModel } from '../interfaces/IUserModelAngular';
 import { environment } from '../../environments/environment';
 import { ICustomerModel } from '../interfaces/ICustomerModelAngular';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,27 +12,29 @@ import { Router } from '@angular/router';
 export class AuthenticationService {
   
   private isLoggedIn = false;
+  public isLoggingOut = false;
   public user: IUserModel;
   customer: ICustomerModel[];
   name: String;
   hostUrl: String = environment.hostUrl;
   constructor(private http: HttpClient, private router: Router) {}
 
-  setAuthenticated(): void {
-    this.isLoggedIn = true;
+  setAuthenticated(flag: boolean): void {
+    this.isLoggedIn = flag;
   }
 
   checkAuthStatus() {
     this.http.get<any>(this.hostUrl + 'checkAuth').subscribe(
       (response) => {
-        if (response.authenticated) {
+        if (response.authenticated === true) {
+          console.log('here')
           this.isLoggedIn = true;
           this.user = response.user;
           console.log(this.user);
   
           this.getCustomerInfo(this.user.userId).subscribe(
             (data) => {
-              this.customer = data; // Assuming the response is a single customer object
+              this.customer = data;
             },
             (error) => {
               console.error('Error:', error);
@@ -57,19 +60,15 @@ export class AuthenticationService {
   }
 
   login() {
+    this.isLoggingOut = false;
     window.location.href = '/auth/google';
   }
 
-  logout() {
+  logout(): Observable<any>  {
     this.isLoggedIn = false;
-    this.http.post( this.hostUrl + 'logout', {}).subscribe(
-      (response) => {
-        this.router.navigateByUrl('/');
-      },
-      (error) => {
-        console.error('Error:', error);
-      }
-    );
+    this.isLoggingOut = true;
+    console.log("Calling logout in Authentication Service URL: " + this.hostUrl)
+    return this.http.post( this.hostUrl + 'logout', {});
   }
 
   updateProfile(profileData: any) {

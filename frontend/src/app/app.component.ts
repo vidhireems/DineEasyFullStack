@@ -16,7 +16,7 @@ export class AppComponent {
   restaurantImage = '../assets/images/DineEasy.jpg';
   profileData: ICustomerModel;
   showProfileForm = false;
-
+  
   showOptionsFlag: boolean = false;
 
   constructor(public authenticationService: AuthenticationService, private router: Router) {
@@ -39,6 +39,27 @@ export class AppComponent {
 
   toggleOptions() {
     this.showOptionsFlag = !this.showOptionsFlag;
+  }
+
+  login() {
+    this.authenticationService.login();
+  }
+
+
+
+  logout() {
+    console.log("Logout in app")
+    // this.authenticationService.isLoggingOut = true;
+    // this.authenticationService.setAuthenticated(false);
+    // this.authenticationService.logout();
+    this.authenticationService.logout().subscribe((response) => {
+          console.log(response)
+          window.location.href = '/';
+        },
+        (error) => {
+          console.error('Error:', error);
+        }
+      );
   }
 
 }

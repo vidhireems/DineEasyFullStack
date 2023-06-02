@@ -51,6 +51,7 @@ class App {
     this.expressApp.use(bodyParser.urlencoded({ extended: true }));
     this.expressApp.use(express.static(path.join(__dirname, '/frontend/dist')));
     this.expressApp.use(session({ 
+      name: 'DineEasy-Cookie',
       secret: 'keyboard ysaeenid',  
       resave: true,
       saveUninitialized: true }));
@@ -116,14 +117,26 @@ class App {
     });
     
     router.post('/logout', this.validateAuth, (req, res, next) => {
-      req.logout(function(err) {
+      req.session.destroy((err) => {
         if (err) {
-          console.log(err);
-           return next(err); 
+          console.error('Error destroying session:', err);
+          return next(err);
+        }
+        
+        req.logout((err) => {
+          if (err) {
+            console.error('Error logging out:', err);
+            return next(err);
           }
-        res.redirect('/');
+          
+          res.clearCookie('DineEasy-Cookie'); 
+          res.sendStatus(200); 
+          
+          res.redirect('/'); 
+        });
       });
     });
+    
     
 
     // Retrieve all the restaurant endpoint

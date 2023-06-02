@@ -14,8 +14,7 @@ export class ProfileComponent {
   authenticated:any;
   customerInfo: any = {};
 
-  constructor(public authenticationService: AuthenticationService, private router: Router) {
-    authenticationService.checkAuthStatus();
+  constructor(private authenticationService: AuthenticationService, private router: Router) {
   }
 
   isEmailSameAsLoggedInUser()
@@ -25,6 +24,7 @@ export class ProfileComponent {
 
   SaveProfile()
   {
+    this.customerInfo.profilePic = this.authenticationService.user.profilePic;
     this.authenticationService.updateProfile(this.customerInfo).subscribe(
       (response: any) => {
         console.log('Profile updated successfully:', response);
@@ -40,4 +40,6 @@ export class ProfileComponent {
   {
     this.router.navigateByUrl('/');
   }
+
+  
 }
