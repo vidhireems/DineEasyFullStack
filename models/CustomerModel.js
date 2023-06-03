@@ -145,7 +145,7 @@ class CustomerModel {
             try {
                 const customerId = request.params.customerId;
                 const { name, profilePic, email, address, contactNumber, customerType } = request.body;
-                if (!name || !profilePic || !email || !address || !contactNumber || !customerType)
+                if (!name || !profilePic || !email || !customerType)
                     return response.status(400).json({ message: "Please fill all the fields" });
                 //find the user and update it in customer collection
                 const updateCustomer = yield this.model.findOneAndUpdate({ customerId }, { name, profilePic, email, address, contactNumber, customerType }, { new: true });
