@@ -75,6 +75,7 @@ class App {
         this.expressApp.use(passport.initialize());
         this.expressApp.use(passport.session());
     }
+    // Validates if the user is authenticated for an API
     validateAuth(req, res, next) {
         if (req.isAuthenticated()) {
             console.log("user is authenticated");
@@ -86,14 +87,17 @@ class App {
     // Api Endpoints....
     routes() {
         let router = express.Router();
+        // Google OAuth callback for localhost
         router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }), (req, res) => {
             console.log("Localhost: successfully authenticated user and returned to callback page.");
             res.redirect('/');
         });
+        // Google OAuth callback for production environment
         router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
             console.log("successfully authenticated user and returned to callback page.");
             res.redirect('/');
         });
+        // Checks if the current user is authenticated and gives the user's information as response 
         router.get('/checkAuth', (req, res) => {
             if (req.isAuthenticated()) {
                 res.json({ authenticated: true, user: req.user });
@@ -102,6 +106,7 @@ class App {
                 res.json({ authenticated: false });
             }
         });
+        // Gets the user information based on id.
         router.get('/user/:userId', this.validateAuth, (req, res) => {
             if (req.user) {
                 let userId = req.params.userId;
@@ -112,7 +117,8 @@ class App {
                 res.status(401).json({ message: 'User not authenticated' });
             }
         });
-        router.put('/updateProfile/:customerId', this.validateAuth, (req, res) => {
+        // Gets customer information
+        router.put('/profile/:customerId', this.validateAuth, (req, res) => {
             if (req.user) {
                 this.Customer.updateCustomer(req, res);
             }
@@ -121,6 +127,7 @@ class App {
                 res.status(401).json({ message: 'User not authenticated' });
             }
         });
+        // Handles logout of a user 
         router.post('/logout', this.validateAuth, (req, res, next) => {
             req.session.destroy((err) => {
                 if (err) {
@@ -198,7 +205,6 @@ class App {
             console.log("In post menu item");
             var resId = req.params.resId;
             var menuId = req.params.menuId;
-            console.log(req.body);
             this.MenuItems.createMenuItems(req, res, {
                 menuId: menuId,
                 resId: resId

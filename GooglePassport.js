@@ -11,20 +11,22 @@ class GooglePassport {
         this.secretId = googleOauth2_1.googleAppAuth.secret;
         this.users = new UserModel_1.UserModel();
         this.customer = new CustomerModel_1.CustomerModel();
+        // Updating callback url based on environment
         let callbackURL = "https://dineeasyy.azurewebsites.net/auth/google/callback";
         if (GooglePassport.env === 'localhost') {
             callbackURL = "http://localhost:8080/auth/google";
         }
+        // Using passport Google strategy for authentication
         passport.use(new GoogleStrategy({
             clientID: this.clientId,
             clientSecret: this.secretId,
             callbackURL: callbackURL
         }, (accessToken, _refreshToken, profile, done) => {
-            console.log(profile);
             process.nextTick(() => {
                 let response;
                 this.users.retrieveUser(response, { ssoId: profile.id })
                     .then((userResponse) => {
+                    // If user is not already registered then add new user
                     if (userResponse === null) {
                         const request = {
                             ssoId: profile.id,
@@ -52,9 +54,11 @@ class GooglePassport {
                 return done(null, profile);
             });
         }));
+        // Serializing user for session management
         passport.serializeUser((user, done) => {
             done(null, user.id);
         });
+        // Deserializing user for session management
         passport.deserializeUser((id, done) => {
             let resp;
             this.users.retrieveUser(resp, { ssoId: id }).then((user) => {

@@ -60,6 +60,7 @@ class App {
     this.expressApp.use(passport.session());
   }
 
+  // Validates if the user is authenticated for an API
   private validateAuth(req:any, res:any, next:any):void {
     if (req.isAuthenticated()) { 
       console.log("user is authenticated" );
@@ -73,6 +74,7 @@ class App {
   private routes(): void {
     let router = express.Router();
 
+    // Google OAuth callback for localhost
     router.get('/auth/google', 
     passport.authenticate('google', {scope: ['profile', 'email']}),
     (req, res) => {
@@ -80,6 +82,7 @@ class App {
       res.redirect('/');
     });
 
+    // Google OAuth callback for production environment
     router.get('/auth/google/callback', 
       passport.authenticate('google', 
         { failureRedirect: '/' }
@@ -89,6 +92,7 @@ class App {
         res.redirect('/');
     });
 
+    // Checks if the current user is authenticated and gives the user's information as response 
     router.get('/checkAuth', (req, res) => {
       if (req.isAuthenticated()) {
         res.json({ authenticated: true, user: req.user });
@@ -97,6 +101,7 @@ class App {
       }
     });
 
+    // Gets the user information based on id.
     router.get('/user/:userId', this.validateAuth, (req, res) => {
       if (req.user) {
         let userId = req.params.userId;
@@ -107,7 +112,8 @@ class App {
       }
     });
     
-    router.put('/updateProfile/:customerId', this.validateAuth, (req, res) => {
+    // Gets customer information
+    router.put('/profile/:customerId', this.validateAuth, (req, res) => {
       if (req.user) {
         this.Customer.updateCustomer(req, res);
       } else {
@@ -116,6 +122,7 @@ class App {
       }
     });
     
+    // Handles logout of a user 
     router.post('/logout', this.validateAuth, (req, res, next) => {
       req.session.destroy((err) => {
         if (err) {
@@ -209,7 +216,6 @@ class App {
       console.log("In post menu item")
         var resId = req.params.resId;
         var menuId = req.params.menuId;
-        console.log(req.body);
         this.MenuItems.createMenuItems(req, res, {
           menuId: menuId,
           resId: resId

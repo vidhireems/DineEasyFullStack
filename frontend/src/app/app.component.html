@@ -14,10 +14,10 @@
           <div class="d-flex buttons">
             <ng-container *ngIf="authenticationService.isAuthenticated(); else loginBlock">
               <div class="dropdown">
-                Welcome, {{authenticationService.user.name}}
-                <img class="profile-pic" src="{{authenticationService.user.profilePic}}" alt="Profile Picture" (click)="toggleOptions()" (mouseenter)="showOptions()" (mouseleave)="hideOptions($event)">
+                Welcome, {{authenticationService.customer.name}}
+                <img class="profile-pic" src="{{authenticationService.customer.profilePic}}" alt="Profile Picture" (click)="toggleOptions()" (mouseenter)="showOptions()" (mouseleave)="hideOptions($event)">
                 <div class="dropdown-content" *ngIf="showOptionsFlag">
-                  <button class="btn  my-button" (click)="profile()">Update Profile</button>
+                  <button class="btn  my-button" (click)="profile()">Profile</button>
                   <button class="btn  my-button" (click)="logout()">Logout</button>
                 </div>
               </div>

@@ -21,37 +21,37 @@ export class AppComponent {
 
   constructor(public authenticationService: AuthenticationService, private router: Router) {
   }
-
-  profile()
-  {
-    this.router.navigateByUrl('/updateProfile/'+ this.authenticationService.user.userId);
-  }
-
+ 
+  // Shows the dropdown options
   showOptions() {
     this.showOptionsFlag = true;
   }
 
+  // Hides the dropdown options
   hideOptions(event: MouseEvent) {
     setTimeout(() => {
       this.showOptionsFlag = false;
     }, 3000);
   }
 
+  // Toggles the show options flag to appear and disappear drop-down menu on mouse events
   toggleOptions() {
     this.showOptionsFlag = !this.showOptionsFlag;
   }
 
+  // Redirects to the profile information if profile option selected
+  profile()
+  {
+    this.router.navigateByUrl('/profile/'+ this.authenticationService.user.userId);
+  }
+
+  // Invokes to login functionality provided by authentication service
   login() {
     this.authenticationService.login();
   }
 
-
-
+  // Invokes the logout functionality provided by authentication service
   logout() {
-    console.log("Logout in app")
-    // this.authenticationService.isLoggingOut = true;
-    // this.authenticationService.setAuthenticated(false);
-    // this.authenticationService.logout();
     this.authenticationService.logout().subscribe((response) => {
           console.log(response)
           window.location.href = '/';
@@ -61,5 +61,4 @@ export class AppComponent {
         }
       );
   }
-
 }
