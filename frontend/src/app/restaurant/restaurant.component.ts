@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import IRestaurantModelAngular from '../interfaces/IRestaurantModelAngular';
 import { RestaurantService } from '../service/restaurant.service';
 import { RestaurantDataService } from '../service/restaurant-data.service';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-restaurant',
@@ -15,7 +16,8 @@ export class RestaurantComponent {
   constructor(
     private route: ActivatedRoute,
     private service: RestaurantService,
-    private restaurantDataService: RestaurantDataService
+    private restaurantDataService: RestaurantDataService,
+    public  authenticationService: AuthenticationService
   ) {}
 
   ngOnInit() {

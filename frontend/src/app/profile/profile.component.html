@@ -36,7 +36,7 @@
             <div class="form-group-item">
               <label for="phone">Phone: </label>
               <div class="input-group">
-                <input id="phone" class="form-control rounded" type="tel" [(ngModel)]="customerInfo.contactNumber" [readonly]="!isEditable['phone']" (click)="$event.stopPropagation()"  (blur)="toggleEdit('phone', false)" required>
+                <input id="phone" class="form-control rounded" type="tel" [(ngModel)]="customerInfo.contactNumber" [readonly]="!isEditable['phone']" (click)="$event.stopPropagation()"  (blur)="toggleEdit('phone', false)">
                 <i class="edit-icon" (click)="toggleEdit('phone', true); $event.stopPropagation()">&#9998;</i>
               </div>
             </div>
@@ -44,7 +44,7 @@
           <div class="form-group">
             <label for="address">Address:</label>
             <div class="input-group">
-              <input id="address" class="form-control rounded" type="text" [(ngModel)]="customerInfo.address" [readonly]="!isEditable['address']" (click)="$event.stopPropagation()" (blur)="toggleEdit('address', false)" required>
+              <input id="address" class="form-control rounded" type="text" [(ngModel)]="customerInfo.address" [readonly]="!isEditable['address']" (click)="$event.stopPropagation()" (blur)="toggleEdit('address', false)">
               <i class="edit-icon" (click)="toggleEdit('address', true); $event.stopPropagation()">&#9998;</i>
             </div>
           </div>
