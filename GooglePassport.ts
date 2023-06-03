@@ -20,23 +20,25 @@ class GooglePassport {
         this.users = new UserModel();
         this.customer = new CustomerModel();
 
+        // Updating callback url based on environment
         let callbackURL = "https://dineeasyy.azurewebsites.net/auth/google/callback";
         if (GooglePassport.env === 'localhost')
         {
             callbackURL =  "http://localhost:8080/auth/google";
         }
 
+        // Using passport Google strategy for authentication
         passport.use(new GoogleStrategy({
                 clientID: this.clientId,
                 clientSecret: this.secretId,
                 callbackURL: callbackURL
             },
             (accessToken: string, _refreshToken: string, profile: any, done: any) => {
-                console.log(profile)
                 process.nextTick(() => {
                     let response: any;
                     this.users.retrieveUser(response, { ssoId: profile.id })
                     .then((userResponse) => {
+                        // If user is not already registered then add new user
                         if (userResponse === null) 
                         {
                             const request = {
@@ -46,7 +48,7 @@ class GooglePassport {
                                     email: profile.emails[0].value,
                                     userType: "Customer",
                                 };
-    
+                                
                                 this.users.createUser(request).then((resp: any) => {
                                     if (resp.ssoId === profile.id) {
                                         console.log("The user was successfully added to the database using OAuth!");
@@ -67,11 +69,13 @@ class GooglePassport {
                 }); 
             }
         ));
-
+        
+        // Serializing user for session management
         passport.serializeUser((user: any, done: any) => { 
             done(null, user.id);
         });
 
+        // Deserializing user for session management
         passport.deserializeUser((id: any, done: any) => {
             let resp;
              this.users.retrieveUser(resp, {ssoId: id}).then((user:any) => {

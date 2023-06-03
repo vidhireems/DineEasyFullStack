@@ -8,39 +8,56 @@
     </head>
     <body> 
       <div class="profile-container">
-        <h1 class="profile-title">Make a profile</h1>
-        <div class="profile-form">
+        <div class="profile-form" (click)="exitEditMode()">
+          <div class="form-group">
+            <label for="profilePic">Profile Picture</label>
+            <div class="input-group">
+              <img class="profile-picture" src="{{customerInfo.profilePic}}" alt="Profile Picture">
+            </div>
+          </div>
           <div class="form-group">
             <label for="name">Name</label>
-            <input id="name" class="form-control" type="text" [(ngModel)]="customerInfo.name" required>
+            <div class="input-group">
+              <input id="name" class="form-control rounded" type="text" [(ngModel)]="customerInfo.name" [readonly]="!isEditable['name']" [autofocus]="isEditable" (click)="$event.stopPropagation()"  (blur)="toggleEdit('name', false)" required>
+              <i class="edit-icon" (click)="toggleEdit('name', true); $event.stopPropagation() ">&#9998;</i>
+            </div>
           </div>
           <div class="form-group form-group-row">
             <div class="form-group-item">
               <label for="email">Email ID: </label>
-              <input id ="email" class="form-control" type="email" [(ngModel)]="customerInfo.email" required>
-              <div *ngIf="!isEmailSameAsLoggedInUser()">
-                Email does not match the currently logged-in user.
+              <div class="input-group">
+                <input id ="email" class="form-control rounded" type="email" [(ngModel)]="customerInfo.email" [readonly]="!isEditable['email']" (click)="$event.stopPropagation()" (blur)="toggleEdit('email', false)" required>
+                <i class="edit-icon" (click)="toggleEdit('email', true); $event.stopPropagation();">&#9998;</i>
+              </div>
+                <div class="email-error" *ngIf="!isEmailSameAsRegisteredUser()">
+                  Provided email does not match with registered email.
               </div>
             </div>
             <div class="form-group-item">
               <label for="phone">Phone: </label>
-            <input id="phone" class="form-control" type="tel" [(ngModel)]="customerInfo.contactNumber" required>
+              <div class="input-group">
+                <input id="phone" class="form-control rounded" type="tel" [(ngModel)]="customerInfo.contactNumber" [readonly]="!isEditable['phone']" (click)="$event.stopPropagation()"  (blur)="toggleEdit('phone', false)" required>
+                <i class="edit-icon" (click)="toggleEdit('phone', true); $event.stopPropagation()">&#9998;</i>
+              </div>
             </div>
           </div>
           <div class="form-group">
             <label for="address">Address:</label>
-            <input id="address" class="form-control" type="text" [(ngModel)]="customerInfo.address" required>
+            <div class="input-group">
+              <input id="address" class="form-control rounded" type="text" [(ngModel)]="customerInfo.address" [readonly]="!isEditable['address']" (click)="$event.stopPropagation()" (blur)="toggleEdit('address', false)" required>
+              <i class="edit-icon" (click)="toggleEdit('address', true); $event.stopPropagation()">&#9998;</i>
+            </div>
           </div>
           <div id="customerType" class="form-group">
-            <label for="customerType">Want to be Premium member?:</label>
-            <select class="form-control" [(ngModel)]="customerInfo.customerType" required>
+            <label for="customerType">Want to be Premium member?</label>
+            <select class="form-control rounded" [(ngModel)]="customerInfo.customerType" (click)="$event.stopPropagation()" required>
               <option value="Freemium">Freemium</option>
               <option value="Premium">Premium</option>
             </select>
           </div>
           <div class="table-button">
-            <button type="submit" class="btn btn-primary" (click)="SaveProfile()">Save Profile</button>
-            <button type="submit" class="btn btn-primary" (click)="CloseProfile()">Cancel</button>
+            <button type="submit" class="btn btn-primary" (click)="SaveProfile(); $event.stopPropagation()">Save Profile</button>
+            <button type="submit" class="btn btn-primary" (click)="CloseProfile();  $event.stopPropagation()">Cancel</button>
           </div>
         </div>
       </div>

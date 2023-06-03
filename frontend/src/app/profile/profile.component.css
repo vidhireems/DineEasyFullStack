@@ -9,6 +9,13 @@
 
   }
 
+  .email-error {
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+    margin-top: 20px;
+  }
+
   .profile-title {
     font-size: 28px;
     font-weight: bold;
@@ -58,3 +65,32 @@
   .form-group-item {
     flex-basis: 48%;
   }
+
+  .input-group {
+    position: relative;
+  }
+  
+  .edit-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('../../assets/images/icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+  
+  .form-control.rounded {
+    border-radius: 10px;
+    padding-right: 30px; /* Adjust the padding to accommodate the edit icon */
+  }
+
+  .profile-picture {
+    width: 100 px;
+    height: 100 px; 
+    border-radius: 50%;
+  }
+  

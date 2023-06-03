@@ -17,7 +17,7 @@
                 Welcome, {{authenticationService.customer.name}}
                 <img class="profile-pic" src="{{authenticationService.customer.profilePic}}" alt="Profile Picture" (click)="toggleOptions()" (mouseenter)="showOptions()" (mouseleave)="hideOptions($event)">
                 <div class="dropdown-content" *ngIf="showOptionsFlag">
-                  <button class="btn  my-button" (click)="profile()">Update Profile</button>
+                  <button class="btn  my-button" (click)="profile()">Profile</button>
                   <button class="btn  my-button" (click)="logout()">Logout</button>
                 </div>
               </div>
