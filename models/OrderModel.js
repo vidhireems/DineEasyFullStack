@@ -89,5 +89,9 @@ class OrderModel {
             }
         });
     }
+    getAllOrderOfUser(userId) {
+        console.log(userId);
+        console.log("all orders of user");
+    }
 }
 exports.OrderModel = OrderModel;
