@@ -169,6 +169,7 @@ restaurantCollection.insertMany([
     resId: "10",
     name: "Barrio - Capitol Hill",
     image: "https://resizer.otstatic.com/v2/photos/wide-huge/3/52194725.jpg",
+    location: "1420 12th Ave Seattle, WA 98122",
     rating: 4.3,
     reviews: 787,
     cost: "30 and under",
