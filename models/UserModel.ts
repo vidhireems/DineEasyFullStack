@@ -2,8 +2,6 @@
 import Mongoose from 'mongoose';
 import { DbConnection } from "../DbConnection";
 import { IUserModel } from '../interfaces/IUserModel';
-const bcrypt = require('bcrypt');
-import { v4 as uuidv4 } from "uuid";
 import { CustomerModel } from './CustomerModel';
 
 //Mongoose connections and object
@@ -12,6 +10,7 @@ let mongooseObj = DbConnection.mongooseInstance;
 
 //Class for restaurant model
 class UserModel {
+    private static instance: UserModel;
     public schema:any;
     public model:any;
     public customer: CustomerModel;
@@ -23,6 +22,14 @@ class UserModel {
         this.customer = new CustomerModel();
     }
 
+    //public method to get the single instance ofuser model
+    public static getInstance(): UserModel {
+        if (!UserModel.instance) {
+          UserModel.instance = new UserModel();
+        }
+        return UserModel.instance;
+      }
+      
     //function to create the schema for restaurants
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
@@ -109,6 +116,12 @@ class UserModel {
             console.error("Error Creating User:", error);
             throw new Error("Error Creating User");
         }
+    }
+
+    //map user  sso id with user id and return user id
+    mapSSOtoUserId(req: any) {
+      //get the sso id from response
+      console.log(req);
     }
     
 }
