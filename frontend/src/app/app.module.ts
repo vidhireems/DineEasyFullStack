@@ -22,6 +22,9 @@ import { OrderComponent } from './order/order.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { ProfileComponent } from './profile/profile.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,8 @@ import { ProfileComponent } from './profile/profile.component';
     OrderItemsComponent,
     InvoiceComponent,
     ProfileComponent,
+    MyOrdersComponent,
+    SuccessDialogComponent,
   ],
   imports: [
     FormsModule,
@@ -44,7 +49,8 @@ import { ProfileComponent } from './profile/profile.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [RestaurantService, MenuService, MenuItemsService, OrderService],
   bootstrap: [AppComponent]

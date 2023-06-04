@@ -5,7 +5,8 @@ import SelectedMenuItem from '../interfaces/SelectedMenuItem'
 import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from '../service/order.service';
-
+import { SuccessDialogComponent } from '../success-dialog/success-dialog.component'; 
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-order-items',
@@ -29,7 +30,8 @@ export class OrderItemsComponent {
     private menuItemsService$: MenuItemsService, 
     private OrderService$: OrderService,
     private route: ActivatedRoute,
-    private router: Router   
+    private router: Router,
+    private dialog: MatDialog   
   ) {};
 
   ngOnInit():void {
@@ -93,6 +95,7 @@ export class OrderItemsComponent {
     }
     this.OrderService$.postOrder(data, this.resId, this.menuId).subscribe(response => {
       console.log("response:",response);
+      this.dialog.open(SuccessDialogComponent);
       this.showInvoiceButton = true;
     });
   }
