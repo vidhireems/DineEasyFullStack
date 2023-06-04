@@ -22,8 +22,9 @@ import { OrderComponent } from './order/order.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ReservationComponent } from './reservation/reservation.component';
-import { ReservationDetailsComponent } from './reservation-details/reservation-details.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -38,8 +39,8 @@ import { ReservationDetailsComponent } from './reservation-details/reservation-d
     OrderItemsComponent,
     InvoiceComponent,
     ProfileComponent,
-    ReservationComponent,
-    ReservationDetailsComponent,
+    MyOrdersComponent,
+    SuccessDialogComponent,
   ],
   imports: [
     FormsModule,
@@ -48,7 +49,8 @@ import { ReservationDetailsComponent } from './reservation-details/reservation-d
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [RestaurantService, MenuService, MenuItemsService, OrderService],
   bootstrap: [AppComponent]
