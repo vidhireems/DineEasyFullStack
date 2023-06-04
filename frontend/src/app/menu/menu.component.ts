@@ -27,6 +27,7 @@ export class MenuComponent implements OnInit {
     // Request menu for a restaurant through the menu service
       this.route.parent?.params.subscribe(params => {
         this.resId = params['resId'];
+        console.log("resID--",this.resId)
         if (this.resId) {
           this.menuService$.getMenu(this.resId).subscribe((data: IMenuModelAngular[]) => {
             this.menu = of(data);
