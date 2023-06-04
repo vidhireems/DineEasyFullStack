@@ -5,7 +5,8 @@ import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from '../service/order.service';
 import { IOrderModel } from '../interfaces/IOrderModelAngular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';import { SuccessDialogComponent } from '../success-dialog/success-dialog.component'; 
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-order-items',
@@ -22,13 +23,15 @@ export class OrderItemsComponent {
   itemIds: String[];
   selectedItems: any[] = [];
   invoiceItems: any[] = [];
+  showInvoiceButton: boolean = false
   itemsSubmitted: boolean = false;
 
   constructor(
     private menuItemsService$: MenuItemsService, 
     private OrderService$: OrderService,
     private route: ActivatedRoute,
-    private router: Router  
+    private router: Router,
+    private dialog: MatDialog   
   ) {};
 
   ngOnInit(): void {
@@ -89,8 +92,9 @@ export class OrderItemsComponent {
     }
     console.log(data);
     this.OrderService$.postOrder(data, this.resId, this.menuId).subscribe(response => {
-      console.log(response);
-      this.itemsSubmitted = true; 
+      console.log("response:",response);
+      this.dialog.open(SuccessDialogComponent);
+      this.showInvoiceButton = true;
     });
   }
 
