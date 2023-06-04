@@ -17,7 +17,7 @@ class GooglePassport {
 
         this.clientId = googleAppAuth.id;
         this.secretId = googleAppAuth.secret;
-        this.users = new UserModel();
+        this.users = UserModel.getInstance();
         this.customer = new CustomerModel();
 
         // Updating callback url based on environment
