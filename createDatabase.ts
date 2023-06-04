@@ -7,7 +7,7 @@ const user                      = "dbAdmin";
 const password                  = "test";
 const authenticationDB          = "admin";
 const database                  = "dineEasy";
-const collectionScriptDirectory = "CreateDb";
+const collectionScriptDirectory = "CreateDb/";
 const createUserFile            = "adminDbUser.js"
 const updateCollectionFiles     = ["createRestaurantData.js","createMenuData.js","createOrderDetails.js"];
 
