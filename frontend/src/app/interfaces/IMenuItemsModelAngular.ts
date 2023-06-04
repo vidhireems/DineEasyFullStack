@@ -3,7 +3,6 @@ interface IMenuItemsModelAngular {
     menuId: String
     resId: String
     menu: [ {
-            selected: unknown;
             itemId: String;
             category: String;
             name: String;

@@ -52,19 +52,19 @@ button {
     margin: 10px 0;
   }
 
-  .back-button {
-    position: absolute;
-    top: 80px;
-    left: 10px;
-    padding: 10px;
-    background-color: #141715;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .back-button i {
-    margin-right: 5px;
-  }
+.back-button {
+  position: absolute;
+  top: 80px;
+  left: 10px;
+  padding: 10px;
+  background-color: #141715;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-button i {
+  margin-right: 5px;
+}
   

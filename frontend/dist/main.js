@@ -441,10 +441,9 @@ class InvoiceComponent {
   }
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      const itemsJson = params['items'];
+      const invoiceItems = JSON.parse(params['items']);
       this.resId = params['resId'];
-      this.selectedItems = itemsJson ? JSON.parse(itemsJson) : [];
-      console.log("selectedItems:", this.selectedItems);
+      this.selectedItems = invoiceItems;
       const restaurantData = this.restaurantDataService.getRestaurantData();
       if (restaurantData) {
         this.restaurantName = restaurantData.name;
@@ -534,7 +533,7 @@ InvoiceComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_3__.CurrencyPipe],
-  styles: [".invoice[_ngcontent-%COMP%] {\n  font-family: Arial, sans-serif;\n  width: 400px;\n  top: 80px;\n  padding: 50px;\n  background-color: #f2f2f2;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  margin: 0 auto;\n  text-align: center; \n}\n\n.invoice-header[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n\n.item-list[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n\n.item[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 10px;\n}\n\n.item-name[_ngcontent-%COMP%] {\n  font-weight: bold;\n}\n\n.total[_ngcontent-%COMP%] {\n  margin-bottom: 10px;\n  text-align: right;\n  font-weight: bold;\n  font-size: 18px;\n}\n\n.download-button[_ngcontent-%COMP%] {\n  text-align: center;\n}\n\nbutton[_ngcontent-%COMP%] {\n  padding: 10px 20px;\n  background-color: #4caf50;\n  color: #fff;\n  border: none;\n  border-radius: 5px;\n  cursor: pointer;\n}\n.line-section[_ngcontent-%COMP%] {\n    border-top: 1px solid #b5a7a7;\n    margin: 10px 0;\n  }\n\n  .back-button[_ngcontent-%COMP%] {\n    position: absolute;\n    top: 80px;\n    left: 10px;\n    padding: 10px;\n    background-color: #141715;\n    color: #fff;\n    border: none;\n    border-radius: 5px;\n    cursor: pointer;\n  }\n  \n  .back-button[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n    margin-right: 5px;\n  }\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvaW52b2ljZS9pbnZvaWNlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSw4QkFBOEI7RUFDOUIsWUFBWTtFQUNaLFNBQVM7RUFDVCxhQUFhO0VBQ2IseUJBQXlCO0VBQ3pCLHNCQUFzQjtFQUN0QixrQkFBa0I7RUFDbEIsY0FBYztFQUNkLGtCQUFrQixFQUFFLHdDQUF3QztBQUM5RDs7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGFBQWE7RUFDYiw4QkFBOEI7RUFDOUIsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0UsbUJBQW1CO0VBQ25CLGlCQUFpQjtFQUNqQixpQkFBaUI7RUFDakIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsZUFBZTtBQUNqQjtBQUNBO0lBQ0ksNkJBQTZCO0lBQzdCLGNBQWM7RUFDaEI7O0VBRUE7SUFDRSxrQkFBa0I7SUFDbEIsU0FBUztJQUNULFVBQVU7SUFDVixhQUFhO0lBQ2IseUJBQXlCO0lBQ3pCLFdBQVc7SUFDWCxZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLGVBQWU7RUFDakI7O0VBRUE7SUFDRSxpQkFBaUI7RUFDbkIiLCJzb3VyY2VzQ29udGVudCI6WyIuaW52b2ljZSB7XG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgc2Fucy1zZXJpZjtcbiAgd2lkdGg6IDQwMHB4O1xuICB0b3A6IDgwcHg7XG4gIHBhZGRpbmc6IDUwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmMmYyZjI7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIHRleHQtYWxpZ246IGNlbnRlcjsgLyogQ2VudGVyIHRoZSBlbnRpcmUgaW52b2ljZSBjb250YWluZXIgKi9cbn1cblxuLmludm9pY2UtaGVhZGVyIHtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn1cblxuLml0ZW0tbGlzdCB7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbi5pdGVtIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xufVxuXG4uaXRlbS1uYW1lIHtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG5cbi50b3RhbCB7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAxOHB4O1xufVxuXG4uZG93bmxvYWQtYnV0dG9uIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG5idXR0b24ge1xuICBwYWRkaW5nOiAxMHB4IDIwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICM0Y2FmNTA7XG4gIGNvbG9yOiAjZmZmO1xuICBib3JkZXI6IG5vbmU7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuLmxpbmUtc2VjdGlvbiB7XG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNiNWE3YTc7XG4gICAgbWFyZ2luOiAxMHB4IDA7XG4gIH1cblxuICAuYmFjay1idXR0b24ge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICB0b3A6IDgwcHg7XG4gICAgbGVmdDogMTBweDtcbiAgICBwYWRkaW5nOiAxMHB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMxNDE3MTU7XG4gICAgY29sb3I6ICNmZmY7XG4gICAgYm9yZGVyOiBub25lO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gIH1cbiAgXG4gIC5iYWNrLWJ1dHRvbiBpIHtcbiAgICBtYXJnaW4tcmlnaHQ6IDVweDtcbiAgfVxuICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
+  styles: [".invoice[_ngcontent-%COMP%] {\n  font-family: Arial, sans-serif;\n  width: 400px;\n  top: 80px;\n  padding: 50px;\n  background-color: #f2f2f2;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  margin: 0 auto;\n  text-align: center; \n}\n\n.invoice-header[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n\n.item-list[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n\n.item[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  margin-bottom: 10px;\n}\n\n.item-name[_ngcontent-%COMP%] {\n  font-weight: bold;\n}\n\n.total[_ngcontent-%COMP%] {\n  margin-bottom: 10px;\n  text-align: right;\n  font-weight: bold;\n  font-size: 18px;\n}\n\n.download-button[_ngcontent-%COMP%] {\n  text-align: center;\n}\n\nbutton[_ngcontent-%COMP%] {\n  padding: 10px 20px;\n  background-color: #4caf50;\n  color: #fff;\n  border: none;\n  border-radius: 5px;\n  cursor: pointer;\n}\n.line-section[_ngcontent-%COMP%] {\n    border-top: 1px solid #b5a7a7;\n    margin: 10px 0;\n  }\n\n.back-button[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 80px;\n  left: 10px;\n  padding: 10px;\n  background-color: #141715;\n  color: #fff;\n  border: none;\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.back-button[_ngcontent-%COMP%]   i[_ngcontent-%COMP%] {\n  margin-right: 5px;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvaW52b2ljZS9pbnZvaWNlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSw4QkFBOEI7RUFDOUIsWUFBWTtFQUNaLFNBQVM7RUFDVCxhQUFhO0VBQ2IseUJBQXlCO0VBQ3pCLHNCQUFzQjtFQUN0QixrQkFBa0I7RUFDbEIsY0FBYztFQUNkLGtCQUFrQixFQUFFLHdDQUF3QztBQUM5RDs7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGFBQWE7RUFDYiw4QkFBOEI7RUFDOUIsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsaUJBQWlCO0FBQ25COztBQUVBO0VBQ0UsbUJBQW1CO0VBQ25CLGlCQUFpQjtFQUNqQixpQkFBaUI7RUFDakIsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGtCQUFrQjtFQUNsQix5QkFBeUI7RUFDekIsV0FBVztFQUNYLFlBQVk7RUFDWixrQkFBa0I7RUFDbEIsZUFBZTtBQUNqQjtBQUNBO0lBQ0ksNkJBQTZCO0lBQzdCLGNBQWM7RUFDaEI7O0FBRUY7RUFDRSxrQkFBa0I7RUFDbEIsU0FBUztFQUNULFVBQVU7RUFDVixhQUFhO0VBQ2IseUJBQXlCO0VBQ3pCLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxpQkFBaUI7QUFDbkIiLCJzb3VyY2VzQ29udGVudCI6WyIuaW52b2ljZSB7XG4gIGZvbnQtZmFtaWx5OiBBcmlhbCwgc2Fucy1zZXJpZjtcbiAgd2lkdGg6IDQwMHB4O1xuICB0b3A6IDgwcHg7XG4gIHBhZGRpbmc6IDUwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmMmYyZjI7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNjY2M7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIHRleHQtYWxpZ246IGNlbnRlcjsgLyogQ2VudGVyIHRoZSBlbnRpcmUgaW52b2ljZSBjb250YWluZXIgKi9cbn1cblxuLmludm9pY2UtaGVhZGVyIHtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbn1cblxuLml0ZW0tbGlzdCB7XG4gIG1hcmdpbi1ib3R0b206IDIwcHg7XG59XG5cbi5pdGVtIHtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xufVxuXG4uaXRlbS1uYW1lIHtcbiAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG5cbi50b3RhbCB7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG4gIHRleHQtYWxpZ246IHJpZ2h0O1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgZm9udC1zaXplOiAxOHB4O1xufVxuXG4uZG93bmxvYWQtYnV0dG9uIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG5idXR0b24ge1xuICBwYWRkaW5nOiAxMHB4IDIwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICM0Y2FmNTA7XG4gIGNvbG9yOiAjZmZmO1xuICBib3JkZXI6IG5vbmU7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuLmxpbmUtc2VjdGlvbiB7XG4gICAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICNiNWE3YTc7XG4gICAgbWFyZ2luOiAxMHB4IDA7XG4gIH1cblxuLmJhY2stYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDgwcHg7XG4gIGxlZnQ6IDEwcHg7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIGJhY2tncm91bmQtY29sb3I6ICMxNDE3MTU7XG4gIGNvbG9yOiAjZmZmO1xuICBib3JkZXI6IG5vbmU7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4uYmFjay1idXR0b24gaSB7XG4gIG1hcmdpbi1yaWdodDogNXB4O1xufVxuICAiXSwic291cmNlUm9vdCI6IiJ9 */"]
 });
 
 
@@ -712,6 +711,7 @@ class MenuComponent {
     // Request menu for a restaurant through the menu service
     this.route.parent?.params.subscribe(params => {
       this.resId = params['resId'];
+      console.log("resID--", this.resId);
       if (this.resId) {
         this.menuService$.getMenu(this.resId).subscribe(data => {
           this.menu = (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.of)(data);
@@ -794,7 +794,7 @@ function OrderItemsComponent_tr_18_Template(rf, ctx) {
       const restoredCtx = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r4);
       const menuItem_r2 = restoredCtx.$implicit;
       const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r3.toggleSelection(menuItem_r2.itemId));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r3.toggleSelection(menuItem_r2.itemId, menuItem_r2.price, menuItem_r2.name));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](4, "td");
@@ -820,17 +820,17 @@ function OrderItemsComponent_tr_18_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](menuItem_r2.price);
   }
 }
-function OrderItemsComponent_button_22_Template(rf, ctx) {
+function OrderItemsComponent_div_22_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "button", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function OrderItemsComponent_button_22_Template_button_click_0_listener() {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 9)(1, "button", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function OrderItemsComponent_div_22_Template_button_click_1_listener() {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r6);
       const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r5.showInvoice());
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r5.generateInvoice());
     });
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1, "Get Invoice");
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2, "Generate Invoice");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
   }
 }
 class OrderItemsComponent {
@@ -839,15 +839,14 @@ class OrderItemsComponent {
     this.OrderService$ = OrderService$;
     this.route = route;
     this.router = router;
-    this.menuId = null;
-    this.resId = null;
     this.selectedItems = [];
-    this.showInvoiceButton = false;
-    this.data = [];
+    this.invoiceItems = [];
+    this.itemsSubmitted = false;
   }
   ngOnInit() {
     // empty the selected items
     this.itemIds = [];
+    this.selectedItems = [];
     // Get resId param from parent component [Menu]
     this.route.parent?.params.subscribe(params => {
       this.resId = params['resId'];
@@ -863,49 +862,55 @@ class OrderItemsComponent {
       }
     });
   }
-  toggleSelection(itemId) {
-    this.menuItems.subscribe(items => {
-      const menuItem = items[0].menu.find(item => item.itemId === itemId);
-      if (menuItem) {
-        if (this.isSelected(itemId)) {
-          this.selectedItems = this.selectedItems.filter(item => item.itemId !== itemId);
-        } else {
-          this.selectedItems.push({
-            itemId: menuItem.itemId,
-            name: menuItem.name,
-            price: menuItem.price,
-            category: menuItem.category
-          });
-        }
-      }
-    });
+  toggleSelection(itemId, price, name) {
+    if (this.isSelected(itemId)) {
+      this.selectedItems = this.selectedItems.filter(item => item !== itemId);
+      this.invoiceItems = this.invoiceItems.filter(item => item.itemId !== itemId);
+      console.log("deselect the item from the invoiceItems array", this.invoiceItems);
+      console.log("deselect the item from the array to selectedItems", this.selectedItems);
+    } else {
+      this.selectedItems.push(itemId);
+      this.invoiceItems.push({
+        itemId,
+        name,
+        price
+      });
+      console.log("successfully added the items to invoiceItems", this.invoiceItems);
+      console.log("successfully added the items to selectedItems", this.selectedItems);
+    }
   }
-  //check if the item is selected
+  // check if the item contains in the selected.
   isSelected(itemId) {
     return this.selectedItems.includes(itemId);
   }
   sendOrder() {
-    console.log("OrderSubmitted");
-    this.itemIds = this.selectedItems.map(item => item.itemId);
-    //calculate quantity
+    if (this.selectedItems.length === 0) {
+      alert("Please select at least one item");
+      return;
+    }
+    this.itemIds = this.selectedItems;
+    // calculate quantity
     this.quantity = this.itemIds.length;
     let data = {
       "customerId": "asdasdasd",
       quantity: this.quantity,
       itemIds: this.itemIds
     };
+    console.log(data);
     this.OrderService$.postOrder(data, this.resId, this.menuId).subscribe(response => {
-      console.log("response:", response);
-      this.showInvoiceButton = true;
+      console.log(response);
+      this.itemsSubmitted = true;
     });
   }
-  showInvoice() {
-    // Convert selectedItems to JSON string
-    const itemsJson = JSON.stringify(this.selectedItems);
-    // Pass the selected items as query parameters when navigating to the InvoiceComponent
+  generateInvoice() {
+    if (this.invoiceItems.length === 0) {
+      console.log('No items selected for the invoice');
+      return;
+    }
+    console.log('Generating invoice...', this.invoiceItems);
     this.router.navigate(['/invoice'], {
       queryParams: {
-        items: itemsJson,
+        items: JSON.stringify(this.invoiceItems),
         resId: this.resId
       }
     });
@@ -920,7 +925,7 @@ OrderItemsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
   features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵProvidersFeature"]([_service_menu_items_service__WEBPACK_IMPORTED_MODULE_0__.MenuItemsService, _service_order_service__WEBPACK_IMPORTED_MODULE_1__.OrderService])],
   decls: 24,
   vars: 4,
-  consts: [[1, "container"], [1, "row", "section-spacing"], [1, "col-md-11"], [3, "submit"], [1, "table"], [4, "ngFor", "ngForOf"], ["type", "submit", 1, "button", "btn-primary"], ["class", "invoice-button", 3, "click", 4, "ngIf"], ["type", "checkbox", "name", "menuItem", 3, "value", "checked", "change"], [1, "invoice-button", 3, "click"]],
+  consts: [[1, "container"], [1, "row", "section-spacing"], [1, "col-md-11"], [3, "submit"], [1, "table"], [4, "ngFor", "ngForOf"], ["type", "submit", "onclick", "sendOrder()", 1, "button", "generate-invoice-button"], ["class", "invoice-button", 4, "ngIf"], ["type", "checkbox", "name", "menuItem", 3, "value", "checked", "change"], [1, "invoice-button"], [1, "button", "generate-invoice-button", 3, "click"]],
   template: function OrderItemsComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "header");
@@ -949,7 +954,7 @@ OrderItemsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](20, "button", 6);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](21, "Submit");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](22, OrderItemsComponent_button_22_Template, 2, 0, "button", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](22, OrderItemsComponent_div_22_Template, 3, 0, "div", 7);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](23, "router-outlet");
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]()()();
     }
@@ -958,11 +963,11 @@ OrderItemsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](18);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngForOf", (tmp_0_0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵpipeBind1"](19, 2, ctx.menuItems)) == null ? null : tmp_0_0[0] == null ? null : tmp_0_0[0].menu);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.showInvoiceButton);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.itemsSubmitted);
     }
   },
   dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["ɵNgNoValidate"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgControlStatusGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_6__.NgForm, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgForOf, _angular_common__WEBPACK_IMPORTED_MODULE_7__.NgIf, _angular_router__WEBPACK_IMPORTED_MODULE_5__.RouterOutlet, _order_order_component__WEBPACK_IMPORTED_MODULE_2__.OrderComponent, _angular_common__WEBPACK_IMPORTED_MODULE_7__.AsyncPipe],
-  styles: [".invoice-button[_ngcontent-%COMP%] {\n    float: right;\n  }\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvb3JkZXItaXRlbXMvb3JkZXItaXRlbXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7RUFDZCIsInNvdXJjZXNDb250ZW50IjpbIi5pbnZvaWNlLWJ1dHRvbiB7XG4gICAgZmxvYXQ6IHJpZ2h0O1xuICB9XG4gICJdLCJzb3VyY2VSb290IjoiIn0= */"]
+  styles: [".invoice-button[_ngcontent-%COMP%] {\n  float: right;\n}\n\n.generate-invoice-button[_ngcontent-%COMP%] {\n  background-color: #080202;\n  color: #fff;\n  border: none;\n  padding: 10px 20px;\n  font-size: 16px;\n  border-radius: 4px;\n  cursor: pointer;\n}\n\n.generate-invoice-button[_ngcontent-%COMP%]:hover {\n  background-color: #f2fdf2;\n  color: #000000; \n  border: #000000 1px solid;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvb3JkZXItaXRlbXMvb3JkZXItaXRlbXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQVk7QUFDZDs7QUFFQTtFQUNFLHlCQUF5QjtFQUN6QixXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsY0FBYztFQUNkLHlCQUF5QjtBQUMzQiIsInNvdXJjZXNDb250ZW50IjpbIi5pbnZvaWNlLWJ1dHRvbiB7XG4gIGZsb2F0OiByaWdodDtcbn1cblxuLmdlbmVyYXRlLWludm9pY2UtYnV0dG9uIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzA4MDIwMjtcbiAgY29sb3I6ICNmZmY7XG4gIGJvcmRlcjogbm9uZTtcbiAgcGFkZGluZzogMTBweCAyMHB4O1xuICBmb250LXNpemU6IDE2cHg7XG4gIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4uZ2VuZXJhdGUtaW52b2ljZS1idXR0b246aG92ZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjJmZGYyO1xuICBjb2xvcjogIzAwMDAwMDsgXG4gIGJvcmRlcjogIzAwMDAwMCAxcHggc29saWQ7XG59XG5cbiJdLCJzb3VyY2VSb290IjoiIn0= */"]
 });
 
 
@@ -1059,7 +1064,7 @@ OrderComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["
     }
   },
   dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgForOf, _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterOutlet, _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterLink, _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterLinkActive, _angular_common__WEBPACK_IMPORTED_MODULE_5__.AsyncPipe],
-  styles: ["\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ== */"]
+  styles: [".nav.nav-tabs[_ngcontent-%COMP%] {\n    background-color: #f8f9fa;\n    margin-top: 1.4cm;\n    padding: 10px;\n    border-bottom: 2px solid #dee2e6;\n    display: flex;\n    justify-content: flex-start\n  }\n  .nav.nav-tabs[_ngcontent-%COMP%]   .nav-item[_ngcontent-%COMP%] {\n    margin-right: 10px;\n  }\n\n  .nav.nav-tabs[_ngcontent-%COMP%]   .nav-link[_ngcontent-%COMP%] {\n    color: #343a40;\n    border: none;\n    cursor: pointer;\n    border-radius: 0;\n    padding: 10px 15px;\n    font-weight: bold;\n    transition: background-color 0.3s ease;\n    background-color: transparent;\n    text-transform: uppercase;\n    letter-spacing: 3px;\n  }\n\n  .nav.nav-tabs[_ngcontent-%COMP%]   .nav-link.active[_ngcontent-%COMP%] {\n    background-color: #000000;\n    color: #fff;\n  }\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvb3JkZXIvb3JkZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtJQUN6QixpQkFBaUI7SUFDakIsYUFBYTtJQUNiLGdDQUFnQztJQUNoQyxhQUFhO0lBQ2I7RUFDRjtFQUNBO0lBQ0Usa0JBQWtCO0VBQ3BCOztFQUVBO0lBQ0UsY0FBYztJQUNkLFlBQVk7SUFDWixlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtJQUNsQixpQkFBaUI7SUFDakIsc0NBQXNDO0lBQ3RDLDZCQUE2QjtJQUM3Qix5QkFBeUI7SUFDekIsbUJBQW1CO0VBQ3JCOztFQUVBO0lBQ0UseUJBQXlCO0lBQ3pCLFdBQVc7RUFDYiIsInNvdXJjZXNDb250ZW50IjpbIi5uYXYubmF2LXRhYnMge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNmOGY5ZmE7XG4gICAgbWFyZ2luLXRvcDogMS40Y207XG4gICAgcGFkZGluZzogMTBweDtcbiAgICBib3JkZXItYm90dG9tOiAycHggc29saWQgI2RlZTJlNjtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogZmxleC1zdGFydFxuICB9XG4gIC5uYXYubmF2LXRhYnMgLm5hdi1pdGVtIHtcbiAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gIH1cblxuICAubmF2Lm5hdi10YWJzIC5uYXYtbGluayB7XG4gICAgY29sb3I6ICMzNDNhNDA7XG4gICAgYm9yZGVyOiBub25lO1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBib3JkZXItcmFkaXVzOiAwO1xuICAgIHBhZGRpbmc6IDEwcHggMTVweDtcbiAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDAuM3MgZWFzZTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDtcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xuICAgIGxldHRlci1zcGFjaW5nOiAzcHg7XG4gIH1cblxuICAubmF2Lm5hdi10YWJzIC5uYXYtbGluay5hY3RpdmUge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDAwMDA7XG4gICAgY29sb3I6ICNmZmY7XG4gIH0iXSwic291cmNlUm9vdCI6IiJ9 */"]
 });
 
 
