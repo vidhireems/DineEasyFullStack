@@ -16,7 +16,6 @@ exports.UserModel = void 0;
 //Imports
 const mongoose_1 = __importDefault(require("mongoose"));
 const DbConnection_1 = require("../DbConnection");
-const bcrypt = require('bcrypt');
 const CustomerModel_1 = require("./CustomerModel");
 //Mongoose connections and object
 let mongooseConnection = DbConnection_1.DbConnection.mongooseConnection;
@@ -28,6 +27,13 @@ class UserModel {
         this.createSchema();
         this.createModel();
         this.customer = new CustomerModel_1.CustomerModel();
+    }
+    //public method to get the single instance ofuser model
+    static getInstance() {
+        if (!UserModel.instance) {
+            UserModel.instance = new UserModel();
+        }
+        return UserModel.instance;
     }
     //function to create the schema for restaurants
     createSchema() {
@@ -107,6 +113,11 @@ class UserModel {
                 throw new Error("Error Creating User");
             }
         });
+    }
+    //map user  sso id with user id and return user id
+    mapSSOtoUserId(req) {
+        //get the sso id from response
+        console.log(req);
     }
 }
 exports.UserModel = UserModel;

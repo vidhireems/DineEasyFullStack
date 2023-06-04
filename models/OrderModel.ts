@@ -87,6 +87,12 @@ class OrderModel {
     }
   }
 
+  getAllOrderOfUser(userId: void) {
+    console.log(userId);
+
+    console.log("all orders of user");
+  }
+
   // delete order
 }
 export { OrderModel };
