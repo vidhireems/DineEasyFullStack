@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from '../service/order.service';
 import { SuccessDialogComponent } from '../success-dialog/success-dialog.component'; 
 import { MatDialog } from '@angular/material/dialog';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-order-items',
@@ -31,7 +32,8 @@ export class OrderItemsComponent {
     private OrderService$: OrderService,
     private route: ActivatedRoute,
     private router: Router,
-    private dialog: MatDialog   
+    private dialog: MatDialog,   
+    private authenticationService: AuthenticationService, 
   ) {};
 
   ngOnInit():void {
@@ -83,13 +85,14 @@ export class OrderItemsComponent {
   sendOrder()
   {
     console.log("OrderSubmitted");
-
+    const user = this.authenticationService.customer;
+    const userId = user.customerId;
     this.itemIds =  this.selectedItems.map(item => item.itemId)
     //calculate quantity
     this.quantity = this.itemIds.length;
 
     let data = {
-      "customerId": "asdasdasd",
+      customerId: userId,
       quantity: this.quantity,
       itemIds: this.itemIds,
     }
