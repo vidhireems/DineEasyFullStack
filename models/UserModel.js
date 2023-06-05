@@ -114,10 +114,5 @@ class UserModel {
             }
         });
     }
-    //map user  sso id with user id and return user id
-    mapSSOtoUserId(req) {
-        //get the sso id from response
-        console.log(req);
-    }
 }
 exports.UserModel = UserModel;

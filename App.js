@@ -131,10 +131,10 @@ class App {
         });
         //retrives all the orders of a particular user
         router.get('/myorders', this.validateAuth, (req, res) => {
-            console.log("in my orders mapping sso id with  user id");
-            const userId = this.users.mapSSOtoUserId(req);
+            const userdata = req.user;
+            console.log(userdata);
             console.log("retriving all the orders of a user");
-            this.Orders.getAllOrderOfUser(userId);
+            this.Orders.getAllOrderOfUser(userdata, res);
         });
         // Handles logout of a user 
         router.post('/logout', this.validateAuth, (req, res, next) => {
