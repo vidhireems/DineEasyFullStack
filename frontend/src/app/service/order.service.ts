@@ -4,6 +4,7 @@ import { IOrderModel } from '../interfaces/IOrderModelAngular';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,11 +13,17 @@ export class OrderService {
   hostUrl:string = environment.hostUrl;
   constructor(private httpClient: HttpClient) { }
   
+  //post a order
   postOrder(data:any, resId:string | null, menuId:string | null): Observable<any>{
     let url = this.hostUrl + 'restaurants/' + resId + '/menu/' + menuId + '/items/order';
     console.log(url);
     console.log(data);
     return this.httpClient.post<any>(url, data);
+  }
+
+  getAllOrderOfUser() {
+    console.log("in get all order of user");
+    return this.httpClient.get<IOrderModel[]>(this.hostUrl + 'myorders');
   }
 }
 
