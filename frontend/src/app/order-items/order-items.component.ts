@@ -4,8 +4,7 @@ import IMenuItemsModelAngular from '../interfaces/IMenuItemsModelAngular';
 import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from '../service/order.service';
-import { IOrderModel } from '../interfaces/IOrderModelAngular';
-import { FormsModule } from '@angular/forms';import { SuccessDialogComponent } from '../success-dialog/success-dialog.component'; 
+import { SuccessDialogComponent } from '../success-dialog/success-dialog.component'; 
 import { MatDialog } from '@angular/material/dialog';
 import { AuthenticationService } from '../service/authentication.service';
 
