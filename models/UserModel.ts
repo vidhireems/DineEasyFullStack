@@ -29,7 +29,7 @@ class UserModel {
         }
         return UserModel.instance;
       }
-      
+
     //function to create the schema for restaurants
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
@@ -119,10 +119,15 @@ class UserModel {
     }
 
     //map user  sso id with user id and return user id
-    mapSSOtoUserId(req: any) {
-      //get the sso id from response
-      console.log(req);
-    }
+    // mapSSOtoUserId(req: any) {
+    //   //get the sso id from response
+    //   const ssoid:String = req.user.ssoId;
+    //   const filter = {ssoId: ssoid};
+
+    //   const UserDetail = this.model.findOne(filter);
+    //   console.log(UserDetail);
+    //   return UserDetail.userId;
+    // }
     
 }
 
