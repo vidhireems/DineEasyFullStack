@@ -1,6 +1,6 @@
 export interface IReservationModelAngular {
   reservationId: string;
-  customerId: string;
+  customerId: number;
   resId: string;
   date: string;
   time: string;
