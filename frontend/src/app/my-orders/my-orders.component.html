@@ -1,1 +1,32 @@
-<p>my-orders works!</p>
+<h2>My Orders</h2>
+
+<div class="table-responsive py-3" *ngIf="userOrders && userOrders.length > 0; else noOrders">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Sr/No</th>
+        <th>Restaurant ID</th>
+        <th>Order Date</th>
+        <th>Status</th>
+        <th>Order Type</th>
+        <th>Quantity</th>
+        <th>Item IDs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of userOrders; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ order.resId }}</td>
+        <td>{{ order.orderDate | date }}</td>
+        <td>{{ order.status }}</td>
+        <td>{{ order.orderType }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>{{ order.itemIds.join(', ') }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noOrders>
+  <p>No orders found.</p>
+</ng-template>
