@@ -104,5 +104,21 @@ class OrderModel {
             }
         });
     }
+    // delete order
+    deleteOrder(orderId, response) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                // Perform the deletion logic using the provided orderId
+                yield this.model.deleteOne({ orderId }).exec();
+                console.log("Order deleted successfully");
+                response.status(200).json({ message: "Order deleted successfully" });
+            }
+            catch (error) {
+                console.log("Error deleting order:", error);
+                console.error(error);
+                response.sendStatus(500);
+            }
+        });
+    }
 }
 exports.OrderModel = OrderModel;

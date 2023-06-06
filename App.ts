@@ -247,6 +247,15 @@ class App {
       this.Orders.createOrder(request, response);
     });
 
+    //delete the route
+    router.delete("/orders/:orderId", (request: any, response: any) => {
+      const orderId = request.params.orderId;
+      
+      // Call a function to delete the order with the specified orderId
+      this.Orders.deleteOrder(orderId, response);
+    });
+    
+
     // post- create customer
     router.post("/addcustomer", (request: any, response: any) => {
       console.log("Adding New Customer:...");

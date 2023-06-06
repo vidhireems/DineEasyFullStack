@@ -102,5 +102,19 @@ class OrderModel {
   
 
   // delete order
+  async deleteOrder(orderId: string, response: any) {
+    try {
+      // Perform the deletion logic using the provided orderId
+      await this.model.deleteOne({ orderId }).exec();
+      
+      console.log("Order deleted successfully");
+      response.status(200).json({ message: "Order deleted successfully" });
+    } catch (error) {
+      console.log("Error deleting order:", error);
+      console.error(error);
+      response.sendStatus(500);
+    }
+  }
+  
 }
 export { OrderModel };

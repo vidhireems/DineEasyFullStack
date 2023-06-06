@@ -16,7 +16,7 @@ describe('POST Order', () => {
             itemIds: ["asdadd", "asdaasdsdd"],
           };
   
-      chai.request('http://localhost:8080')
+      chai.request('https://dineeasyy.azurewebsites.net')
         .post('/restaurants/1/menu/1/items/order') // Replace the placeholders with actual values
         .send(requestData) // Send the request data as payload, if applicable
         .end((err, res) => {
@@ -55,7 +55,7 @@ describe('POST Order', () => {
     //clean the entrywhich was created above  
     after((done) => {
         const OrderId = orderId
-        chai.request('http://localhost:8080')
+        chai.request('https://dineeasyy.azurewebsites.net')
           .delete(`/orders/${OrderId}`)
           .end((err, res) => {
             if (err) {
