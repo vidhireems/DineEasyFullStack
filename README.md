@@ -24,10 +24,12 @@ Build, Run and Deploy:
 
     Development mode:
         `npm run start:local`  -- Builds and runs both Backend and Frontend in development mode
-    
+        `npm run test:local` -- Runs Tests locally
+
     Production mode:
         `npm run build:prod`  -- Builds both Backend and Frontend in production mode
         `npm start`      -- Runs in production mode locally.
+        `npm run test` -- Runs Tests for cloud deployed website
     
     To Deploy on Azure:
         `npm run build:prod` -- Builds in production mode and populates the dist folder
