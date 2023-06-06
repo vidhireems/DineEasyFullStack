@@ -25,6 +25,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReservationComponent } from './reservation/reservation.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     RestaurantsComponent,
     RestaurantComponent,
     RestaurantOverviewComponent,
+    ReservationComponent,
     OrderComponent,
     OrderItemsComponent,
     InvoiceComponent,
