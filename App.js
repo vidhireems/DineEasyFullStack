@@ -83,8 +83,10 @@ class App {
             console.log("user is authenticated");
             return next();
         }
-        console.log("user is not authenticated");
-        res.redirect('/');
+        else {
+            console.log("user is not authenticated");
+            res.redirect('/');
+        }
     }
     // Api Endpoints....
     routes() {
@@ -93,6 +95,9 @@ class App {
         router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }), (req, res) => {
             console.log("Localhost: successfully authenticated user and returned to callback page.");
             res.redirect('/');
+        });
+        router.get('/', (req, res) => {
+            res.redirect('/home');
         });
         // Google OAuth callback for production environment
         router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
@@ -136,21 +141,10 @@ class App {
         });
         // Handles logout of a user 
         router.post('/logout', this.validateAuth, (req, res, next) => {
-            req.session.destroy((err) => {
-                if (err) {
-                    console.error('Error destroying session:', err);
-                    return next(err);
-                }
-                req.logout((err) => {
-                    if (err) {
-                        console.error('Error logging out:', err);
-                        return next(err);
-                    }
-                    res.clearCookie('DineEasy-Cookie');
-                    res.sendStatus(200);
-                    res.redirect('/');
-                });
-            });
+            req.logout();
+            res.clearCookie('DineEasy-Cookie');
+            req.session.destroy();
+            res.status(200).redirect('/');
         });
         // Retrieve all the restaurant endpoint
         router.get("/restaurants", (req, res) => {
