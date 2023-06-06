@@ -55,10 +55,20 @@ class UserModel {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const UserDetail = yield this.model.findOne(filter);
-                if (response) {
-                    response.json(UserDetail);
+                if (!UserDetail) {
+                    console.error({ error: "Unable to find User" });
+                    if (response) {
+                        response.status(404).send({ error: "User not found" });
+                    }
                 }
-                return UserDetail;
+                else {
+                    if (response) {
+                        return response.status(200).json(UserDetail);
+                    }
+                    else {
+                        return UserDetail;
+                    }
+                }
             }
             catch (err) {
                 console.error(err);
