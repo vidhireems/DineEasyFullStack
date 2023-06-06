@@ -109,10 +109,9 @@ class App {
             }
         });
         // Gets the user information based on id.
-        router.get('/user/:userId', this.validateAuth, (req, res) => {
+        router.get('/user', this.validateAuth, (req, res) => {
             if (req.user) {
-                let userId = req.params.userId;
-                this.Customer.retrieveCustomer(res, { customerId: userId });
+                this.Customer.retrieveCustomer(res, { customerId: req.user.userId });
             }
             else {
                 console.log('User not authenticated');
@@ -120,9 +119,9 @@ class App {
             }
         });
         // Gets customer information
-        router.put('/profile/:customerId', this.validateAuth, (req, res) => {
+        router.put('/profile', this.validateAuth, (req, res) => {
             if (req.user) {
-                this.Customer.updateCustomer(req, res);
+                this.Customer.updateCustomer(req.user.userId, req, res);
             }
             else {
                 console.log('User not authenticated');
@@ -132,7 +131,6 @@ class App {
         //retrives all the orders of a particular user
         router.get('/myorders', this.validateAuth, (req, res) => {
             const userdata = req.user;
-            console.log(userdata);
             console.log("retriving all the orders of a user");
             this.Orders.getAllOrderOfUser(userdata, res);
         });
@@ -237,28 +235,23 @@ class App {
             console.log("Adding New Customer:...");
             this.Customer.createCustomer(request, response);
         });
-        //post- customer update
-        router.post("/updatecustomer/:customerId", (req, res) => {
-            console.log("Update Customer:...");
-            this.Customer.updateCustomer(req, res);
-        });
         // post reservations
-        router.post("/addreservation", (request, response) => {
+        router.post("/addreservation", this.validateAuth, (request, response) => {
             console.log("Adding New Reservation");
             this.Reservation.createReservation(request, response);
         });
         // get reservations
-        router.get("/reservation", (request, response) => {
+        router.get("/reservation", this.validateAuth, (request, response) => {
             console.log("Query all reservations");
             this.Reservation.getAllReservations(response);
         });
         // update reservation
-        router.patch("/reservation/:reservationId", (request, response) => {
+        router.patch("/reservation/:reservationId", this.validateAuth, (request, response) => {
             console.log("Updating Reservation");
             this.Reservation.updateReservation(request, response);
         });
         // delete reservation
-        router.delete("/reservation/:reservationId", (request, response) => {
+        router.delete("/reservation/:reservationId", this.validateAuth, (request, response) => {
             console.log("Deleting Reservation");
             this.Reservation.cancelReservation(request, response);
         });

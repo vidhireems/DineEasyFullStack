@@ -31,7 +31,7 @@ export class AuthenticationService {
         if (response.authenticated === true) {
           this.isLoggedIn = true;
           this.user = response.user;
-          this.getCustomerInfo(this.user.userId).subscribe(
+          this.getCustomerInfo().subscribe(
             (data) => {
               this.customer = data;
             },
@@ -50,8 +50,8 @@ export class AuthenticationService {
   }
   
   // Gets the customer information
-  getCustomerInfo(userId: String) {
-    return this.http.get<ICustomerModel>(this.hostUrl + 'user/' + userId);
+  getCustomerInfo() {
+    return this.http.get<ICustomerModel>(this.hostUrl + 'user');
   }
   
   // Checks where the current user is logged-in
@@ -61,7 +61,7 @@ export class AuthenticationService {
 
   // Updated the customer profile
   updateProfile(profileData: any) {
-    return this.http.put(this.hostUrl + 'profile/' + this.user.userId, profileData);
+    return this.http.put(this.hostUrl + 'profile', profileData);
   }
 
   // Redirect to Google OAuth callback API for login

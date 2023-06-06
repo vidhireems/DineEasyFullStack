@@ -22,7 +22,7 @@ export class ProfileComponent {
   // Initalizes the default customer information to be shown on the form
   initializeCustomerInfo() {
     const customer = this.authenticationService.customer;
-
+    
     this.customerInfo = {
       name: customer.name,
       profilePic: customer.profilePic,

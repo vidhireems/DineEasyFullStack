@@ -48,7 +48,7 @@ export class AppComponent {
   // Redirects to the profile information if profile option selected
   profile()
   {
-    this.router.navigateByUrl('/profile/'+ this.authenticationService.user.userId);
+    this.router.navigateByUrl('/profile');
   }
 
   // Invokes to login functionality provided by authentication service
