@@ -8,6 +8,8 @@ import { ActivatedRoute,Router } from '@angular/router';
 })
 export class ReservationDetailsComponent implements OnInit {
   reservationId: string;
+  date: string;
+  time: string;
   tableNumber: number;
   resId: string;
 
@@ -17,6 +19,8 @@ export class ReservationDetailsComponent implements OnInit {
     this.route.queryParams.subscribe(params => {
       this.reservationId = params['reservationId'];
       this.tableNumber = +params['tableNumber'];
+      this.date = params['date'];
+      this.time = params['time'];
       this.resId =params['resId'];
     });
   }

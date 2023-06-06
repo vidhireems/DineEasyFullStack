@@ -1348,6 +1348,8 @@ class ReservationDetailsComponent {
     this.route.queryParams.subscribe(params => {
       this.reservationId = params['reservationId'];
       this.tableNumber = +params['tableNumber'];
+      this.date = params['date'];
+      this.time = params['time'];
       this.resId = params['resId'];
     });
   }
@@ -1363,33 +1365,38 @@ ReservationDetailsComponent.ɵfac = function ReservationDetailsComponent_Factory
 ReservationDetailsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: ReservationDetailsComponent,
   selectors: [["app-reservation-details"]],
-  decls: 13,
-  vars: 1,
+  decls: 15,
+  vars: 2,
   consts: [[1, "container"], [1, "reservation-status"], [1, "pre-order"], [3, "click"]],
   template: function ReservationDetailsComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "reservation-details works!");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0)(1, "div", 1)(2, "h2");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Reservation Status");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 0)(3, "div", 1)(4, "h2");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Reservation Status");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "p");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 2)(9, "p");
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, " Do you want to order your meal now itself?");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReservationDetailsComponent_Template_button_click_11_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Thank you for choosing us");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 2)(11, "p");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, " Do you want to order your meal now itself?");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "button", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ReservationDetailsComponent_Template_button_click_13_listener() {
         return ctx.goToOrder();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Order");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Order");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Hello customer, your reservation us is confirmed. Your ID is ", ctx.reservationId, ".");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Hello customer, your reservation with us is confirmed. Your reservation ID is ", ctx.reservationId, ".");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Table Number ", ctx.tableNumber, " is reserved for you ");
     }
   },
   styles: [".reservation-status[_ngcontent-%COMP%] {\n  border: 1px solid #ccc;\n  padding: 20px;\n  background-color: #f5f5f5;\n  border-radius: 4px;\n  margin-top: 20px;\n}\n\n.reservation-status[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 20px;\n  margin-bottom: 10px;\n}\n\n.reservation-status[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 16px;\n}\n\n.pre-order[_ngcontent-%COMP%] {\n  margin-top: 1cm;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 1cm;\n  background-color: #f2f2f2;\n  padding: 20px;\n  border-radius: 10px;\n}\n\n.pre-order[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 18px;\n  color: #333;\n}\n\n.pre-order[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  background-color: #000000;\n  color: #f2fdf2;\n  transition: background-color 0.3s ease;\n  text-decoration: none;\n  border: none;\n  padding: 10px 20px;\n  font-size: 16px;\n  border-radius: 5px;\n  cursor: pointer;\n}\n\n.pre-order[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover {\n  background-color: #f2fdf2;\n  color: #000000;\n  border: #000000 1px solid;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvcmVzZXJ2YXRpb24tZGV0YWlscy9yZXNlcnZhdGlvbi1kZXRhaWxzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxzQkFBc0I7RUFDdEIsYUFBYTtFQUNiLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsZUFBZTtFQUNmLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsYUFBYTtFQUNiLHVCQUF1QjtFQUN2QixtQkFBbUI7RUFDbkIsUUFBUTtFQUNSLHlCQUF5QjtFQUN6QixhQUFhO0VBQ2IsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsU0FBUztFQUNULGVBQWU7RUFDZixXQUFXO0FBQ2I7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsY0FBYztFQUNkLHNDQUFzQztFQUN0QyxxQkFBcUI7RUFDckIsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2Ysa0JBQWtCO0VBQ2xCLGVBQWU7QUFDakI7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsY0FBYztFQUNkLHlCQUF5QjtBQUMzQiIsInNvdXJjZXNDb250ZW50IjpbIi5yZXNlcnZhdGlvbi1zdGF0dXMge1xuICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICBwYWRkaW5nOiAyMHB4O1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjVmNWY1O1xuICBib3JkZXItcmFkaXVzOiA0cHg7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG59XG5cbi5yZXNlcnZhdGlvbi1zdGF0dXMgaDIge1xuICBmb250LXNpemU6IDIwcHg7XG4gIG1hcmdpbi1ib3R0b206IDEwcHg7XG59XG5cbi5yZXNlcnZhdGlvbi1zdGF0dXMgcCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbn1cblxuLnByZS1vcmRlciB7XG4gIG1hcmdpbi10b3A6IDFjbTtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGdhcDogMWNtO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjJmMmYyO1xuICBwYWRkaW5nOiAyMHB4O1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xufVxuXG4ucHJlLW9yZGVyIHAge1xuICBtYXJnaW46IDA7XG4gIGZvbnQtc2l6ZTogMThweDtcbiAgY29sb3I6ICMzMzM7XG59XG5cbi5wcmUtb3JkZXIgYnV0dG9uIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDAwMDtcbiAgY29sb3I6ICNmMmZkZjI7XG4gIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgMC4zcyBlYXNlO1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gIGJvcmRlcjogbm9uZTtcbiAgcGFkZGluZzogMTBweCAyMHB4O1xuICBmb250LXNpemU6IDE2cHg7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG4ucHJlLW9yZGVyIGJ1dHRvbjpob3ZlciB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmMmZkZjI7XG4gIGNvbG9yOiAjMDAwMDAwO1xuICBib3JkZXI6ICMwMDAwMDAgMXB4IHNvbGlkO1xufSJdLCJzb3VyY2VSb290IjoiIn0= */"]
@@ -1408,29 +1415,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ReservationComponent": () => (/* binding */ ReservationComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 6839);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 6839);
 /* harmony import */ var _service_reservation_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../service/reservation.service */ 4815);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ 6679);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ 9542);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 6679);
+/* harmony import */ var _service_authentication_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/authentication.service */ 7217);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 9542);
+
 
 
 
 
 class ReservationComponent {
-  constructor(reservationService, router, route) {
+  constructor(reservationService, router, route, authenticationService) {
     this.reservationService = reservationService;
     this.router = router;
     this.route = route;
+    this.authenticationService = authenticationService;
     this.isReservationConfirmed = false;
   }
   createReservation() {
+    const user = this.authenticationService.customer;
+    const userID = user.customerId;
+    console.log(userID);
     const reservation = {
       peopleCount: parseInt(this.partySize.toString()),
       date: this.date,
       time: this.time,
       phoneNumber: this.phone,
       reservationId: '',
-      customerId: '1',
+      customerId: parseInt(userID.toString()),
       resId: this.route.parent?.snapshot.paramMap.get('resId'),
       status: 'pending',
       tableNumber: Math.floor(Math.random() * 20) + 1 // Generate a random number between 1 and 20
@@ -1443,6 +1456,7 @@ class ReservationComponent {
         this.tableNumber = tableNumber;
         this.isReservationConfirmed = true;
         console.log('Response:', response);
+        console.log(userID);
         this.router.navigate(['../reservation-details'], {
           relativeTo: this.route,
           queryParams: {
@@ -1460,9 +1474,9 @@ class ReservationComponent {
   }
 }
 ReservationComponent.ɵfac = function ReservationComponent_Factory(t) {
-  return new (t || ReservationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_service_reservation_service__WEBPACK_IMPORTED_MODULE_0__.ReservationService), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__.ActivatedRoute));
+  return new (t || ReservationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_service_reservation_service__WEBPACK_IMPORTED_MODULE_0__.ReservationService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.Router), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_service_authentication_service__WEBPACK_IMPORTED_MODULE_1__.AuthenticationService));
 };
-ReservationComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+ReservationComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
   type: ReservationComponent,
   selectors: [["app-reservation"]],
   decls: 64,
@@ -1470,119 +1484,119 @@ ReservationComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
   consts: [[1, "reservation-container"], [1, "reservation-title"], [1, "reservation-form"], [1, "form-group"], ["for", "partySize"], ["id", "partySize", 1, "form-control", 3, "ngModel", "ngModelChange"], ["value", "1"], ["value", "2"], ["value", "3"], ["value", "4"], ["value", "5"], ["value", "6"], ["value", "7"], ["value", "8"], ["value", "9"], ["value", "10"], ["value", "11"], ["value", "12"], ["value", "13"], ["value", "14"], ["value", "15"], ["value", "16"], ["value", "17"], ["value", "18"], ["value", "19"], ["value", "20"], [1, "form-group", "form-group-row"], [1, "form-group-item"], ["for", "date"], ["type", "date", "id", "date", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "time"], ["type", "time", "id", "time", 1, "form-control", 3, "ngModel", "ngModelChange"], ["for", "phone"], ["type", "tel", "id", "phone", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "table-button"], ["type", "submit", 1, "btn", "btn-primary", 3, "click"]],
   template: function ReservationComponent_Template(rf, ctx) {
     if (rf & 1) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0)(1, "h1", 1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Make a Reservation");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 2)(4, "div", 3)(5, "label", 4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "Party Size:");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "select", 5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngModelChange", function ReservationComponent_Template_select_ngModelChange_7_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "h1", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2, "Make a Reservation");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "div", 2)(4, "div", 3)(5, "label", 4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](6, "Party Size:");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "select", 5);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function ReservationComponent_Template_select_ngModelChange_7_listener($event) {
         return ctx.partySize = $event;
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "option", 6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "1 person");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "option", 7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "2 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "option", 8);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](13, "3 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "option", 9);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "4 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "option", 10);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "5 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "option", 11);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19, "6 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "option", 12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](21, "7 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "option", 13);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23, "8 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "option", 14);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](25, "9 person");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "option", 15);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](27, "10 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](28, "option", 16);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](29, "11 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "option", 17);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](31, "12 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "option", 18);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](33, "13 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "option", 19);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](35, "14 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "option", 20);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37, "15 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "option", 21);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](39, "16 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](40, "option", 22);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](41, "17 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](42, "option", 23);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](43, "18 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](44, "option", 24);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](45, "19 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](46, "option", 25);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](47, "20 people");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](48, "div", 26)(49, "div", 27)(50, "label", 28);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](51, "Date:");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](52, "input", 29);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngModelChange", function ReservationComponent_Template_input_ngModelChange_52_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "option", 6);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, "1 person");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "option", 7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](11, "2 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "option", 8);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](13, "3 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "option", 9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](15, "4 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](16, "option", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](17, "5 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](18, "option", 11);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](19, "6 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](20, "option", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](21, "7 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](22, "option", 13);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](23, "8 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](24, "option", 14);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](25, "9 person");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](26, "option", 15);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](27, "10 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](28, "option", 16);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](29, "11 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](30, "option", 17);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](31, "12 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](32, "option", 18);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](33, "13 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](34, "option", 19);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](35, "14 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](36, "option", 20);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](37, "15 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](38, "option", 21);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](39, "16 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](40, "option", 22);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](41, "17 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](42, "option", 23);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](43, "18 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](44, "option", 24);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](45, "19 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](46, "option", 25);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](47, "20 people");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](48, "div", 26)(49, "div", 27)(50, "label", 28);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](51, "Date:");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](52, "input", 29);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function ReservationComponent_Template_input_ngModelChange_52_listener($event) {
         return ctx.date = $event;
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](53, "div", 27)(54, "label", 30);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](55, "Time:");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "input", 31);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngModelChange", function ReservationComponent_Template_input_ngModelChange_56_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](53, "div", 27)(54, "label", 30);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](55, "Time:");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](56, "input", 31);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function ReservationComponent_Template_input_ngModelChange_56_listener($event) {
         return ctx.time = $event;
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](57, "div", 3)(58, "label", 32);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](59, "Phone:");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](60, "input", 33);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngModelChange", function ReservationComponent_Template_input_ngModelChange_60_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](57, "div", 3)(58, "label", 32);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](59, "Phone:");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](60, "input", 33);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("ngModelChange", function ReservationComponent_Template_input_ngModelChange_60_listener($event) {
         return ctx.phone = $event;
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](61, "div", 34)(62, "button", 35);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function ReservationComponent_Template_button_click_62_listener() {
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](61, "div", 34)(62, "button", 35);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function ReservationComponent_Template_button_click_62_listener() {
         return ctx.createReservation();
       });
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](63, " Reserve a Table ");
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](63, " Reserve a Table ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()();
     }
     if (rf & 2) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx.partySize);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](45);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx.date);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx.time);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngModel", ctx.phone);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](7);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngModel", ctx.partySize);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](45);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngModel", ctx.date);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngModel", ctx.time);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](4);
+      _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngModel", ctx.phone);
     }
   },
-  dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_3__.NgModel],
+  dependencies: [_angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgSelectOption, _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ɵNgSelectMultipleOption"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.SelectControlValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgModel],
   styles: [".reservation-container[_ngcontent-%COMP%] {\n    max-width: 800px;\n    margin: 1.3cm auto 0;\n    padding: 40px;\n    background-color: #f8f8f8;\n    border: 1px solid #ddd;\n    border-radius: 4px;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n    \n  }\n  \n  .reservation-title[_ngcontent-%COMP%] {\n    font-size: 28px;\n    font-weight: bold;\n    margin-bottom: 20px;\n    color: #333;\n  }\n  \n  .reservation-form[_ngcontent-%COMP%]   .form-group[_ngcontent-%COMP%] {\n    margin-bottom: 20px;\n    margin-top: 20px;\n  }\n  \n  .reservation-form[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n    display: block;\n    margin-bottom: 5px;\n    font-weight: bold;\n  }\n  \n  .reservation-form[_ngcontent-%COMP%]   .form-control[_ngcontent-%COMP%] {\n    width: 100%;\n    padding: 8px;\n    \n    border: 1px solid #ccc;\n    border-radius: 10px;\n  }\n  \n  .btn[_ngcontent-%COMP%] {\n    padding: 10px 20px;\n    background-color: #dc3545;\n    color: #fff;\n    border: none;\n    border-radius: 4px;\n    cursor: pointer;\n    transition: background-color 0.3s ease;\n  }\n  \n  .btn[_ngcontent-%COMP%]:hover {\n    background-color: #c82333;\n  }\n  .form-group-row[_ngcontent-%COMP%] {\n    display: flex;\n    justify-content: space-between;\n  }\n  \n  .form-group-item[_ngcontent-%COMP%] {\n    flex-basis: 48%;\n  }\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvcmVzZXJ2YXRpb24vcmVzZXJ2YXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGdCQUFnQjtJQUNoQixvQkFBb0I7SUFDcEIsYUFBYTtJQUNiLHlCQUF5QjtJQUN6QixzQkFBc0I7SUFDdEIsa0JBQWtCO0lBQ2xCLHdDQUF3Qzs7RUFFMUM7O0VBRUE7SUFDRSxlQUFlO0lBQ2YsaUJBQWlCO0lBQ2pCLG1CQUFtQjtJQUNuQixXQUFXO0VBQ2I7O0VBRUE7SUFDRSxtQkFBbUI7SUFDbkIsZ0JBQWdCO0VBQ2xCOztFQUVBO0lBQ0UsY0FBYztJQUNkLGtCQUFrQjtJQUNsQixpQkFBaUI7RUFDbkI7O0VBRUE7SUFDRSxXQUFXO0lBQ1gsWUFBWTs7SUFFWixzQkFBc0I7SUFDdEIsbUJBQW1CO0VBQ3JCOztFQUVBO0lBQ0Usa0JBQWtCO0lBQ2xCLHlCQUF5QjtJQUN6QixXQUFXO0lBQ1gsWUFBWTtJQUNaLGtCQUFrQjtJQUNsQixlQUFlO0lBQ2Ysc0NBQXNDO0VBQ3hDOztFQUVBO0lBQ0UseUJBQXlCO0VBQzNCO0VBQ0E7SUFDRSxhQUFhO0lBQ2IsOEJBQThCO0VBQ2hDOztFQUVBO0lBQ0UsZUFBZTtFQUNqQiIsInNvdXJjZXNDb250ZW50IjpbIi5yZXNlcnZhdGlvbi1jb250YWluZXIge1xuICAgIG1heC13aWR0aDogODAwcHg7XG4gICAgbWFyZ2luOiAxLjNjbSBhdXRvIDA7XG4gICAgcGFkZGluZzogNDBweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjhmOGY4O1xuICAgIGJvcmRlcjogMXB4IHNvbGlkICNkZGQ7XG4gICAgYm9yZGVyLXJhZGl1czogNHB4O1xuICAgIGJveC1zaGFkb3c6IDAgMnB4IDRweCByZ2JhKDAsIDAsIDAsIDAuMSk7XG4gICAgXG4gIH1cbiAgXG4gIC5yZXNlcnZhdGlvbi10aXRsZSB7XG4gICAgZm9udC1zaXplOiAyOHB4O1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIG1hcmdpbi1ib3R0b206IDIwcHg7XG4gICAgY29sb3I6ICMzMzM7XG4gIH1cbiAgXG4gIC5yZXNlcnZhdGlvbi1mb3JtIC5mb3JtLWdyb3VwIHtcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xuICAgIG1hcmdpbi10b3A6IDIwcHg7XG4gIH1cbiAgXG4gIC5yZXNlcnZhdGlvbi1mb3JtIGxhYmVsIHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBtYXJnaW4tYm90dG9tOiA1cHg7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gIH1cbiAgXG4gIC5yZXNlcnZhdGlvbi1mb3JtIC5mb3JtLWNvbnRyb2wge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHBhZGRpbmc6IDhweDtcbiAgICBcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2NjO1xuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIH1cbiAgXG4gIC5idG4ge1xuICAgIHBhZGRpbmc6IDEwcHggMjBweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZGMzNTQ1O1xuICAgIGNvbG9yOiAjZmZmO1xuICAgIGJvcmRlcjogbm9uZTtcbiAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgY3Vyc29yOiBwb2ludGVyO1xuICAgIHRyYW5zaXRpb246IGJhY2tncm91bmQtY29sb3IgMC4zcyBlYXNlO1xuICB9XG4gIFxuICAuYnRuOmhvdmVyIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjYzgyMzMzO1xuICB9XG4gIC5mb3JtLWdyb3VwLXJvdyB7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG4gIH1cbiAgXG4gIC5mb3JtLWdyb3VwLWl0ZW0ge1xuICAgIGZsZXgtYmFzaXM6IDQ4JTtcbiAgfSJdLCJzb3VyY2VSb290IjoiIn0= */"]
 });
 
