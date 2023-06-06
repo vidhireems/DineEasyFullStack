@@ -22,6 +22,8 @@ import { OrderComponent } from './order/order.component';
 import { OrderItemsComponent } from './order-items/order-items.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationDetailsComponent } from './reservation-details/reservation-details.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { ProfileComponent } from './profile/profile.component';
     OrderItemsComponent,
     InvoiceComponent,
     ProfileComponent,
+    ReservationComponent,
+    ReservationDetailsComponent,
   ],
   imports: [
     FormsModule,

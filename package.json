@@ -44,6 +44,7 @@
   },
   "homepage": "https://github.com/vidhireems/DineEasyFullStack#readme",
   "devDependencies": {
+    "@angular-devkit/build-angular": "^16.0.4",
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.13",
     "@types/express-session": "^1.17.7",
