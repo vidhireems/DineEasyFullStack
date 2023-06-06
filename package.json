@@ -28,7 +28,8 @@
     "uuid": "^9.0.0"
   },
   "scripts": {
-    "test": "c8 mocha --exit",
+    "test": "nyc c8 mocha --exit test/*CloudTest.js",
+    "test:local": "nyc c8 mocha --exit test/*LocalTest.js",
     "build:prod": "tsc && cd frontend && npm run build && cd ..",
     "start": "node AppServer.js",
     "start:local": "tsc && cd frontend && npm run build:local && cd .. && node AppServer.js --env localhost"
