@@ -72,7 +72,7 @@ class App {
     }
     else {
       console.log("user is not authenticated");
-      res.redirect('/');
+      res.status(401).redirect('/');
     }
     
   }
@@ -133,11 +133,16 @@ class App {
     });
     
     //retrives all the orders of a particular user
-    router.get('/myorders', this.validateAuth, (req, res)=> {
-      const userdata = req.user;
-      console.log("retriving all the orders of a user");
-      this.Orders.getAllOrderOfUser(userdata, res);
-    })
+    router.get('/myorders', this.validateAuth, (req, res) => {
+    const userdata = req.user;
+    if (!req.user) {
+      // Authentication failed
+      console.log("Authentication failed");
+      return res.sendStatus(401);
+    }
+    console.log("Retrieving all orders of a user");
+    this.Orders.getAllOrderOfUser(userdata, res);
+});
 
     // Handles logout of a user 
     router.post('/logout', this.validateAuth, (req: any, res, next) => {
