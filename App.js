@@ -41,6 +41,7 @@ const GooglePassport_1 = __importDefault(require("./GooglePassport"));
 const passport = require("passport");
 const path = require("path");
 const uuid_1 = require("uuid");
+const UserModel_1 = require("./models/UserModel");
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 // Class App which creates and configure the express application
@@ -55,6 +56,7 @@ class App {
         this.Customer = new CustomerModel_1.CustomerModel();
         this.Reservation = new ReservationModel_1.ReservationModel();
         this.googlePassportObj = new GooglePassport_1.default();
+        this.users = UserModel_1.UserModel.getInstance();
         this.sessionKey = (0, uuid_1.v4)();
         this.middleware();
         this.routes();
@@ -126,6 +128,13 @@ class App {
                 console.log('User not authenticated');
                 res.status(401).json({ message: 'User not authenticated' });
             }
+        });
+        //retrives all the orders of a particular user
+        router.get('/myorders', this.validateAuth, (req, res) => {
+            const userdata = req.user;
+            console.log(userdata);
+            console.log("retriving all the orders of a user");
+            this.Orders.getAllOrderOfUser(userdata, res);
         });
         // Handles logout of a user 
         router.post('/logout', this.validateAuth, (req, res, next) => {

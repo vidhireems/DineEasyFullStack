@@ -9,7 +9,7 @@ class GooglePassport {
     constructor() {
         this.clientId = googleOauth2_1.googleAppAuth.id;
         this.secretId = googleOauth2_1.googleAppAuth.secret;
-        this.users = new UserModel_1.UserModel();
+        this.users = UserModel_1.UserModel.getInstance();
         this.customer = new CustomerModel_1.CustomerModel();
         // Updating callback url based on environment
         let callbackURL = "https://dineeasyy.azurewebsites.net/auth/google/callback";

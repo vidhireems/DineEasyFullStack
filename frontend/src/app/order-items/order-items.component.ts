@@ -5,7 +5,9 @@ import { Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from '../service/order.service';
 import { IOrderModel } from '../interfaces/IOrderModelAngular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';import { SuccessDialogComponent } from '../success-dialog/success-dialog.component'; 
+import { MatDialog } from '@angular/material/dialog';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-order-items',
@@ -22,13 +24,16 @@ export class OrderItemsComponent {
   itemIds: String[];
   selectedItems: any[] = [];
   invoiceItems: any[] = [];
+  showInvoiceButton: boolean = false
   itemsSubmitted: boolean = false;
 
   constructor(
     private menuItemsService$: MenuItemsService, 
     private OrderService$: OrderService,
     private route: ActivatedRoute,
-    private router: Router  
+    private router: Router,
+    private dialog: MatDialog,   
+    private authenticationService: AuthenticationService, 
   ) {};
 
   ngOnInit(): void {
@@ -72,25 +77,25 @@ export class OrderItemsComponent {
     return this.selectedItems.includes(itemId);
   }
 
-  sendOrder(): void {
-    if (this.selectedItems.length === 0) {
-      alert("Please select at least one item");
-      return;
-    }
-
-    this.itemIds = this.selectedItems;
-    // calculate quantity
+  sendOrder()
+  {
+    console.log("OrderSubmitted");
+    const user = this.authenticationService.customer;
+    const userId = user.customerId;
+    this.itemIds =  this.selectedItems.map(item => item.itemId)
+    //calculate quantity
     this.quantity = this.itemIds.length;
 
     let data = {
-      "customerId": "asdasdasd",
+      customerId: userId,
       quantity: this.quantity,
       itemIds: this.itemIds,
     }
     console.log(data);
     this.OrderService$.postOrder(data, this.resId, this.menuId).subscribe(response => {
-      console.log(response);
-      this.itemsSubmitted = true; 
+      console.log("response:",response);
+      this.dialog.open(SuccessDialogComponent);
+      this.showInvoiceButton = true;
     });
   }
 

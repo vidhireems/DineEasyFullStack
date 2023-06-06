@@ -29,7 +29,8 @@ class DbConnection {
         const envArgIndex = args.findIndex(arg => arg === '--env');
         if(envArgIndex !== -1 || args[envArgIndex + 1] === 'localhost' || DbConnection.environment  == 'localhost')
         {
-            this.DB_CONNECTION_STRING = `mongodb://localhost:${this.PORT}/dineEasy`;
+            this.DB_CONNECTION_STRING = 'mongodb://dbAdmin:test@127.0.0.1:27017/dineEasy?authSource=admin';
+            
         }
         
         this.mongooseConnection  = Mongoose.connection;
