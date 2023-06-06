@@ -89,5 +89,23 @@ class OrderModel {
             }
         });
     }
+    getAllOrderOfUser(userdata, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const userId = userdata.userId;
+                const filter = { customerId: userId };
+                console.log(filter);
+                const userOrder = yield this.model.find(filter).exec();
+                console.log("all orders of user");
+                res.json(userOrder);
+                res.status(200);
+            }
+            catch (error) {
+                console.log("Error retrieving user orders:", error);
+                console.error(error);
+                res.sendStatus(500);
+            }
+        });
+    }
 }
 exports.OrderModel = OrderModel;

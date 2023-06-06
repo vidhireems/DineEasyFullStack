@@ -12,8 +12,10 @@ import GooglePassportObj from './GooglePassport';
 import passport = require("passport");
 import path = require("path");
 import { v4 as uuidv4 } from "uuid";
+import { UserModel } from "./models/UserModel";
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+
 
 
 // Class App which creates and configure the express application
@@ -26,6 +28,7 @@ class App {
   public Reservation: ReservationModel;
   public Customer: CustomerModel;
   public googlePassportObj:GooglePassportObj;
+  users: UserModel;
   public sessionKey: string;
 
   // Constructor which runs the configuration on the express application and calls the routes function
@@ -38,6 +41,7 @@ class App {
     this.Customer = new CustomerModel();
     this.Reservation = new ReservationModel();
     this.googlePassportObj = new GooglePassportObj();
+    this.users = UserModel.getInstance();
     this.sessionKey = uuidv4();
     this.middleware();
     this.routes();
@@ -122,6 +126,14 @@ class App {
       }
     });
     
+    //retrives all the orders of a particular user
+    router.get('/myorders', this.validateAuth, (req, res)=> {
+      const userdata = req.user;
+      console.log(userdata);
+      console.log("retriving all the orders of a user");
+      this.Orders.getAllOrderOfUser(userdata, res);
+    })
+
     // Handles logout of a user 
     router.post('/logout', this.validateAuth, (req, res, next) => {
       req.session.destroy((err) => {

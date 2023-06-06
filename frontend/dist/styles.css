@@ -1695,7 +1695,7 @@ textarea.cdk-textarea-autosize-measuring-firefox {
   --mdc-secondary-navigation-tab-container-height: 48px;
 }
 
-html {
+.mat-mdc-checkbox {
   --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.38);
   --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.38);
   --mdc-checkbox-selected-checkmark-color: #fff;
@@ -1714,7 +1714,6 @@ html {
   --mdc-checkbox-unselected-hover-state-layer-color: black;
   --mdc-checkbox-unselected-pressed-state-layer-color: black;
 }
-
 .mat-mdc-checkbox.mat-primary {
   --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.38);
   --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.38);
@@ -1760,7 +1759,7 @@ html {
   color: rgba(0, 0, 0, 0.38);
 }
 
-html {
+.mat-mdc-checkbox {
   --mdc-checkbox-state-layer-size: 40px;
 }
 
