@@ -25,6 +25,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { SuccessDialogComponent } from './success-dialog/success-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationDetailsComponent } from './reservation-details/reservation-details.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ProfileComponent,
     MyOrdersComponent,
     SuccessDialogComponent,
+    ReservationComponent,
+    ReservationDetailsComponent
   ],
   imports: [
     FormsModule,

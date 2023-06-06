@@ -79,10 +79,15 @@ export class OrderItemsComponent {
 
   sendOrder()
   {
+    if (this.selectedItems.length === 0) {
+      alert("Please select at least one item");
+      return;
+    }
     console.log("OrderSubmitted");
     const user = this.authenticationService.customer;
     const userId = user.customerId;
-    this.itemIds =  this.selectedItems.map(item => item.itemId)
+    this.itemIds =  this.selectedItems;
+    console.log(this.itemIds);
     //calculate quantity
     this.quantity = this.itemIds.length;
 
@@ -96,6 +101,7 @@ export class OrderItemsComponent {
       console.log("response:",response);
       this.dialog.open(SuccessDialogComponent);
       this.showInvoiceButton = true;
+      this.generateInvoice();
     });
   }
 

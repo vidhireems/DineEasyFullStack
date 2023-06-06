@@ -1190,7 +1190,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "fromReadableStreamLike": () => (/* binding */ fromReadableStreamLike),
 /* harmony export */   "innerFrom": () => (/* binding */ innerFrom)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! tslib */ 2321);
 /* harmony import */ var _util_isArrayLike__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/isArrayLike */ 9806);
 /* harmony import */ var _util_isPromise__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/isPromise */ 9548);
 /* harmony import */ var _Observable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Observable */ 833);
@@ -3948,7 +3948,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "isReadableStreamLike": () => (/* binding */ isReadableStreamLike),
 /* harmony export */   "readableStreamLikeToAsyncGenerator": () => (/* binding */ readableStreamLikeToAsyncGenerator)
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 4929);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ 2321);
 /* harmony import */ var _isFunction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./isFunction */ 2971);
 
 
@@ -4141,370 +4141,6 @@ function createInvalidObservableTypeError(input) {
 
 /***/ }),
 
-/***/ 4929:
-/*!*****************************************!*\
-  !*** ./node_modules/tslib/tslib.es6.js ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "__assign": () => (/* binding */ __assign),
-/* harmony export */   "__asyncDelegator": () => (/* binding */ __asyncDelegator),
-/* harmony export */   "__asyncGenerator": () => (/* binding */ __asyncGenerator),
-/* harmony export */   "__asyncValues": () => (/* binding */ __asyncValues),
-/* harmony export */   "__await": () => (/* binding */ __await),
-/* harmony export */   "__awaiter": () => (/* binding */ __awaiter),
-/* harmony export */   "__classPrivateFieldGet": () => (/* binding */ __classPrivateFieldGet),
-/* harmony export */   "__classPrivateFieldIn": () => (/* binding */ __classPrivateFieldIn),
-/* harmony export */   "__classPrivateFieldSet": () => (/* binding */ __classPrivateFieldSet),
-/* harmony export */   "__createBinding": () => (/* binding */ __createBinding),
-/* harmony export */   "__decorate": () => (/* binding */ __decorate),
-/* harmony export */   "__esDecorate": () => (/* binding */ __esDecorate),
-/* harmony export */   "__exportStar": () => (/* binding */ __exportStar),
-/* harmony export */   "__extends": () => (/* binding */ __extends),
-/* harmony export */   "__generator": () => (/* binding */ __generator),
-/* harmony export */   "__importDefault": () => (/* binding */ __importDefault),
-/* harmony export */   "__importStar": () => (/* binding */ __importStar),
-/* harmony export */   "__makeTemplateObject": () => (/* binding */ __makeTemplateObject),
-/* harmony export */   "__metadata": () => (/* binding */ __metadata),
-/* harmony export */   "__param": () => (/* binding */ __param),
-/* harmony export */   "__propKey": () => (/* binding */ __propKey),
-/* harmony export */   "__read": () => (/* binding */ __read),
-/* harmony export */   "__rest": () => (/* binding */ __rest),
-/* harmony export */   "__runInitializers": () => (/* binding */ __runInitializers),
-/* harmony export */   "__setFunctionName": () => (/* binding */ __setFunctionName),
-/* harmony export */   "__spread": () => (/* binding */ __spread),
-/* harmony export */   "__spreadArray": () => (/* binding */ __spreadArray),
-/* harmony export */   "__spreadArrays": () => (/* binding */ __spreadArrays),
-/* harmony export */   "__values": () => (/* binding */ __values),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/******************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-    return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-    if (typeof b !== "function" && b !== null)
-        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-    extendStatics(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-        }
-        return t;
-    }
-    return __assign.apply(this, arguments);
-}
-
-function __rest(s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-}
-
-function __decorate(decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-}
-
-function __param(paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-}
-
-function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
-    function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
-    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
-    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
-    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
-    var _, done = false;
-    for (var i = decorators.length - 1; i >= 0; i--) {
-        var context = {};
-        for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
-        for (var p in contextIn.access) context.access[p] = contextIn.access[p];
-        context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
-        var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
-        if (kind === "accessor") {
-            if (result === void 0) continue;
-            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
-            if (_ = accept(result.get)) descriptor.get = _;
-            if (_ = accept(result.set)) descriptor.set = _;
-            if (_ = accept(result.init)) initializers.unshift(_);
-        }
-        else if (_ = accept(result)) {
-            if (kind === "field") initializers.unshift(_);
-            else descriptor[key] = _;
-        }
-    }
-    if (target) Object.defineProperty(target, contextIn.name, descriptor);
-    done = true;
-};
-
-function __runInitializers(thisArg, initializers, value) {
-    var useValue = arguments.length > 2;
-    for (var i = 0; i < initializers.length; i++) {
-        value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
-    }
-    return useValue ? value : void 0;
-};
-
-function __propKey(x) {
-    return typeof x === "symbol" ? x : "".concat(x);
-};
-
-function __setFunctionName(f, name, prefix) {
-    if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
-    return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
-};
-
-function __metadata(metadataKey, metadataValue) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
-}
-
-function __awaiter(thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-}
-
-function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (g && (g = 0, op[0] && (_ = 0)), _) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-}
-
-var __createBinding = Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-        desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-});
-
-function __exportStar(m, o) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
-}
-
-function __values(o) {
-    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-    if (m) return m.call(o);
-    if (o && typeof o.length === "number") return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-}
-
-function __read(o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-}
-
-/** @deprecated */
-function __spread() {
-    for (var ar = [], i = 0; i < arguments.length; i++)
-        ar = ar.concat(__read(arguments[i]));
-    return ar;
-}
-
-/** @deprecated */
-function __spreadArrays() {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-}
-
-function __spreadArray(to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-}
-
-function __await(v) {
-    return this instanceof __await ? (this.v = v, this) : new __await(v);
-}
-
-function __asyncGenerator(thisArg, _arguments, generator) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var g = generator.apply(thisArg, _arguments || []), i, q = [];
-    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
-    function fulfill(value) { resume("next", value); }
-    function reject(value) { resume("throw", value); }
-    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
-}
-
-function __asyncDelegator(o) {
-    var i, p;
-    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: false } : f ? f(v) : v; } : f; }
-}
-
-function __asyncValues(o) {
-    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
-    var m = o[Symbol.asyncIterator], i;
-    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
-    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
-}
-
-function __makeTemplateObject(cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-
-var __setModuleDefault = Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-};
-
-function __importStar(mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-}
-
-function __importDefault(mod) {
-    return (mod && mod.__esModule) ? mod : { default: mod };
-}
-
-function __classPrivateFieldGet(receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-}
-
-function __classPrivateFieldSet(receiver, state, value, kind, f) {
-    if (kind === "m") throw new TypeError("Private method is not writable");
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
-}
-
-function __classPrivateFieldIn(state, receiver) {
-    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
-    return typeof state === "function" ? receiver === state : state.has(receiver);
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-    __extends,
-    __assign,
-    __rest,
-    __decorate,
-    __param,
-    __metadata,
-    __awaiter,
-    __generator,
-    __createBinding,
-    __exportStar,
-    __values,
-    __read,
-    __spread,
-    __spreadArrays,
-    __spreadArray,
-    __await,
-    __asyncGenerator,
-    __asyncDelegator,
-    __asyncValues,
-    __makeTemplateObject,
-    __importStar,
-    __importDefault,
-    __classPrivateFieldGet,
-    __classPrivateFieldSet,
-    __classPrivateFieldIn,
-});
-
-
-/***/ }),
-
 /***/ 2223:
 /*!******************************************************************!*\
   !*** ./node_modules/@angular/animations/fesm2022/animations.mjs ***!
@@ -4534,7 +4170,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ɵPRE_STYLE": () => (/* binding */ ɵPRE_STYLE)
 /* harmony export */ });
 /**
- * @license Angular v16.0.2
+ * @license Angular v16.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -5790,7 +5426,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/animations */ 2223);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 6839);
 /**
- * @license Angular v16.0.2
+ * @license Angular v16.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -8756,7 +8392,7 @@ class TransitionAnimationEngine {
       removeClass(element, DISABLED_CLASSNAME);
     }
   }
-  removeNode(namespaceId, element, isHostElement, context) {
+  removeNode(namespaceId, element, context) {
     if (isElementNode(element)) {
       const ns = namespaceId ? this._fetchNamespace(namespaceId) : null;
       if (ns) {
@@ -8764,11 +8400,9 @@ class TransitionAnimationEngine {
       } else {
         this.markElementAsRemoved(namespaceId, element, false, context);
       }
-      if (isHostElement) {
-        const hostNS = this.namespacesByHostElement.get(element);
-        if (hostNS && hostNS.id !== namespaceId) {
-          hostNS.removeNode(element, context);
-        }
+      const hostNS = this.namespacesByHostElement.get(element);
+      if (hostNS && hostNS.id !== namespaceId) {
+        hostNS.removeNode(element, context);
       }
     } else {
       this._onRemovalComplete(element, context);
@@ -9115,7 +8749,7 @@ class TransitionAnimationEngine {
     replaceNodes.forEach(node => {
       const post = postStylesMap.get(node);
       const pre = preStylesMap.get(node);
-      postStylesMap.set(node, new Map([...Array.from(post?.entries() ?? []), ...Array.from(pre?.entries() ?? [])]));
+      postStylesMap.set(node, new Map([...(post?.entries() ?? []), ...(pre?.entries() ?? [])]));
     });
     const rootPlayers = [];
     const subPlayers = [];
@@ -9663,8 +9297,8 @@ class AnimationEngine {
   onInsert(namespaceId, element, parent, insertBefore) {
     this._transitionEngine.insertNode(namespaceId, element, parent, insertBefore);
   }
-  onRemove(namespaceId, element, context, isHostElement) {
-    this._transitionEngine.removeNode(namespaceId, element, isHostElement || false, context);
+  onRemove(namespaceId, element, context) {
+    this._transitionEngine.removeNode(namespaceId, element, context);
   }
   disableAnimations(element, disable) {
     this._transitionEngine.markElementAsDisabled(element, disable);
@@ -12907,7 +12541,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /** Current version of the Angular Component Development Kit. */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.0.1');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.0.3');
 
 
 /***/ }),
@@ -21414,7 +21048,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 6839);
 /**
- * @license Angular v16.0.2
+ * @license Angular v16.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -25747,15 +25381,23 @@ function invalidPipeArgumentError(type, value) {
 }
 class SubscribableStrategy {
   createSubscription(async, updateLatestValue) {
-    return async.subscribe({
+    // Subscription can be side-effectful, and we don't want any signal reads which happen in the
+    // side effect of the subscription to be tracked by a component's template when that
+    // subscription is triggered via the async pipe. So we wrap the subscription in `untracked` to
+    // decouple from the current reactive context.
+    //
+    // `untracked` also prevents signal _writes_ which happen in the subscription side effect from
+    // being treated as signal writes during the template evaluation (which throws errors).
+    return (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.untracked)(() => async.subscribe({
       next: updateLatestValue,
       error: e => {
         throw e;
       }
-    });
+    }));
   }
   dispose(subscription) {
-    subscription.unsubscribe();
+    // See the comment in `createSubscription` above on the use of `untracked`.
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.untracked)(() => subscription.unsubscribe());
   }
 }
 class PromiseStrategy {
@@ -27011,7 +26653,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.0.2');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.0.4');
 
 /**
  * Defines a scroll position manager. Implemented by `BrowserViewportScroller`.
@@ -27953,7 +27595,7 @@ class NgOptimizedImage {
     this.imgElement = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.ElementRef).nativeElement;
     this.injector = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injector);
     this.isServer = isPlatformServer((0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_0__.PLATFORM_ID));
-    this.preloadLinkChecker = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(PreloadLinkCreator);
+    this.preloadLinkCreator = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.inject)(PreloadLinkCreator);
     // a LCP image observer - should be injected only in the dev mode
     this.lcpObserver = ngDevMode ? this.injector.get(LCPImageObserver) : null;
     /**
@@ -28097,7 +27739,7 @@ class NgOptimizedImage {
       this.setHostAttribute('srcset', rewrittenSrcset);
     }
     if (this.isServer && this.priority) {
-      this.preloadLinkChecker.createPreloadLinkTag(this.renderer, rewrittenSrc, rewrittenSrcset, this.sizes);
+      this.preloadLinkCreator.createPreloadLinkTag(this.renderer, rewrittenSrc, rewrittenSrcset, this.sizes);
     }
   }
   /** @nodoc */
@@ -28629,17 +28271,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 6839);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 745);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 833);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 9346);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 833);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ 9346);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ 3853);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 116);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ 635);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 2673);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 9337);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 155);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 6477);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 2313);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 2673);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 9337);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/operators */ 155);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ 6477);
 /**
- * @license Angular v16.0.2
+ * @license Angular v16.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -30081,7 +29724,9 @@ function legacyInterceptorFnFactory() {
       // out.
       chain = interceptors.reduceRight(adaptLegacyInterceptorToChain, interceptorChainEndFn);
     }
-    return chain(req, handler);
+    const pendingTasks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵInitialRenderPendingTasks"]);
+    const taskId = pendingTasks.add();
+    return chain(req, handler).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.finalize)(() => pendingTasks.remove(taskId)));
   };
 }
 class HttpInterceptorHandler extends HttpHandler {
@@ -30090,6 +29735,7 @@ class HttpInterceptorHandler extends HttpHandler {
     this.backend = backend;
     this.injector = injector;
     this.chain = null;
+    this.pendingTasks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵInitialRenderPendingTasks"]);
   }
   handle(initialRequest) {
     if (this.chain === null) {
@@ -30100,7 +29746,8 @@ class HttpInterceptorHandler extends HttpHandler {
       // out.
       this.chain = dedupedInterceptorFns.reduceRight((nextSequencedFn, interceptorFn) => chainedInterceptorFn(nextSequencedFn, interceptorFn, this.injector), interceptorChainEndFn);
     }
-    return this.chain(initialRequest, downstreamRequest => this.backend.handle(downstreamRequest));
+    const taskId = this.pendingTasks.add();
+    return this.chain(initialRequest, downstreamRequest => this.backend.handle(downstreamRequest)).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.finalize)(() => this.pendingTasks.remove(taskId)));
   }
 }
 HttpInterceptorHandler.ɵfac = function HttpInterceptorHandler_Factory(t) {
@@ -30207,7 +29854,7 @@ class JsonpClientBackend {
       throw new Error(JSONP_ERR_HEADERS_NOT_SUPPORTED);
     }
     // Everything else happens inside the Observable boundary.
-    return new rxjs__WEBPACK_IMPORTED_MODULE_5__.Observable(observer => {
+    return new rxjs__WEBPACK_IMPORTED_MODULE_6__.Observable(observer => {
       // The first step to make a request is to generate the callback name, and replace the
       // callback placeholder in the URL with the name. Care has to be taken here to ensure
       // a trailing &, if matched, gets inserted back into the URL in the correct place.
@@ -30322,7 +29969,7 @@ class JsonpClientBackend {
   }
 }
 JsonpClientBackend.ɵfac = function JsonpClientBackend_Factory(t) {
-  return new (t || JsonpClientBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](JsonpCallbackContext), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_6__.DOCUMENT));
+  return new (t || JsonpClientBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](JsonpCallbackContext), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_7__.DOCUMENT));
 };
 JsonpClientBackend.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({
   token: JsonpClientBackend,
@@ -30338,7 +29985,7 @@ JsonpClientBackend.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODUL
       type: undefined,
       decorators: [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.Inject,
-        args: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.DOCUMENT]
+        args: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.DOCUMENT]
       }]
     }];
   }, null);
@@ -30426,16 +30073,16 @@ class HttpXhrBackend {
     // Quick check to give a better error message when a user attempts to use
     // HttpClient.jsonp() without installing the HttpClientJsonpModule
     if (req.method === 'JSONP') {
-      throw new Error(`Attempted to construct Jsonp request without HttpClientJsonpModule installed.`);
+      throw new _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵRuntimeError"](-2800 /* RuntimeErrorCode.MISSING_JSONP_MODULE */, (typeof ngDevMode === 'undefined' || ngDevMode) && `Cannot make a JSONP request without JSONP support. To fix the problem, either add the \`withJsonpSupport()\` call (if \`provideHttpClient()\` is used) or import the \`HttpClientJsonpModule\` in the root NgModule.`);
     }
     // Check whether this factory has a special function to load an XHR implementation
     // for various non-browser environments. We currently limit it to only `ServerXhr`
     // class, which needs to load an XHR implementation.
     const xhrFactory = this.xhrFactory;
-    const source = xhrFactory.ɵloadImpl ? (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.from)(xhrFactory.ɵloadImpl()) : (0,rxjs__WEBPACK_IMPORTED_MODULE_0__.of)(null);
-    return source.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.switchMap)(() => {
+    const source = xhrFactory.ɵloadImpl ? (0,rxjs__WEBPACK_IMPORTED_MODULE_8__.from)(xhrFactory.ɵloadImpl()) : (0,rxjs__WEBPACK_IMPORTED_MODULE_0__.of)(null);
+    return source.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.switchMap)(() => {
       // Everything happens on Observable subscription.
-      return new rxjs__WEBPACK_IMPORTED_MODULE_5__.Observable(observer => {
+      return new rxjs__WEBPACK_IMPORTED_MODULE_6__.Observable(observer => {
         // Start by setting up the XHR object with request method, URL, and withCredentials
         // flag.
         const xhr = xhrFactory.build();
@@ -30653,16 +30300,6 @@ class HttpXhrBackend {
             xhr.upload.addEventListener('progress', onUpProgress);
           }
         }
-        let macroTaskCanceller;
-        /** Tear down logic to cancel the backround macrotask. */
-        const onLoadStart = () => {
-          macroTaskCanceller ??= createBackgroundMacroTask();
-        };
-        const onLoadEnd = () => {
-          macroTaskCanceller?.();
-        };
-        xhr.addEventListener('loadstart', onLoadStart);
-        xhr.addEventListener('loadend', onLoadEnd);
         // Fire the request, and notify the event stream that it was fired.
         xhr.send(reqBody);
         observer.next({
@@ -30672,14 +30309,10 @@ class HttpXhrBackend {
         // request cancellation handler.
         return () => {
           // On a cancellation, remove all registered event listeners.
-          xhr.removeEventListener('loadstart', onLoadStart);
-          xhr.removeEventListener('loadend', onLoadEnd);
           xhr.removeEventListener('error', onError);
           xhr.removeEventListener('abort', onError);
           xhr.removeEventListener('load', onLoad);
           xhr.removeEventListener('timeout', onError);
-          //  Cancel the background macrotask.
-          macroTaskCanceller?.();
           if (req.reportProgress) {
             xhr.removeEventListener('progress', onDownProgress);
             if (reqBody !== null && xhr.upload) {
@@ -30696,7 +30329,7 @@ class HttpXhrBackend {
   }
 }
 HttpXhrBackend.ɵfac = function HttpXhrBackend_Factory(t) {
-  return new (t || HttpXhrBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_6__.XhrFactory));
+  return new (t || HttpXhrBackend)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_7__.XhrFactory));
 };
 HttpXhrBackend.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({
   token: HttpXhrBackend,
@@ -30707,25 +30340,10 @@ HttpXhrBackend.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_4_
     type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.Injectable
   }], function () {
     return [{
-      type: _angular_common__WEBPACK_IMPORTED_MODULE_6__.XhrFactory
+      type: _angular_common__WEBPACK_IMPORTED_MODULE_7__.XhrFactory
     }];
   }, null);
 })();
-// Cannot use `Number.MAX_VALUE` as it does not fit into a 32-bit signed integer.
-const MAX_INT = 2147483647;
-/**
- * A method that creates a background macrotask of up to Number.MAX_VALUE.
- *
- * This is so that Zone.js can intercept HTTP calls, this is important for server rendering,
- * as the application is only rendered once the application is stabilized, meaning there are pending
- * macro and micro tasks.
- *
- * @returns a callback method to cancel the macrotask.
- */
-function createBackgroundMacroTask() {
-  const timeout = setTimeout(() => void 0, MAX_INT);
-  return () => clearTimeout(timeout);
-}
 const XSRF_ENABLED = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.InjectionToken('XSRF_ENABLED');
 const XSRF_DEFAULT_COOKIE_NAME = 'XSRF-TOKEN';
 const XSRF_COOKIE_NAME = new _angular_core__WEBPACK_IMPORTED_MODULE_4__.InjectionToken('XSRF_COOKIE_NAME', {
@@ -30765,14 +30383,14 @@ class HttpXsrfCookieExtractor {
     const cookieString = this.doc.cookie || '';
     if (cookieString !== this.lastCookieString) {
       this.parseCount++;
-      this.lastToken = (0,_angular_common__WEBPACK_IMPORTED_MODULE_6__["ɵparseCookieValue"])(cookieString, this.cookieName);
+      this.lastToken = (0,_angular_common__WEBPACK_IMPORTED_MODULE_7__["ɵparseCookieValue"])(cookieString, this.cookieName);
       this.lastCookieString = cookieString;
     }
     return this.lastToken;
   }
 }
 HttpXsrfCookieExtractor.ɵfac = function HttpXsrfCookieExtractor_Factory(t) {
-  return new (t || HttpXsrfCookieExtractor)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_6__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__.PLATFORM_ID), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](XSRF_COOKIE_NAME));
+  return new (t || HttpXsrfCookieExtractor)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_7__.DOCUMENT), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_core__WEBPACK_IMPORTED_MODULE_4__.PLATFORM_ID), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](XSRF_COOKIE_NAME));
 };
 HttpXsrfCookieExtractor.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({
   token: HttpXsrfCookieExtractor,
@@ -30786,7 +30404,7 @@ HttpXsrfCookieExtractor.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_
       type: undefined,
       decorators: [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.Inject,
-        args: [_angular_common__WEBPACK_IMPORTED_MODULE_6__.DOCUMENT]
+        args: [_angular_common__WEBPACK_IMPORTED_MODULE_7__.DOCUMENT]
       }]
     }, {
       type: undefined,
@@ -31224,7 +30842,7 @@ function transferCacheInterceptorFn(req, next) {
     }));
   }
   // Request not found in cache. Make the request and cache it.
-  return next(req).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.tap)(event => {
+  return next(req).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.tap)(event => {
     if (event instanceof HttpResponse) {
       transferState.set(storeKey, {
         body: event.body,
@@ -31307,15 +30925,12 @@ function withHttpTransferCache() {
     useFactory: () => {
       const appRef = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_4__.ApplicationRef);
       const cacheState = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.inject)(CACHE_STATE);
-      const pendingTasks = (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.inject)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵInitialRenderPendingTasks"]);
       return () => {
-        const isStablePromise = appRef.isStable.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.first)(isStable => isStable)).toPromise();
-        isStablePromise.then(() => pendingTasks.whenAllTasksComplete).then(() => {
+        appRef.isStable.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_11__.first)(isStable => isStable)).toPromise().then(() => {
           cacheState.isCacheActive = false;
         });
       };
-    },
-    deps: [_angular_core__WEBPACK_IMPORTED_MODULE_4__.ApplicationRef, CACHE_STATE, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵInitialRenderPendingTasks"]]
+    }
   }];
 }
 
@@ -31716,12 +31331,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 228);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 6078);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 833);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 6646);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 1203);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 155);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6317);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 833);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 6646);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 745);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 1203);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/operators */ 1353);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 8977);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 155);
 /**
- * @license Angular v16.0.2
+ * @license Angular v16.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -31793,9 +31412,36 @@ const __forward_ref__ = getClosureSafeProperty({
  * DI is declared, but not yet defined. It is also used when the `token` which we use when creating
  * a query is not yet defined.
  *
+ * `forwardRef` is also used to break circularities in standalone components imports.
+ *
  * @usageNotes
- * ### Example
+ * ### Circular dependency example
  * {@example core/di/ts/forward_ref/forward_ref_spec.ts region='forward_ref'}
+ *
+ * ### Circular standalone reference import example
+ * ```ts
+ * @Component({
+ *   standalone: true,
+ *   imports: [ChildComponent],
+ *   selector: 'app-parent',
+ *   template: `<app-child [hideParent]="hideParent"></app-child>`,
+ * })
+ * export class ParentComponent {
+ *   @Input() hideParent: boolean;
+ * }
+ *
+ *
+ * @Component({
+ *   standalone: true,
+ *   imports: [CommonModule, forwardRef(() => ParentComponent)],
+ *   selector: 'app-child',
+ *   template: `<app-parent *ngIf="!hideParent"></app-parent>`,
+ * })
+ * export class ChildComponent {
+ *   @Input() hideParent: boolean;
+ * }
+ * ```
+ *
  * @publicApi
  */
 function forwardRef(forwardRefFn) {
@@ -36030,7 +35676,10 @@ function getOrCreateInjectable(tNode, lView, token, flags = InjectFlags.Default,
   if (tNode !== null) {
     // If the view or any of its ancestors have an embedded
     // view injector, we have to look it up there first.
-    if (lView[FLAGS] & 2048 /* LViewFlags.HasEmbeddedViewInjector */) {
+    if (lView[FLAGS] & 2048 /* LViewFlags.HasEmbeddedViewInjector */ &&
+    // The token must be present on the current node injector when the `Self`
+    // flag is set, so the lookup on embedded view injector(s) can be skipped.
+    !(flags & InjectFlags.Self)) {
       const embeddedInjectorValue = lookupTokenUsingEmbeddedInjector(tNode, lView, token, flags, NOT_FOUND);
       if (embeddedInjectorValue !== NOT_FOUND) {
         return embeddedInjectorValue;
@@ -41450,7 +41099,7 @@ class Version {
 /**
  * @publicApi
  */
-const VERSION = new Version('16.0.2');
+const VERSION = new Version('16.0.4');
 
 // This default value is when checking the hierarchy for a token.
 //
@@ -41636,6 +41285,10 @@ function maybeUnwrapFn(value) {
   }
 }
 
+/**
+ * The max length of the string representation of a value in an error message
+ */
+const VALUE_STRING_LENGTH_LIMIT = 200;
 /** Verifies that a given type is a Standalone Component. */
 function assertStandaloneComponentType(type) {
   assertComponentDef(type);
@@ -41659,11 +41312,21 @@ function throwErrorIfNoChangesMode(creationMode, oldValue, currValue, propName, 
   const hostComponentDef = getDeclarationComponentDef(lView);
   const componentClassName = hostComponentDef?.type?.name;
   const field = propName ? ` for '${propName}'` : '';
-  let msg = `ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked. Previous value${field}: '${oldValue}'. Current value: '${currValue}'.${componentClassName ? ` Expression location: ${componentClassName} component` : ''}`;
+  let msg = `ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked. Previous value${field}: '${formatValue(oldValue)}'. Current value: '${formatValue(currValue)}'.${componentClassName ? ` Expression location: ${componentClassName} component` : ''}`;
   if (creationMode) {
     msg += ` It seems like the view has been created after its parent and its children have been dirty checked.` + ` Has it been created in a change detection hook?`;
   }
   throw new RuntimeError(-100 /* RuntimeErrorCode.EXPRESSION_CHANGED_AFTER_CHECKED */, msg);
+}
+function formatValue(value) {
+  let strValue = String(value);
+  // JSON.stringify will throw on circular references
+  try {
+    if (Array.isArray(value) || strValue === '[object Object]') {
+      strValue = JSON.stringify(value);
+    }
+  } catch (error) {}
+  return strValue.length > VALUE_STRING_LENGTH_LIMIT ? strValue.substring(0, VALUE_STRING_LENGTH_LIMIT) + '…' : strValue;
 }
 function constructDetailsForInterpolation(lView, rootIndex, expressionIndex, meta, changedValue) {
   const [propName, prefix, ...chunks] = meta.split(INTERPOLATION_DELIMITER);
@@ -44898,7 +44561,7 @@ function validateMappings(bindingType, def, hostDirectiveBindings) {
         throw new RuntimeError(311 /* RuntimeErrorCode.HOST_DIRECTIVE_UNDEFINED_BINDING */, `Directive ${className} does not have an ${bindingType} with a public name of ${publicName}.`);
       }
       const remappedPublicName = hostDirectiveBindings[publicName];
-      if (bindings.hasOwnProperty(remappedPublicName) && bindings[remappedPublicName] !== publicName) {
+      if (bindings.hasOwnProperty(remappedPublicName) && remappedPublicName !== publicName && bindings[remappedPublicName] !== publicName) {
         throw new RuntimeError(312 /* RuntimeErrorCode.HOST_DIRECTIVE_CONFLICTING_ALIAS */, `Cannot alias ${bindingType} ${publicName} of host directive ${className} to ${remappedPublicName}, because it already has a different ${bindingType} with the same public name.`);
       }
     }
@@ -55418,7 +55081,7 @@ function computeCombinedExports(type) {
   if (ngModuleDef === null) {
     return [type];
   }
-  return [...flatten(maybeUnwrapFn(ngModuleDef.exports).map(type => {
+  return flatten(maybeUnwrapFn(ngModuleDef.exports).map(type => {
     const ngModuleDef = getNgModuleDef(type);
     if (ngModuleDef) {
       verifySemanticsOfNgModuleDef(type, false);
@@ -55426,7 +55089,7 @@ function computeCombinedExports(type) {
     } else {
       return type;
     }
-  }))];
+  }));
 }
 /**
  * Some declared components may be compiled asynchronously, and thus may not have their
@@ -56585,6 +56248,55 @@ var MissingTranslationStrategy;
 })(MissingTranslationStrategy || (MissingTranslationStrategy = {}));
 
 /**
+ * *Internal* service that keeps track of pending tasks happening in the system
+ * during the initial rendering. No tasks are tracked after an initial
+ * rendering.
+ *
+ * This information is needed to make sure that the serialization on the server
+ * is delayed until all tasks in the queue (such as an initial navigation or a
+ * pending HTTP request) are completed.
+ */
+class InitialRenderPendingTasks {
+  constructor() {
+    this.taskId = 0;
+    this.pendingTasks = new Set();
+    this.hasPendingTasks = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(false);
+  }
+  add() {
+    this.hasPendingTasks.next(true);
+    const taskId = this.taskId++;
+    this.pendingTasks.add(taskId);
+    return taskId;
+  }
+  remove(taskId) {
+    this.pendingTasks.delete(taskId);
+    if (this.pendingTasks.size === 0) {
+      this.hasPendingTasks.next(false);
+    }
+  }
+  ngOnDestroy() {
+    this.pendingTasks.clear();
+    this.hasPendingTasks.next(false);
+  }
+}
+InitialRenderPendingTasks.ɵfac = function InitialRenderPendingTasks_Factory(t) {
+  return new (t || InitialRenderPendingTasks)();
+};
+InitialRenderPendingTasks.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
+  token: InitialRenderPendingTasks,
+  factory: InitialRenderPendingTasks.ɵfac,
+  providedIn: 'root'
+});
+(function () {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(InitialRenderPendingTasks, [{
+    type: Injectable,
+    args: [{
+      providedIn: 'root'
+    }]
+  }], null, null);
+})();
+
+/**
  * Combination of NgModuleFactory and ComponentFactories.
  *
  * @publicApi
@@ -57227,14 +56939,14 @@ const ZONE_IS_STABLE_OBSERVABLE = new InjectionToken(ngDevMode ? 'isStable Obser
 function isStableFactory() {
   const zone = inject(NgZone);
   let _stable = true;
-  const isCurrentlyStable = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Observable(observer => {
+  const isCurrentlyStable = new rxjs__WEBPACK_IMPORTED_MODULE_3__.Observable(observer => {
     _stable = zone.isStable && !zone.hasPendingMacrotasks && !zone.hasPendingMicrotasks;
     zone.runOutsideAngular(() => {
       observer.next(_stable);
       observer.complete();
     });
   });
-  const isStable = new rxjs__WEBPACK_IMPORTED_MODULE_2__.Observable(observer => {
+  const isStable = new rxjs__WEBPACK_IMPORTED_MODULE_3__.Observable(observer => {
     // Create the subscription to onStable outside the Angular Zone so that
     // the callback is run outside the Angular Zone.
     let stableSub;
@@ -57265,7 +56977,7 @@ function isStableFactory() {
       unstableSub.unsubscribe();
     };
   });
-  return (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.merge)(isCurrentlyStable, isStable.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.share)()));
+  return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.merge)(isCurrentlyStable, isStable.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.share)()));
 }
 
 /**
@@ -58174,6 +57886,7 @@ class ApplicationRef {
     /** @internal */
     this._views = [];
     this.internalErrorHandler = inject(INTERNAL_APPLICATION_ERROR_HANDLER);
+    this.zoneIsStable = inject(ZONE_IS_STABLE_OBSERVABLE);
     /**
      * Get a list of component types registered to this application.
      * This list is populated even before the component is created.
@@ -58186,7 +57899,7 @@ class ApplicationRef {
     /**
      * Returns an Observable that indicates when the application is stable or unstable.
      */
-    this.isStable = inject(ZONE_IS_STABLE_OBSERVABLE);
+    this.isStable = inject(InitialRenderPendingTasks).hasPendingTasks.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_6__.mergeMap)(hasPendingTasks => hasPendingTasks ? (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.of)(false) : this.zoneIsStable), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.distinctUntilChanged)(), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.share)());
     this._injector = inject(EnvironmentInjector);
   }
   /**
@@ -60734,80 +60447,6 @@ function isDisconnectedNode(tNode, lView) {
 }
 
 /**
- * *Internal* service that keeps track of pending tasks happening in the system
- * during the initial rendering. No tasks are tracked after an initial
- * rendering.
- *
- * This information is needed to make sure that the serialization on the server
- * is delayed until all tasks in the queue (such as an initial navigation or a
- * pending HTTP request) are completed.
- */
-class InitialRenderPendingTasks {
-  get whenAllTasksComplete() {
-    if (this.collection.size === 0) {
-      this.complete();
-    }
-    return this.promise;
-  }
-  constructor() {
-    this.taskId = 0;
-    this.collection = new Set();
-    this.ngZone = inject(NgZone);
-    this.completed = false;
-    // Run outside of the Angular zone to avoid triggering
-    // extra change detection cycles.
-    this.ngZone.runOutsideAngular(() => {
-      this.promise = new Promise(resolve => {
-        this.resolve = resolve;
-      });
-    });
-  }
-  add() {
-    if (this.completed) {
-      // Indicates that the task was added after
-      // the task queue completion, so it's a noop.
-      return -1;
-    }
-    const taskId = this.taskId++;
-    this.collection.add(taskId);
-    return taskId;
-  }
-  remove(taskId) {
-    if (this.completed) return;
-    this.collection.delete(taskId);
-    if (this.collection.size === 0) {
-      this.complete();
-    }
-  }
-  ngOnDestroy() {
-    this.complete();
-    this.collection.clear();
-  }
-  complete() {
-    this.completed = true;
-    this.resolve();
-  }
-}
-InitialRenderPendingTasks.ɵfac = function InitialRenderPendingTasks_Factory(t) {
-  return new (t || InitialRenderPendingTasks)();
-};
-InitialRenderPendingTasks.ɵprov = /*@__PURE__*/ɵɵdefineInjectable({
-  token: InitialRenderPendingTasks,
-  factory: InitialRenderPendingTasks.ɵfac,
-  providedIn: 'root'
-});
-(function () {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(InitialRenderPendingTasks, [{
-    type: Injectable,
-    args: [{
-      providedIn: 'root'
-    }]
-  }], function () {
-    return [];
-  }, null);
-})();
-
-/**
  * Indicates whether the hydration-related code was added,
  * prevents adding it multiple times.
  */
@@ -60861,8 +60500,8 @@ function printHydrationStats(injector) {
 /**
  * Returns a Promise that is resolved when an application becomes stable.
  */
-function whenStable(appRef, pendingTasks, injector) {
-  const isStablePromise = appRef.isStable.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.first)(isStable => isStable)).toPromise();
+function whenStable(appRef, injector) {
+  const isStablePromise = appRef.isStable.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.first)(isStable => isStable)).toPromise();
   if (typeof ngDevMode !== 'undefined' && ngDevMode) {
     const timeoutTime = APPLICATION_IS_STABLE_TIMEOUT;
     const console = injector.get(Console);
@@ -60875,8 +60514,7 @@ function whenStable(appRef, pendingTasks, injector) {
     });
     isStablePromise.finally(() => clearTimeout(timeoutId));
   }
-  const pendingTasksPromise = pendingTasks.whenAllTasksComplete;
-  return Promise.allSettled([isStablePromise, pendingTasksPromise]);
+  return isStablePromise.then(() => {});
 }
 /**
  * Returns a set of providers required to setup hydration support
@@ -60939,10 +60577,9 @@ function withDomHydration() {
     useFactory: () => {
       if (isBrowser() && inject(IS_HYDRATION_DOM_REUSE_ENABLED)) {
         const appRef = inject(ApplicationRef);
-        const pendingTasks = inject(InitialRenderPendingTasks);
         const injector = inject(Injector);
         return () => {
-          whenStable(appRef, pendingTasks, injector).then(() => {
+          whenStable(appRef, injector).then(() => {
             // Wait until an app becomes stable and cleanup all views that
             // were not claimed during the application bootstrap process.
             // The timing is similar to when we start the serialization process
@@ -61351,7 +60988,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 1640);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 635);
 /**
- * @license Angular v16.0.2
+ * @license Angular v16.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -69301,7 +68938,7 @@ UntypedFormBuilder.ɵprov = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODUL
 /**
  * @publicApi
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.0.2');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.0.4');
 
 /**
  * Exports the required providers and directives for template-driven forms,
@@ -70086,7 +69723,7 @@ function MatOption_span_6_Template(rf, ctx) {
 }
 const _c3 = [[["mat-icon"]], "*"];
 const _c4 = ["mat-icon", "*"];
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.0.1');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.Version('16.0.3');
 
 /** @docs-private */
 class AnimationCurves {}
@@ -74543,7 +74180,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_animations_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/animations/browser */ 2571);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 6477);
 /**
- * @license Angular v16.0.2
+ * @license Angular v16.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -74831,7 +74468,7 @@ class BaseAnimationRenderer {
     this.engine.onInsert(this.namespaceId, newChild, parent, isMove);
   }
   removeChild(parent, oldChild, isHostElement) {
-    this.engine.onRemove(this.namespaceId, oldChild, this.delegate, isHostElement);
+    this.engine.onRemove(this.namespaceId, oldChild, this.delegate);
   }
   selectRootElement(selectorOrNode, preserveContent) {
     return this.delegate.selectRootElement(selectorOrNode, preserveContent);
@@ -75207,7 +74844,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/common */ 6477);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 3765);
 /**
- * @license Angular v16.0.2
+ * @license Angular v16.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -77498,7 +77135,7 @@ function provideClientHydration(...features) {
 /**
  * @publicApi
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Version('16.0.2');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Version('16.0.4');
 
 // Re-export TransferState to the public API of the `platform-browser` for backwards-compatibility.
 /**
@@ -77653,7 +77290,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! rxjs/operators */ 1308);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @angular/platform-browser */ 2512);
 /**
- * @license Angular v16.0.2
+ * @license Angular v16.0.4
  * (c) 2010-2022 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -84871,7 +84508,7 @@ function mapToResolve(provider) {
 /**
  * @publicApi
  */
-const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Version('16.0.2');
+const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Version('16.0.4');
 
 /**
  * @module
@@ -84886,6 +84523,370 @@ const VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.Version('16.0.2')
  * Generated bundle index. Do not edit.
  */
 
+
+
+/***/ }),
+
+/***/ 2321:
+/*!******************************************!*\
+  !*** ./node_modules/tslib/tslib.es6.mjs ***!
+  \******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "__assign": () => (/* binding */ __assign),
+/* harmony export */   "__asyncDelegator": () => (/* binding */ __asyncDelegator),
+/* harmony export */   "__asyncGenerator": () => (/* binding */ __asyncGenerator),
+/* harmony export */   "__asyncValues": () => (/* binding */ __asyncValues),
+/* harmony export */   "__await": () => (/* binding */ __await),
+/* harmony export */   "__awaiter": () => (/* binding */ __awaiter),
+/* harmony export */   "__classPrivateFieldGet": () => (/* binding */ __classPrivateFieldGet),
+/* harmony export */   "__classPrivateFieldIn": () => (/* binding */ __classPrivateFieldIn),
+/* harmony export */   "__classPrivateFieldSet": () => (/* binding */ __classPrivateFieldSet),
+/* harmony export */   "__createBinding": () => (/* binding */ __createBinding),
+/* harmony export */   "__decorate": () => (/* binding */ __decorate),
+/* harmony export */   "__esDecorate": () => (/* binding */ __esDecorate),
+/* harmony export */   "__exportStar": () => (/* binding */ __exportStar),
+/* harmony export */   "__extends": () => (/* binding */ __extends),
+/* harmony export */   "__generator": () => (/* binding */ __generator),
+/* harmony export */   "__importDefault": () => (/* binding */ __importDefault),
+/* harmony export */   "__importStar": () => (/* binding */ __importStar),
+/* harmony export */   "__makeTemplateObject": () => (/* binding */ __makeTemplateObject),
+/* harmony export */   "__metadata": () => (/* binding */ __metadata),
+/* harmony export */   "__param": () => (/* binding */ __param),
+/* harmony export */   "__propKey": () => (/* binding */ __propKey),
+/* harmony export */   "__read": () => (/* binding */ __read),
+/* harmony export */   "__rest": () => (/* binding */ __rest),
+/* harmony export */   "__runInitializers": () => (/* binding */ __runInitializers),
+/* harmony export */   "__setFunctionName": () => (/* binding */ __setFunctionName),
+/* harmony export */   "__spread": () => (/* binding */ __spread),
+/* harmony export */   "__spreadArray": () => (/* binding */ __spreadArray),
+/* harmony export */   "__spreadArrays": () => (/* binding */ __spreadArrays),
+/* harmony export */   "__values": () => (/* binding */ __values),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+  extendStatics = Object.setPrototypeOf ||
+      ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+      function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+  return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+  if (typeof b !== "function" && b !== null)
+      throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+  extendStatics(d, b);
+  function __() { this.constructor = d; }
+  d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign = function() {
+  __assign = Object.assign || function __assign(t) {
+      for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+      }
+      return t;
+  }
+  return __assign.apply(this, arguments);
+}
+
+function __rest(s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+      t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function")
+      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+          if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+              t[p[i]] = s[p[i]];
+      }
+  return t;
+}
+
+function __decorate(decorators, target, key, desc) {
+  var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+  if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+  else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+  return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+
+function __param(paramIndex, decorator) {
+  return function (target, key) { decorator(target, key, paramIndex); }
+}
+
+function __esDecorate(ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
+  function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
+  var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
+  var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
+  var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
+  var _, done = false;
+  for (var i = decorators.length - 1; i >= 0; i--) {
+      var context = {};
+      for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
+      for (var p in contextIn.access) context.access[p] = contextIn.access[p];
+      context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
+      var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
+      if (kind === "accessor") {
+          if (result === void 0) continue;
+          if (result === null || typeof result !== "object") throw new TypeError("Object expected");
+          if (_ = accept(result.get)) descriptor.get = _;
+          if (_ = accept(result.set)) descriptor.set = _;
+          if (_ = accept(result.init)) initializers.unshift(_);
+      }
+      else if (_ = accept(result)) {
+          if (kind === "field") initializers.unshift(_);
+          else descriptor[key] = _;
+      }
+  }
+  if (target) Object.defineProperty(target, contextIn.name, descriptor);
+  done = true;
+};
+
+function __runInitializers(thisArg, initializers, value) {
+  var useValue = arguments.length > 2;
+  for (var i = 0; i < initializers.length; i++) {
+      value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
+  }
+  return useValue ? value : void 0;
+};
+
+function __propKey(x) {
+  return typeof x === "symbol" ? x : "".concat(x);
+};
+
+function __setFunctionName(f, name, prefix) {
+  if (typeof name === "symbol") name = name.description ? "[".concat(name.description, "]") : "";
+  return Object.defineProperty(f, "name", { configurable: true, value: prefix ? "".concat(prefix, " ", name) : name });
+};
+
+function __metadata(metadataKey, metadataValue) {
+  if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+}
+
+function __awaiter(thisArg, _arguments, P, generator) {
+  function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+  return new (P || (P = Promise))(function (resolve, reject) {
+      function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+      function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+      function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+      step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+}
+
+function __generator(thisArg, body) {
+  var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+  return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+  function verb(n) { return function (v) { return step([n, v]); }; }
+  function step(op) {
+      if (f) throw new TypeError("Generator is already executing.");
+      while (g && (g = 0, op[0] && (_ = 0)), _) try {
+          if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+          if (y = 0, t) op = [op[0] & 2, t.value];
+          switch (op[0]) {
+              case 0: case 1: t = op; break;
+              case 4: _.label++; return { value: op[1], done: false };
+              case 5: _.label++; y = op[1]; op = [0]; continue;
+              case 7: op = _.ops.pop(); _.trys.pop(); continue;
+              default:
+                  if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                  if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                  if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                  if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                  if (t[2]) _.ops.pop();
+                  _.trys.pop(); continue;
+          }
+          op = body.call(thisArg, _);
+      } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+      if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+  }
+}
+
+var __createBinding = Object.create ? (function(o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+  }
+  Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+function __exportStar(m, o) {
+  for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+}
+
+function __values(o) {
+  var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+  if (m) return m.call(o);
+  if (o && typeof o.length === "number") return {
+      next: function () {
+          if (o && i >= o.length) o = void 0;
+          return { value: o && o[i++], done: !o };
+      }
+  };
+  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read(o, n) {
+  var m = typeof Symbol === "function" && o[Symbol.iterator];
+  if (!m) return o;
+  var i = m.call(o), r, ar = [], e;
+  try {
+      while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+  }
+  catch (error) { e = { error: error }; }
+  finally {
+      try {
+          if (r && !r.done && (m = i["return"])) m.call(i);
+      }
+      finally { if (e) throw e.error; }
+  }
+  return ar;
+}
+
+/** @deprecated */
+function __spread() {
+  for (var ar = [], i = 0; i < arguments.length; i++)
+      ar = ar.concat(__read(arguments[i]));
+  return ar;
+}
+
+/** @deprecated */
+function __spreadArrays() {
+  for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+  for (var r = Array(s), k = 0, i = 0; i < il; i++)
+      for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+          r[k] = a[j];
+  return r;
+}
+
+function __spreadArray(to, from, pack) {
+  if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+      if (ar || !(i in from)) {
+          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+          ar[i] = from[i];
+      }
+  }
+  return to.concat(ar || Array.prototype.slice.call(from));
+}
+
+function __await(v) {
+  return this instanceof __await ? (this.v = v, this) : new __await(v);
+}
+
+function __asyncGenerator(thisArg, _arguments, generator) {
+  if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+  var g = generator.apply(thisArg, _arguments || []), i, q = [];
+  return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+  function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+  function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+  function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+  function fulfill(value) { resume("next", value); }
+  function reject(value) { resume("throw", value); }
+  function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+}
+
+function __asyncDelegator(o) {
+  var i, p;
+  return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+  function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: false } : f ? f(v) : v; } : f; }
+}
+
+function __asyncValues(o) {
+  if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+  var m = o[Symbol.asyncIterator], i;
+  return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+  function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+  function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+}
+
+function __makeTemplateObject(cooked, raw) {
+  if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+  return cooked;
+};
+
+var __setModuleDefault = Object.create ? (function(o, v) {
+  Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+  o["default"] = v;
+};
+
+function __importStar(mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  __setModuleDefault(result, mod);
+  return result;
+}
+
+function __importDefault(mod) {
+  return (mod && mod.__esModule) ? mod : { default: mod };
+}
+
+function __classPrivateFieldGet(receiver, state, kind, f) {
+  if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+  if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+  return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+}
+
+function __classPrivateFieldSet(receiver, state, value, kind, f) {
+  if (kind === "m") throw new TypeError("Private method is not writable");
+  if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+  if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+  return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+}
+
+function __classPrivateFieldIn(state, receiver) {
+  if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+  return typeof state === "function" ? receiver === state : state.has(receiver);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __extends,
+  __assign,
+  __rest,
+  __decorate,
+  __param,
+  __metadata,
+  __awaiter,
+  __generator,
+  __createBinding,
+  __exportStar,
+  __values,
+  __read,
+  __spread,
+  __spreadArrays,
+  __spreadArray,
+  __await,
+  __asyncGenerator,
+  __asyncDelegator,
+  __asyncValues,
+  __makeTemplateObject,
+  __importStar,
+  __importDefault,
+  __classPrivateFieldGet,
+  __classPrivateFieldSet,
+  __classPrivateFieldIn,
+});
 
 
 /***/ })
