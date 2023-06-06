@@ -54,11 +54,23 @@ class UserModel {
 
         try {
             const UserDetail = await this.model.findOne(filter);
-            if(response)
-            {
-                response.json(UserDetail);
-            }
-            return UserDetail;
+            if (!UserDetail) {
+                console.error({ error: "Unable to find User" });
+                if(response)
+                {
+                response.status(404).send({ error: "User not found" });
+                }
+              } else {
+                if(response)
+                {
+                  return response.status(200).json(UserDetail);
+                }
+                else
+                {
+                  return UserDetail;
+                }
+              }
+
         }catch(err) {
             console.error(err);
             if(response)
@@ -118,17 +130,6 @@ class UserModel {
         }
     }
 
-    //map user  sso id with user id and return user id
-    // mapSSOtoUserId(req: any) {
-    //   //get the sso id from response
-    //   const ssoid:String = req.user.ssoId;
-    //   const filter = {ssoId: ssoid};
-
-    //   const UserDetail = this.model.findOne(filter);
-    //   console.log(UserDetail);
-    //   return UserDetail.userId;
-    // }
-    
 }
 
 export {UserModel};

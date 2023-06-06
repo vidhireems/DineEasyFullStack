@@ -37,6 +37,7 @@ import { ReservationDetailsComponent } from './reservation-details/reservation-d
     RestaurantsComponent,
     RestaurantComponent,
     RestaurantOverviewComponent,
+    ReservationComponent,
     OrderComponent,
     OrderItemsComponent,
     InvoiceComponent,

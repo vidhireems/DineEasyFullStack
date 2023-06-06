@@ -139,11 +139,10 @@ class CustomerModel {
         });
     }
     //update customer
-    //only update name, address, contact number
-    updateCustomer(request, response) {
+    updateCustomer(customerId, request, response) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const customerId = request.params.customerId;
+                // const customerId = request.params.customerId;
                 const { name, profilePic, email, address, contactNumber, customerType } = request.body;
                 if (!name || !profilePic || !email || !customerType)
                     return response.status(400).json({ message: "Please fill all the fields" });
