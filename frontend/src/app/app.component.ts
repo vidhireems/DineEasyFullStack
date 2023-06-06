@@ -59,7 +59,6 @@ export class AppComponent {
   // Invokes the logout functionality provided by authentication service
   logout() {
     this.authenticationService.logout().subscribe((response) => {
-          console.log(response)
           window.location.href = '/';
         },
         (error) => {

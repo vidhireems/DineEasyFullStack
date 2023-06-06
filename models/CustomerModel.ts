@@ -139,7 +139,7 @@ class CustomerModel {
   //update customer
   public async updateCustomer(customerId:any, request: any, response: any): Promise<any> {
     try {
-      // const customerId = request.params.customerId;
+     
       const { name, profilePic, email, address, contactNumber, customerType } = request.body;
       if ( !name || !profilePic || !email || !customerType )
         return response.status(400).json({ message: "Please fill all the fields" });

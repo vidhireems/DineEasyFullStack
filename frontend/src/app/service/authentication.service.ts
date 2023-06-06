@@ -74,8 +74,7 @@ export class AuthenticationService {
   logout(): Observable<any>  {
     this.isLoggedIn = false;
     this.isLoggingOut = true;
-    console.log("Calling logout in Authentication Service URL: " + this.hostUrl)
-    return this.http.post( this.hostUrl + 'logout', {});
+    return this.http.post( this.hostUrl + 'logout', {}, { responseType: 'text' });
   }
 
 }

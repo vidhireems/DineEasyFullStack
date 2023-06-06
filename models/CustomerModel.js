@@ -142,7 +142,6 @@ class CustomerModel {
     updateCustomer(customerId, request, response) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                // const customerId = request.params.customerId;
                 const { name, profilePic, email, address, contactNumber, customerType } = request.body;
                 if (!name || !profilePic || !email || !customerType)
                     return response.status(400).json({ message: "Please fill all the fields" });
