@@ -416,7 +416,7 @@ menuItemsCollection.insertMany([
     resId: "5",
     menu: [
       {
-        itemId: "asdaasvlkjewayfsdd",
+        itemId: "adfadsfas",
         category: "Appetizers",
         name: "Paneer Tikka",
         price: 8.99,
@@ -425,7 +425,7 @@ menuItemsCollection.insertMany([
           "Chunks of cottage cheese marinated in yogurt and Indian spices, grilled to perfection.",
       },
       {
-        itemId: "asdaasflkajehiufysdd",
+        itemId: "aaaaa",
         category: "Entrees",
         name: "Butter Chicken",
         price: 16.99,
@@ -434,7 +434,7 @@ menuItemsCollection.insertMany([
           "Tender chicken cooked in a rich and creamy tomato sauce, flavored with butter and spices.",
       },
       {
-        itemId: "asdasflkjaew4hofiufufhkahsadasdd",
+        itemId: "bbbbbb",
         category: "Entrees",
         name: "Biryani",
         price: 14.99,
@@ -443,7 +443,7 @@ menuItemsCollection.insertMany([
           "Basmati rice cooked with vegetables, spices, and herbs, served with raita.",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "ccccc",
         category: "Desserts",
         name: "Gulab Jamun",
         price: 4.99,
@@ -458,7 +458,7 @@ menuItemsCollection.insertMany([
     resId: "6",
     menu: [
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "ddddd",
         category: "MEZE STARTERS",
         name: "Marinated Olives",
         price: 7,
@@ -466,7 +466,7 @@ menuItemsCollection.insertMany([
         ingredients: "spice mix, orange zest, fresh herbs",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "eeee",
         category: " SALADS & SIDES",
         name: "Spring Chopped Salad ",
         price: 16,
@@ -475,7 +475,7 @@ menuItemsCollection.insertMany([
           "mixed lettuces, chickpea, tomato, fennel, peppers, red onion, graviera cheese, puffed wheat berry",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "fffff",
         category: "ENTREES",
         name: "Beef & Lamb Keftedaki",
         price: 20,
@@ -484,7 +484,7 @@ menuItemsCollection.insertMany([
           "grilled meatballs, tomato jam, lemon yogurt parsley salad",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "ggggg",
         category: "ENTREES",
         name: "Chickpea Falafel Plate ",
         price: 24,
@@ -493,7 +493,7 @@ menuItemsCollection.insertMany([
           "eggplant, soft boiled egg, pickled red cabbage, pickled jalapeño, lemon tahini sauce",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "hhhhh",
         category: "SALADS & SIDES",
         name: "Heirloom Tomato Salad",
         price: 19,
@@ -508,7 +508,7 @@ menuItemsCollection.insertMany([
     resId: "7",
     menu: [
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "iiiiii",
         category: "APPETIZERS",
         name: "SALSA TRIO (V*)",
         price: 7,
@@ -517,7 +517,7 @@ menuItemsCollection.insertMany([
           "Pico de gallo, tomato jalapeño, and tomatillo salsa served with chips cooked in rice oil.",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "jjjjjj",
         category: " APPETIZERS",
         name: "JALAPEÑO QUESO (S, V) ",
         price: 7,
@@ -526,7 +526,7 @@ menuItemsCollection.insertMany([
           "House-made queso sauce served with chips cooked in rice oil. add house-made chorizo",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "kkkkkk",
         category: "SOUPS & SALADS",
         name: "CHICKEN TORTILLA SOUP (S)",
         price: 14,
@@ -535,7 +535,7 @@ menuItemsCollection.insertMany([
           "Pasilla chile chicken broth, tinga marinated chicken breast, crispy tortilla strips, diced onions, avocado, cotija cheese, cilantro, and lime.",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "llllll",
         category: "LUNCH PLATOS",
         name: "AL PASTOR TACOS (S)",
         price: 17,
@@ -544,7 +544,7 @@ menuItemsCollection.insertMany([
           "Marinated grilled pork, avocado salsa, pineapple, diced onion, cilantro, habanero hot sauce.",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "mmmmmm",
         category: "LUNCH PLATOS",
         name: "QUESADILLA (V, G)",
         price: 19,
@@ -559,7 +559,7 @@ menuItemsCollection.insertMany([
     resId: "7",
     menu: [
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "nnnnnnn",
         category: "APPETIZERS",
         name: "GRILLED CORN ESQUITES (V)",
         price: 12,
@@ -568,7 +568,7 @@ menuItemsCollection.insertMany([
           "Corn grilled and sliced off the cob, crema, cotija, Japanese mayonnaise, chile powder and lime.",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "oooooo",
         category: "SOUPS & SALADS",
         name: "HOUSE SALAD",
         price: 8,
@@ -577,7 +577,7 @@ menuItemsCollection.insertMany([
           "Mixed greens, shaved cucumber, carrot, cherry & grape tomatoes in a honey-lime-serrano vinaigrette.",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "ppppppp",
         category: "TACOS",
         name: "KALE MUSHROOM",
         price: 17,
@@ -592,7 +592,7 @@ menuItemsCollection.insertMany([
     resId: "7",
     menu: [
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "qqqqqqq",
         category: "BREAKFAST",
         name: "CHILAQUILES",
         price: 12,
@@ -601,7 +601,7 @@ menuItemsCollection.insertMany([
           "House-made tortilla chips tossed in your choice of roasted-tomato-jalapeño sauce or tomatillo sauce. Topped with two free-range eggs, cotija cheese, pico de gallo, crema, and cilantro.",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "rrrrr",
         category: "DESSERT",
         name: "CHURROS",
         price: 8,
@@ -615,7 +615,7 @@ menuItemsCollection.insertMany([
     resId: "8",
     menu: [
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "ssssss",
         category: "Beginning",
         name: " Spanish White Anchovies and Piquillo Pepper",
         price: 11,
@@ -623,7 +623,7 @@ menuItemsCollection.insertMany([
         ingredients: "",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "tttttt",
         category: "Entrée",
         name: "Grilled Leg of Lamb, Saffron Rub, Spinach and Sofrito",
         price: 38,
@@ -631,7 +631,7 @@ menuItemsCollection.insertMany([
         ingredients: "",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "uuuuuu",
         category: "Exotic Cocktails",
         name: "ULTIMAT MOSCOW MULE",
         price: 12,
@@ -639,7 +639,7 @@ menuItemsCollection.insertMany([
         ingredients: "",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "vvvvvv",
         category: "Cocktails",
         name: " WITCHES SOUR",
         price: 15,
@@ -647,7 +647,7 @@ menuItemsCollection.insertMany([
         ingredients: "",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "wwwwww",
         category: "Beginning",
         name: "Local Corn Soup, Vanilla Oil, Chanterelle Mushroom ",
         price: 12,
@@ -661,7 +661,7 @@ menuItemsCollection.insertMany([
     resId: "9",
     menu: [
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "xxxxxx",
         category: "SAVORY",
         name: " FRENCH ONION 'FUN-DUE",
         price: 11,
@@ -670,7 +670,7 @@ menuItemsCollection.insertMany([
           " House-made Caramelized Onions, Gruyére, Crostini, Ferm-Veggies",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "yyyyy",
         category: "SAVORY",
         name: " HOUSE-MADE CROSTINI AND SPREADS ",
         price: 38,
@@ -678,7 +678,7 @@ menuItemsCollection.insertMany([
         ingredients: " Olive Tapenade, Herd Goat Cheese, Seasonal Spread ",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "zzzzz",
         category: " Chill on Tap ",
         name: "'16 Willamette Valley Pinot Noir ",
         price: 12,
@@ -686,7 +686,7 @@ menuItemsCollection.insertMany([
         ingredients: " Grochau Cellars",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "abab",
         category: " Cellar on Tap",
         name: " 18 Melon de Bourgogne ",
         price: 15,
@@ -694,7 +694,7 @@ menuItemsCollection.insertMany([
         ingredients: "Grochau Cellars",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "acaca",
         category: "Sweet",
         name: "Craft Chocolate Trio ",
         price: 12,
@@ -708,7 +708,7 @@ menuItemsCollection.insertMany([
     resId: "10",
     menu: [
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "adada",
         category: "Starters",
         name: " Fire Shrimp",
         price: 14,
@@ -717,7 +717,7 @@ menuItemsCollection.insertMany([
           "jalapeño & habanero salsa, crema, garlic, toasted flour tortillas",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "aeaea",
         category: "Starters",
         name: "Rockfish Ceviche",
         price: 16,
@@ -726,7 +726,7 @@ menuItemsCollection.insertMany([
           "citrus, yuzu kosho, red onion, chile flake, pomegranate, pickled chayote",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "afafa",
         category: "Soup & Salad",
         name: "Butternut Squash and Beet Salad ",
         price: 15,
@@ -735,7 +735,7 @@ menuItemsCollection.insertMany([
           "mixed greens, roasted butternut squash and beets, pepitas, fresnos, corn, queso fresco, avocado dressing",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "agaga",
         category: "Classic Tacos",
         name: " Spiced Steak",
         price: 6.75,
@@ -743,7 +743,7 @@ menuItemsCollection.insertMany([
         ingredients: "onion, cilantro, cascabel salsa, guacamole",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "ahaha",
         category: "Classic Tacos",
         name: "baja crispy fish",
         price: 6,
@@ -757,7 +757,7 @@ menuItemsCollection.insertMany([
     resId: "10",
     menu: [
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "akaka",
         category: "Brunch",
         name: " Chilaquiles",
         price: 16,
@@ -766,7 +766,7 @@ menuItemsCollection.insertMany([
           "jtwo sunny side up eggs*, corn tortilla chips, creamy habanero sauce, mushroom, onion, cherry tomato, corn, cotija, crema, cilantro",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "alala",
         category: "Brunch",
         name: "Kids french toast ",
         price: 16,
@@ -774,7 +774,7 @@ menuItemsCollection.insertMany([
         ingredients: "2 pieces, seasonal fruit and breakfast potatoes",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "amamama",
         category: "Kids Brunch!",
         name: "kids cheesy scramble        ",
         price: 10,
@@ -789,7 +789,7 @@ menuItemsCollection.insertMany([
     resId: "11",
     menu: [
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "ananana",
         category: "snacks & starts",
         name: " montaditos",
         price: 10,
@@ -798,7 +798,7 @@ menuItemsCollection.insertMany([
           "toasted baguette rounds served with a sweet and savory spread toppings.fig jam, goat cheese, and prosciuttopesto, tomato, fresh basil, balsmic reduction (",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "aoaoao",
         category: "snacks & starts",
         name: "mixed greens",
         price: 10,
@@ -816,7 +816,7 @@ menuItemsCollection.insertMany([
           "penne rigate, monterey jack, havarti, medium cheddar, heavy cream  ",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "apapap",
         category: "mains & shares",
         name: "charcuterie plate ",
         price: 20,
@@ -825,7 +825,7 @@ menuItemsCollection.insertMany([
           "salami, spicy coppa, serrano ham, brie, water crackers, marcona almonds",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "aqaqaq",
         category: "mains & shares",
         name: "cheese plate",
         price: 16,
@@ -840,7 +840,7 @@ menuItemsCollection.insertMany([
     resId: "12",
     menu: [
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "ararar",
         category: "Pub Fare",
         name: " FRESH CUT FISH & CHIPS",
         price: 17,
@@ -848,7 +848,7 @@ menuItemsCollection.insertMany([
         ingredients: "Beer battered rockfish, fries, remoulade sauce",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "asas",
         category: "Pub Fare",
         name: "THE QUINN’S BURGER",
         price: 18,
@@ -857,7 +857,7 @@ menuItemsCollection.insertMany([
           "*8oz house-ground angus beef, white cheddar,bacon, brioche roll, aioli, served with fries, optional addons: arugula, tomato, onion, pickle",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "azz",
         category: "Large Plates",
         name: "SEARED SALMON",
         price: 22,
@@ -865,7 +865,7 @@ menuItemsCollection.insertMany([
         ingredients: "Seared salmon, fennel nage,pple fennel slaw, chive oil",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "ayyy",
         category: "Large Plates",
         name: "SEAFOOD ALFREDO",
         price: 24,
@@ -873,7 +873,7 @@ menuItemsCollection.insertMany([
         ingredients: "Fettuccini, shrimp, scallop, parmesan",
       },
       {
-        itemId: "asdasdaslkvjheoiuyed",
+        itemId: "awwwww",
         category: "Small Plates",
         name: "SHEPHERD’S PIE",
         price: 13,
