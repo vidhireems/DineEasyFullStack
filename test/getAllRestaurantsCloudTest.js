@@ -19,7 +19,6 @@ describe('Test GET all Restaurants result from cloud host', function () {
 			.end(function (err, res) {
 				requestResult = res.body;
 				response = res;
-                console.log("response for all", response.body)
                 expect(err).to.be.null;
                 expect(res).to.have.status(200);
 				done();

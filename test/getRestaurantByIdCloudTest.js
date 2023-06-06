@@ -25,7 +25,6 @@ describe('Test GET one Restaurant result from cloud', function () {
             .end(function (err, res) {
                 requestResult = res.body;
                 response = res;
-                console.log("response--", response)
                 expect(err).to.be.null;
                 expect(res).to.have.status(200);
                 done();
@@ -57,4 +56,15 @@ describe('Test GET one Restaurant result from cloud', function () {
         expect(response.body).to.have.property('parkingdetails');
         expect(response.body).to.have.property('isValetPark').not.to.be.a.string;
     });
+    // Test to handle the failure scenario when the restaurant is not found
+    it('Should return a 404 error when the restaurant is not found', function (done) {
+        chai.request("https://dineeasyy.azurewebsites.net")
+            .get("/restaurants/18") // Assuming restaurant with ID 100 does not exist
+            .end(function (err, res) {
+                expect(res).to.have.status(404);
+                expect(res.body).to.have.property('error').to.equal('Restaurant not found');
+                done();
+            });
+    });
+
 });
