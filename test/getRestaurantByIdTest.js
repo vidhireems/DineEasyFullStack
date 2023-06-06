@@ -30,7 +30,15 @@ describe('Test GET one Restaurant result', function () {
                 done();
             });
         });
-    
+        
+    // Test to check if the API is responding correctly
+    it('Should return a 200 status code', function () {
+        expect(response).to.have.status(200);
+        expect(response).to.have.headers;
+        expect(response.body).to.be.an('object'); 
+        expect(response.body).to.not.be.an('array');
+    });
+
     // Test to check all the properties in the response object
     it('Should return a single object of restaurant', function (){
         expect(response).to.have.status(200);

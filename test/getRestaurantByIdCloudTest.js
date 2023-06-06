@@ -30,11 +30,18 @@ describe('Test GET one Restaurant result from cloud', function () {
                 expect(res).to.have.status(200);
                 done();
             });
-        });
+    });
     
-    // Test to check all the properties in the response object
-    it('Should return a single object of restaurant from cloud', function (){
+    // Test to check if the API is responding correctly
+    it('Should return a 200 status code', function () {
         expect(response).to.have.status(200);
+        expect(response).to.have.headers;
+        expect(response.body).to.be.an('object'); 
+        expect(response.body).to.not.be.an('array');
+    });
+    
+    // Test to check if the response contains the expected keys
+    it('Should include specific keys in the response body', function () {
         expect(response.body).to.include.keys('name');
         expect(response.body).to.have.property('_id');
         expect(response.body).to.have.property('resId').to.be.equal('1').to.be.a.string;
@@ -49,8 +56,5 @@ describe('Test GET one Restaurant result from cloud', function () {
         expect(response.body).to.have.property('hours');
         expect(response.body).to.have.property('parkingdetails');
         expect(response.body).to.have.property('isValetPark').not.to.be.a.string;
-        expect(response).to.have.headers;
     });
-
 });
-

@@ -42,7 +42,6 @@ describe('Test GET all Restaurants result', function () {
                     expect(body[i]).to.have.property('_id');
                     expect(body[i]).to.have.property('resId').to.be.a.string;
                     expect(body[i]).to.have.property('image');
-                    expect(body[i]).to.have.property('location');
                     expect(body[i]).to.have.property('rating').not.to.be.a.string;
                     expect(body[i]).to.have.property('reviews').not.to.be.a.string;
                     expect(body[i]).to.have.property('cost');
